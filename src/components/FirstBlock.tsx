@@ -6,7 +6,7 @@ import Link from "next/link";
 const FirstBlock = () => {
     return (
         <section
-            className="relative bg-gray-900 rounded-3xl max-w-[1350px] mx-auto px-8 py-20 mt-14 shadow-xl overflow-hidden"
+            className="relative bg-gray-900 rounded-3xl max-w-[1350px] mx-auto px-8 py-20 mt-10 shadow-xl overflow-hidden"
             style={{ minHeight: '480px' }}
         >
             <div className="flex flex-col-reverse md:flex-row items-center gap-14 md:gap-20 h-full">
