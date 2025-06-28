@@ -10,9 +10,9 @@ type StatItem = {
 
 const stats: StatItem[] = [
     { label: 'Лет на рынке', value: 14 },
-    { label: 'Средний стаж (лет)', value: 17 },
+    { label: 'Средний стаж экспертов', value: 17 },
     { label: 'Приборов в собственности', value: '180+' },
-    { label: 'Объектов спецоценки', value: '8000+' },
+    { label: 'Объектов спецоценки', value: '12000+' },
 ];
 
 export const Stats = () => {
