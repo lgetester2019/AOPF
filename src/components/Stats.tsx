@@ -10,7 +10,7 @@ type StatItem = {
 
 const stats: StatItem[] = [
     { label: 'Лет на рынке', value: 14 },
-    { label: 'Средний стаж экспертов', value: 17 },
+    { label: 'Средний стаж экспертов(лет)', value: 17 },
     { label: 'Приборов в собственности', value: '180+' },
     { label: 'Объектов спецоценки', value: '12000+' },
 ];
@@ -18,7 +18,7 @@ const stats: StatItem[] = [
 export const Stats = () => {
     return (
         <div className="mx-auto max-w-[1350px] mt-2 pb-12 pt-6">
-            <div className="grid grid-cols-2 bg-green-600/50 md:grid-cols-4 rounded-3xl overflow-hidden border-4 border-green-600">
+            <div className="grid grid-cols-2 bg-green-600/60 md:grid-cols-4 rounded-3xl overflow-hidden border-4 border-green-600">
                 {stats.map((stat, idx) => {
                     let num: number;
                     let plus = false;
@@ -57,7 +57,7 @@ export const Stats = () => {
                                     </motion.span>
                                 )}
                             </h6>
-                            <p className="text-sm font-medium tracking-widest text-white uppercase lg:text-base mt-2">
+                            <p className="text-sm font-medium tracking-widest text-white uppercase lg:text-sm mt-2">
                                 {stat.label}
                             </p>
                         </div>

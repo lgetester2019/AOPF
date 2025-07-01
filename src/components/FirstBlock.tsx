@@ -6,7 +6,7 @@ import Link from "next/link";
 const FirstBlock = () => {
     return (
         <section
-            className="relative bg-gray-900 rounded-3xl max-w-[1350px] lg:mx-auto px-6 sm:px-8 py-16 sm:py-20 mt-10 md:py-8 shadow-xl overflow-hidden"
+            className="relative bg-[#26428b] rounded-3xl max-w-[1350px] lg:mx-auto px-6 sm:px-8 py-16 sm:py-20 mt-10  shadow-xl overflow-hidden"
             style={{ minHeight: '480px' }}
         >
             <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-10  h-full">
@@ -18,7 +18,7 @@ const FirstBlock = () => {
                         и экология — наша забота
                     </h1>
                     <p className="text-white text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10">
-                        Более 10 лет мы проводим спецоценку условий труда, анализ воды и воздуха, производственный контроль и создаём системы управления профессиональными рисками.
+                        Более 10 лет мы проводим спецоценку условий труда, анализ воды и воздуха, производственный контроль и создаем системы управления охраной труда, в том числе профриски и технологические карты.
                     </p>
 
                     {/* Кнопка видна только на lg и выше */}
