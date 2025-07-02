@@ -74,7 +74,7 @@ const Header: React.FC = () => {
                         <div className="flex items-center gap-6">
                             <div className="flex items-center gap-2">
                                 <Mail size={16} className="text-gray-900" />
-                                <span>info@aopf.ru</span>
+                                <span>info.aopf@gmail.com</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Phone size={16} className="text-gray-900" />
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
                         {/* Mobile Controls */}
                         <div className="flex items-center gap-3 lg:hidden ml-auto">
                             <a
-                                href="mailto:info@aopf.ru"
+                                href="mailto:info.aopf@gmail.com"
                                 className="rounded-full hover:bg-gray-100"
                                 aria-label="Email"
                             >

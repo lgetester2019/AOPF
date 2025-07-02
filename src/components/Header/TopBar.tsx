@@ -17,7 +17,7 @@ const TopBar = () => (
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                     <Mail size={16} className="text-gray-900" />
-                    <span>info@aopf.ru</span>
+                    <span>info.aopf@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <Phone size={16} className="text-gray-900" />

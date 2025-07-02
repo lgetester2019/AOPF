@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail size={18}/>
-                            <span>info@aopf.ru</span>
+                            <span>info.aopf@gmail.com</span>
                         </div>
 
                         {/* Соцсети */}
