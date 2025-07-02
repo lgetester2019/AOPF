@@ -3,6 +3,8 @@ import FirstBlock from "@/components/FirstBlock";
 import {Stats} from "@/components/Stats";
 import Benefits from "@/components/Benefits";
 import ContactForm from "@/components/ContactForm";
+import ServicesPreview from "@/components/ServicesPreview";
+import ClientsSection from "@/components/ClientsSection";
 
 export default function Home() {
     return (
@@ -12,6 +14,8 @@ export default function Home() {
                 <FirstBlock/>
                 <Stats/>
                 <Benefits/>
+                <ServicesPreview></ServicesPreview>
+                <ClientsSection></ClientsSection>
 <ContactForm></ContactForm>
             </div>
         </div>
