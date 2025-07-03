@@ -7,6 +7,7 @@ import ServicesPreview from "@/components/ServicesPreview";
 import ClientsSection from "@/components/ClientsSection";
 import ContactMap from "@/components/ContactMap";
 import Certificates from "@/components/Certificates";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
                 <Benefits/>
                 <ServicesPreview></ServicesPreview>
                 <ClientsSection></ClientsSection>
+                <AboutUs></AboutUs>
 <ContactForm></ContactForm>
                 <Certificates></Certificates>
                 <ContactMap></ContactMap>
