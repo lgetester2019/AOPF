@@ -8,6 +8,7 @@ import ClientsSection from "@/components/ClientsSection";
 import ContactMap from "@/components/ContactMap";
 import Certificates from "@/components/Certificates";
 import AboutUs from "@/components/AboutUs";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
 <ContactForm></ContactForm>
                 <Certificates></Certificates>
                 <ContactMap></ContactMap>
+                <Footer></Footer>
             </div>
         </div>
     );
