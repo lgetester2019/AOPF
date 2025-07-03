@@ -5,6 +5,8 @@ import Benefits from "@/components/Benefits";
 import ContactForm from "@/components/ContactForm";
 import ServicesPreview from "@/components/ServicesPreview";
 import ClientsSection from "@/components/ClientsSection";
+import ContactMap from "@/components/ContactMap";
+import Certificates from "@/components/Certificates";
 
 export default function Home() {
     return (
@@ -17,6 +19,8 @@ export default function Home() {
                 <ServicesPreview></ServicesPreview>
                 <ClientsSection></ClientsSection>
 <ContactForm></ContactForm>
+                <Certificates></Certificates>
+                <ContactMap></ContactMap>
             </div>
         </div>
     );
