@@ -5,14 +5,14 @@ import {
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
-} from "@/components/ui/accordion"; // поправь путь если нужно
+} from "@/components/ui/accordion";
 
 export default function RiskAssessmentPage() {
     return (
         <>
             <Header />
             <main className="max-w-[1350px] mx-auto px-6 py-40 font-sans text-gray-800">
-                {/* Хедер с фото и заголовком */}
+                {}
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <img
                         src="/risks.jpg"
@@ -32,7 +32,7 @@ export default function RiskAssessmentPage() {
                     </div>
                 </header>
 
-                {/* Контент — аккордеон */}
+                {}
                 <section className="space-y-10 leading-relaxed  text-gray-700">
                     <Accordion type="single" collapsible className="space-y-6 ">
                         <AccordionItem value="definition w-full cursor-pointer  hover:bg-green-600/10">

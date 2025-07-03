@@ -1,4 +1,3 @@
-// src/data/services.ts
 export const services = [
     {
         title: "Специальная оценка условий труда",

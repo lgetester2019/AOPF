@@ -1,11 +1,11 @@
 module.exports = {
     content: [
-        "./src/**/*.{js,jsx,ts,tsx,html}", // пути к твоим файлам, где используешь классы tailwind
+        "./src/**/*.{js,jsx,ts,tsx,html}",
     ],
     theme: {
         extend: {
             fontFamily: {
-                sans: ['"Nunito"', 'sans-serif'], // <== Заменим стандартный sans
+                sans: ['"Nunito"', 'sans-serif'],
             },
         },
     },

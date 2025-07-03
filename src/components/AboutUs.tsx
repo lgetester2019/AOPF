@@ -22,7 +22,7 @@ export default function AboutUs() {
     return (
         <section className="py-10 mb-24 mt-6 px-4 md:px-10 bg-green-600/60 rounded-3xl max-w-[1350px] mx-auto text-white">
             <div className="flex flex-col md:flex-row gap-12  mx-auto">
-                {/* Левая колонка — заголовок и общий текст */}
+                {}
                 <div className="md:w-1/2 space-y-2">
                     <h2 className="text-4xl font-extrabold mb-4 text-white" >
                         О компании
@@ -52,7 +52,7 @@ export default function AboutUs() {
                     </p>
                 </div>
 
-                {/* Правая колонка — карточки аккредитаций */}
+                {}
                 <div className="md:w-1/2 flex flex-col gap-8">
                     {accreditations.map(({ title, text, color }, idx) => (
                         <div

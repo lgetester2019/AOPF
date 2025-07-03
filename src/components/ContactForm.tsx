@@ -26,7 +26,7 @@ const ContactForm: React.FC = () => {
         <section
             className="bg-[#26428b] my-10 mt-10 text-white lg:py-12 py-8 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
-                {/* Левый блок */}
+                {}
                 <div className="space-y-6">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                         Свяжитесь с нами, и наши эксперты<br className="hidden sm:block"/>
@@ -36,7 +36,7 @@ const ContactForm: React.FC = () => {
                         Мы работаем быстро, качественно, со строгим соблюдением условий договора и установленных сроков.
                     </p>
 
-                    {/* Контактная информация */}
+                    {}
                     <div className="space-y-5 text-white text-sm sm:text-base">
                         <div className="flex items-center gap-3">
                             <MapPin size={18}/>
@@ -55,7 +55,7 @@ const ContactForm: React.FC = () => {
                             <span>info.aopf@gmail.com</span>
                         </div>
 
-                        {/* Соцсети */}
+                        {}
                         <div className="flex items-center gap-6 pt-2">
                             <a
                                 href="https://t.me/your_channel"
@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Правая часть: форма */}
+                {}
                 <form
                     onSubmit={handleSubmit}
                     className="bg-white text-gray-900 p-4 md:p-6 sm:p-8 rounded-2xl shadow-xl space-y-5"

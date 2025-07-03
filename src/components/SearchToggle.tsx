@@ -15,7 +15,7 @@ const SearchToggle = () => {
 
     return (
         <div className="relative flex items-center">
-            {/* Анимация поиска */}
+            {}
             <div
                 className={`transition-all duration-300 overflow-hidden ${
                     open ? "w-48 sm:w-64 ml-2" : "w-0"
@@ -29,7 +29,7 @@ const SearchToggle = () => {
                 />
             </div>
 
-            {/* Кнопка переключения */}
+            {}
             <button
                 onClick={() => setOpen((prev) => !prev)}
                 className="ml-2 p-2 rounded-full hover:bg-gray-100 transition-colors"

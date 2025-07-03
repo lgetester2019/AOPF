@@ -31,7 +31,7 @@ export default function FaqPage() {
                 <section className="space-y-10 leading-relaxed text-gray-700">
                     <Accordion type="single" collapsible className="space-y-6">
 
-                        {/* Вопрос 1 */}
+                        {}
                         <AccordionItem value="faq1">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -51,7 +51,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* Вопрос 2 */}
+                        {}
                         <AccordionItem value="faq2">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -63,7 +63,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* Вопрос 3 */}
+                        {}
                         <AccordionItem value="faq3">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">

@@ -18,7 +18,7 @@ import DropdownMenu from "@/components/DropdownMenu";
 import SearchToggle from "@/components/SearchToggle";
 import DropdownServices from "@/components/DropdownServices";
 
-import MobileMenu from "./MobileMenu"; // Импорт мобильного меню
+import MobileMenu from "./MobileMenu";
 
 const Header: React.FC = () => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
     return (
         <div className="fixed top-0 left-0 w-full z-50 bg-white">
             <header className="w-full">
-                {/* TopBar */}
+                {}
                 <div className="hidden lg:block w-full bg-green-600/20">
                     <div className="max-w-[1350px] mx-auto flex justify-between items-center px-6 py-2 text-sm text-gray-700">
                         <div className="flex items-center gap-6">
@@ -100,7 +100,7 @@ const Header: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Main Header */}
+                {}
                 <div className="bg-white rounded-b-4xl shadow-sm">
                     <div className="max-w-[1350px] mx-auto flex items-center justify-between px-6 py-4 gap-6">
                         <div className="flex items-center gap-3">
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
                             </a>
                         </div>
 
-                        {/* Desktop Nav */}
+                        {}
                         <nav className="hidden lg:flex gap-3 text-base font-semibold text-gray-800">
                             <div
                                 className="relative"
@@ -156,7 +156,7 @@ const Header: React.FC = () => {
                             </a>
                         </nav>
 
-                        {/* Desktop Right */}
+                        {}
                         <div className="hidden lg:flex items-center gap-4 ml-auto">
                             <SearchToggle/>
                             <Button
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
                             </Button>
                         </div>
 
-                        {/* Mobile Controls */}
+                        {}
                         <div className="flex items-center gap-3 lg:hidden ml-auto">
                             <a
                                 href="mailto:info.aopf@gmail.com"
@@ -214,7 +214,7 @@ const Header: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Мобильное меню */}
+                {}
                 {mobileMenuOpen && (
                     <MobileMenu onClose={() => setMobileMenuOpen(false)}/>
                 )}

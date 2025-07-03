@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import { Droplets, Wind, ShieldCheck } from "lucide-react";
-import { services } from "@/data/services"; // импорт из нового файла
+import { services } from "@/data/services";
 
 
 
@@ -32,7 +32,7 @@ export default function ServicesPage() {
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                 />
 
-                                {/* Текстовый блок — на нижней части изображения */}
+                                {}
                                 <div className="absolute bottom-0 left-0 right-0 bg-white/50 backdrop-blur-sm p-6">
                                     <h2 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-green-700 transition-colors">
                                         {service.title}

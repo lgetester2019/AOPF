@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-white text-black rounded-t-[45px] pt-10 border border-t border-gray-300 border-b-0">
             <div className="max-w-[1350px] mx-auto px-6 lg:px-[60px]">
-                {/* Верхний блок */}
+                {}
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center text-center lg:text-left mb-10 gap-6">
-                    {/* Логотип */}
+                    {}
                     <div>
                         <img
                             src="/logo_aopf.png"
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                         />
                     </div>
 
-                    {/* Навигация */}
+                    {}
                     <nav className="flex flex-col items-center gap-3 lg:flex-row lg:gap-8 text-sm lg:text-base">
                         <a href="/services" className="hover:underline">Услуги</a>
                         <a href="/laboratory" className="hover:underline">Лаборатория</a>
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                         <a href="/documents" className="hover:underline">Документы</a>
                     </nav>
 
-                    {/* Соцсети */}
+                    {}
                     <div className="flex justify-center gap-4 text-2xl">
                         <a
                             href="https://t.me/+T61CqRO6JVo2Njcx"
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Контакты + адрес адаптивно */}
+                {}
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10 text-sm lg:text-base">
                     <div className="flex items-center gap-3">
                         <Mail size={16} />
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
 
                 <hr className="border-gray-300 mb-6" />
 
-                {/* Копирайт */}
+                {}
                 <div className="text-center text-xs lg:text-sm pb-6 text-black">
                     &copy; 2025 АОПФ. Все права защищены. Информация на сайте носит исключительно информационный характер и не является публичной офертой.
                 </div>

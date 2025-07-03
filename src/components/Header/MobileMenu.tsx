@@ -2,7 +2,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
 import SearchToggle from "@/components/SearchToggle";
 import DropdownMenu from "@/components/DropdownMenu";
-import DropdownServices from "@/components/DropdownServices"; // импортируем список услуг
+import DropdownServices from "@/components/DropdownServices";
 import MobileSubMenu from "./MobileSubMenu";
 
 const MobileMenu = ({ onClose }: { onClose: () => void }) => (

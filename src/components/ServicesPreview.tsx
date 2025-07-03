@@ -12,7 +12,7 @@ export default function ServicesPreview() {
         <section className="py-20">
             <div className="max-w-[1350px] bg-green-600/60 rounded-3xl py-6 lg:py-14 px-4 md:px-12 mx-auto">
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-12 items-start">
-                    {/* Левая колонка: текст + кнопка (на мобильных кнопка будет ниже благодаря order) */}
+                    {}
                     <div className="flex flex-col order-1 md:order-1">
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
                             Наши ключевые услуги
@@ -32,7 +32,7 @@ export default function ServicesPreview() {
                             сотрудничеству.
                         </p>
 
-                        {/* Кнопка - на десктопе сразу под текстом */}
+                        {}
                         <div className="hidden md:block">
                             <Link
                                 href="/services"
@@ -44,7 +44,7 @@ export default function ServicesPreview() {
                         </div>
                     </div>
 
-                    {/* Правая колонка: услуги */}
+                    {}
                     <div className="order-2 md:order-2 flex flex-col gap-6">
                         {previewServices.map((service, index) => (
                             <Link
@@ -71,7 +71,7 @@ export default function ServicesPreview() {
                             </Link>
                         ))}
 
-                        {/* Кнопка - на мобильных после списка услуг */}
+                        {}
                         <div className="mt-1 md:hidden">
                             <Link
                                 href="/services"
