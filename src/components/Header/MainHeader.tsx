@@ -148,7 +148,7 @@ const Header: React.FC = () => {
                                     </div>
                                 )}
                             </div>
-                            <a href="#" className="px-3 py-1 hover:text-green-600 transition">
+                            <a href="/contacts" className="px-3 py-1 hover:text-green-600 transition">
                                 Контакты
                             </a>
                             <a href="#" className="px-3 py-1 hover:text-green-600 transition">
