@@ -1,7 +1,7 @@
 "use client";
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import Header from "../../../aopf-site/src/components/Header";
+import Header from "../../../src/components/Header";
 import {
     Accordion,
     AccordionItem,
