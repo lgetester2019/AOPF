@@ -6,12 +6,17 @@ import {
     AccordionTrigger,
     AccordionContent,
 } from "@/components/ui/accordion";
+import Footer from "@/components/Footer";
+import OtherServices from "@/components/OtherServices";
+import ContactForm from "@/components/ContactForm";
+import ClientsSection from "@/components/ClientsSection";
+import Certificates from "@/components/Certificates";
 
 export default function RiskAssessmentPage() {
     return (
         <>
             <Header />
-            <main className="max-w-[1350px] mx-auto px-6 py-40 font-sans text-gray-800">
+            <main className="max-w-[1350px] mx-auto px-6 pt-40 pb-10 font-sans text-gray-800">
                 {}
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <img
@@ -217,7 +222,17 @@ export default function RiskAssessmentPage() {
                         </AccordionItem>
                     </Accordion>
                 </section>
+                <Certificates />
+
+                <OtherServices currentHref="/services/risk" />
+                <ClientsSection />
+
+                <ContactForm></ContactForm>
+
             </main>
+
+            <Footer></Footer>
+
         </>
     );
 }

@@ -1,11 +1,16 @@
 import Header from "@/components/Header";
 import React from "react";
+import Footer from "@/components/Footer";
+import OtherServices from "@/components/OtherServices";
+import ContactForm from "@/components/ContactForm";
+import ClientsSection from "@/components/ClientsSection";
+import Certificates from "@/components/Certificates";
 
 export default function SUOTFullPage() {
     return (
         <>
             <Header />
-            <main className="max-w-[1350px] mx-auto px-6 py-40 font-sans text-gray-800">
+            <main className="max-w-[1350px] mx-auto px-6 pt-40 pb-10 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <img
                         src="/suot.jpg"
@@ -67,7 +72,17 @@ export default function SUOTFullPage() {
                         </li>
                     </ol>
                 </section>
+                <Certificates />
+
+                <OtherServices currentHref="/services/audit" />
+                <ClientsSection />
+
+                <ContactForm></ContactForm>
+
             </main>
+
+            <Footer></Footer>
+
         </>
     );
 }

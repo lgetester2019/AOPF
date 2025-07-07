@@ -65,7 +65,7 @@ const Header: React.FC = () => {
                 {}
                 <div className="bg-white rounded-b-4xl shadow-sm">
                     <div className="max-w-[1350px] mx-auto flex items-center justify-between px-6 py-4 gap-6">
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-4">
                             <a href="/" aria-label="Главная">
                                 <img
                                     src="/logo_aopf.png"
@@ -73,6 +73,13 @@ const Header: React.FC = () => {
                                     className="h-10 w-auto cursor-pointer"
                                 />
                             </a>
+                            <div
+                                className="hidden lg:flex flex-col text-green-600 font-semibold select-none"
+                                style={{lineHeight: "1", marginTop: "-0.15rem"}}
+                            >
+                                <span className="text-lg leading-none">СОУТ от</span>
+                                <span className="text-base leading-none">профессионалов</span>
+                            </div>
                         </div>
 
                         {}

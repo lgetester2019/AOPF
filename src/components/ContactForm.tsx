@@ -85,17 +85,17 @@ const ContactForm: React.FC = () => {
                     className="bg-white text-gray-900 p-4 md:p-6 sm:p-8 rounded-2xl shadow-xl space-y-5"
                 >
                     <div>
-                        <label className="block mb-1 font-medium text-sm">Ваше имя *</label>
+                        <label className="block mb-1 font-medium text-sm">Ваше имя</label>
                         <input
                             type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            required
                             className="w-full px-4 py-2.5 border bg-green-600/10 border-green-400 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
-                            placeholder="Иван"
+                            placeholder="Иван (необязательно)"
                         />
                     </div>
+
 
                     <div>
                         <label className="block mb-1 font-medium text-sm">Номер телефона *</label>
