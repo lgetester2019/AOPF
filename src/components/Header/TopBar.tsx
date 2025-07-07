@@ -20,15 +20,36 @@ const TopBar = () => (
                     <span>info.aopf@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Phone size={16} className="text-gray-900" />
-                    <span>8 (812) 441–37–78</span>
+                    <Phone size={16} className="text-gray-900"/>
+                    <span>
+  <a href="tel:+78124413778" className="hover:underline">
+    8 (812) 441–37–78
+  </a>,{" "}
+                        <a href="tel:+79626847783" className="hover:underline">
+    +7 (962) 684-77-83
+  </a>,{" "}
+                        <a href="tel:+79119236867" className="hover:underline">
+    +7 (911) 923-68-67
+  </a>
+</span>
+
                 </div>
-                <a href="https://t.me/your_channel" target="_blank" rel="noopener noreferrer"
-                   className="p-1.5 rounded-full hover:bg-gray-100 transition-colors" aria-label="Telegram">
-                    <Send size={18} className="text-[#0088cc]" />
+                <a
+                    href="https://t.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+                    aria-label="Telegram"
+                >
+                <Send size={18} className="text-[#0088cc]" />
                 </a>
-                <a href="https://wa.me/79111234567" target="_blank" rel="noopener noreferrer"
-                   className="p-1.5 rounded-full hover:bg-gray-100 transition-colors" aria-label="WhatsApp">
+                <a
+                    href="https://wa.me/79626847783"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+                    aria-label="WhatsApp"
+                >
                     <PhoneCall size={18} className="text-[#25D366]" />
                 </a>
             </div>
