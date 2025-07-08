@@ -11,7 +11,13 @@ import OtherServices from "@/components/OtherServices";
 import ContactForm from "@/components/ContactForm";
 import ClientsSection from "@/components/ClientsSection";
 import Certificates from "@/components/Certificates";
+import BenefitsBlock from "@/components/BenefitsBlock";
+import PricePreview from "@/components/PricePreview";
+import AudienceBlock from "@/components/AudienceBlock";
+const riskData = [
+    { service: "Оценка профессиональных рисков", price: "от 600 рублей за рабочее место" },
 
+];
 export default function RiskAssessmentPage() {
     return (
         <>
@@ -25,7 +31,7 @@ export default function RiskAssessmentPage() {
                         className="w-full h-80 object-cover brightness-90"
                     />
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
-                        <h1 className="text-4xl font-extrabold mb-2 drop-shadow-lg text-center">
+                        <h1 className="lg:text-4xl text-xl  font-extrabold mb-2 drop-shadow-lg text-center">
                             Оценка профессиональных рисков
                         </h1>
                         <p className="max-w-xl text-center text-lg drop-shadow-md">
@@ -207,7 +213,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="conclusion">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold  border-l-4 border-green-600 pl-4 text-green-600">
                                     Заключение
                                 </h2>
                             </AccordionTrigger>
@@ -222,10 +228,17 @@ export default function RiskAssessmentPage() {
                         </AccordionItem>
                     </Accordion>
                 </section>
-                <Certificates />
+                <BenefitsBlock></BenefitsBlock>
 
+                <Certificates />
+                <PricePreview
+                    title="Оценка профессиональных рисков"
+                    data={riskData}
+                    href="/prices#risk"
+                />
                 <OtherServices currentHref="/services/risk" />
                 <ClientsSection />
+                <AudienceBlock/>
 
                 <ContactForm></ContactForm>
 

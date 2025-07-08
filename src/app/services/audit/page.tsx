@@ -5,7 +5,13 @@ import OtherServices from "@/components/OtherServices";
 import ContactForm from "@/components/ContactForm";
 import ClientsSection from "@/components/ClientsSection";
 import Certificates from "@/components/Certificates";
-
+import BenefitsBlock from "@/components/BenefitsBlock";
+import PricePreview from "@/components/PricePreview";
+import AudienceBlock from "@/components/AudienceBlock";
+const auditData = [
+    { service: "Аудит системы управления охраной труда(СУОТ)", price: "от 5000 рублей" },
+    // другие позиции...
+];
 export default function SUOTFullPage() {
     return (
         <>
@@ -18,7 +24,7 @@ export default function SUOTFullPage() {
                         className="w-full h-80 object-cover brightness-90"
                     />
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
-                        <h1 className="text-4xl font-extrabold mb-2 drop-shadow-lg text-center">
+                        <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
                             Аудит, разработка системы управления охраной труда (СУОТ)
                         </h1>
                         <p className="max-w-xl text-center text-lg drop-shadow-md">
@@ -72,10 +78,17 @@ export default function SUOTFullPage() {
                         </li>
                     </ol>
                 </section>
-                <Certificates />
+                <BenefitsBlock></BenefitsBlock>
 
+                <Certificates />
+                <PricePreview
+                    title="Аудит системы управления охраной труда"
+                    data={auditData}
+                    href="/prices#audit"
+                />
                 <OtherServices currentHref="/services/audit" />
                 <ClientsSection />
+                <AudienceBlock/>
 
                 <ContactForm></ContactForm>
 

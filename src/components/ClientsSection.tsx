@@ -13,7 +13,7 @@ const clients = [
 
 export default function Clients() {
     return (
-        <section className="pb-10 md:pb-16 rounded-3xl bg-white">
+        <section className="pb-10 md:pb-16 pt-10 rounded-3xl bg-white">
             <div className="max-w-[1350px] mx-auto ">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6 sm:mb-10 text-gray-900 relative inline-block">
                     Наши клиенты

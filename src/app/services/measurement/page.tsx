@@ -5,7 +5,12 @@ import OtherServices from "@/components/OtherServices";
 import ContactForm from "@/components/ContactForm";
 import ClientsSection from "@/components/ClientsSection";
 import Certificates from "@/components/Certificates";
-
+import BenefitsBlock from "@/components/BenefitsBlock";
+import PricePreview from "@/components/PricePreview";
+import AudienceBlock from "@/components/AudienceBlock";
+const measurementData = [
+    { service: "Отбор проб воздуха рабочей зоны", price: "1000 рублей" },
+];
 export default function MeasurementsPage() {
     return (
         <>
@@ -18,7 +23,7 @@ export default function MeasurementsPage() {
                         className="w-full h-80 object-cover brightness-90"
                     />
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
-                        <h1 className="text-4xl font-extrabold mb-2 drop-shadow-lg text-center">
+                        <h1 className="lg:text-4xl text-xl  font-extrabold mb-2 drop-shadow-lg text-center">
                             Измерения физических факторов
                         </h1>
                         <p className="max-w-xl text-center text-lg drop-shadow-md">
@@ -53,10 +58,20 @@ export default function MeasurementsPage() {
                     </ul>
 
                 </section>
+                <BenefitsBlock></BenefitsBlock>
+
                 <Certificates />
+                <PricePreview
+                    title="Измерения и лабораторные исследования"
+                    data={measurementData}
+                    href="/prices#measurement"
+                    customPriceText="150 рублей за 1 показатель"
+                />
 
                 <OtherServices currentHref="/services/measurement" />
                 <ClientsSection />
+
+                <AudienceBlock/>
 
                 <ContactForm></ContactForm>
             </main>
