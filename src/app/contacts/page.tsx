@@ -1,8 +1,14 @@
-'use client';
 
 import { MapPin, Phone, Mail, Car, Footprints } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata = {
+    title: "Контакты | Агентство оценки производственных факторов — Санкт-Петербург",
+    description:
+        "Свяжитесь с нами: адрес, телефоны, e-mail, карта проезда. ООО «Агентство оценки производственных факторов» — официальный офис в Санкт-Петербурге.",
+};
+
 
 export default function ContactsPage() {
     return (

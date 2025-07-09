@@ -14,6 +14,14 @@ import Certificates from "@/components/Certificates";
 import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
+
+export const metadata = {
+    title: "Оценка профессиональных рисков — охрана труда на практике",
+    description:
+        "Оценка профессиональных рисков: выявление и предотвращение угроз безопасности труда. Разработка документации, сопровождение, в соответствии с ТК РФ.",
+};
+
+
 const riskData = [
     { service: "Оценка профессиональных рисков", price: "от 600 рублей за рабочее место" },
 

@@ -8,6 +8,19 @@ import Certificates from "@/components/Certificates";
 import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
+import ServiceBlock from "@/components/ServiceBlock";
+import AuditFAQ from "@/components/AuditFAQ";
+import ServiceProcess from "@/components/ServiceProcess";
+import Reviews from "@/components/Review";
+import ContactMap from "@/components/ContactMap";
+
+export const metadata = {
+    title: "Аудит и разработка СУОТ — эффективная система охраны труда",
+    description:
+        "Создаём СУОТ под ключ: аудит, разработка политики, процедур, инструкций и документации. Повышение уровня безопасности труда на предприятии.",
+};
+
+
 const auditData = [
     { service: "Аудит системы управления охраной труда(СУОТ)", price: "от 5000 рублей" },
     // другие позиции...
@@ -79,18 +92,24 @@ export default function SUOTFullPage() {
                     </ol>
                 </section>
                 <BenefitsBlock></BenefitsBlock>
-
-                <Certificates />
+<ServiceBlock></ServiceBlock>
+                <AudienceBlock/>
+                <ServiceProcess></ServiceProcess>
+                <ContactForm></ContactForm>
+                <Reviews></Reviews>
                 <PricePreview
                     title="Аудит системы управления охраной труда"
                     data={auditData}
                     href="/prices#audit"
                 />
-                <OtherServices currentHref="/services/audit" />
                 <ClientsSection />
-                <AudienceBlock/>
+                <AuditFAQ></AuditFAQ>
+                <Certificates />
+                <OtherServices currentHref="/services/audit" />
+<ContactMap></ContactMap>
 
-                <ContactForm></ContactForm>
+
+
 
             </main>
 

@@ -14,6 +14,13 @@ import BlogOverview from "@/components/BlogOverview";
 import { createClient } from '@supabase/supabase-js';
 import Reviews from "@/components/Review";
 
+export const metadata = {
+    title: "Охрана труда и безопасность — аккредитованная лаборатория",
+    description:
+        "Почти 10 лет оказываем услуги по охране труда: СОУТ, анализ воды, производственный контроль, обучение, оценка рисков и разработка документации. Аккредитация, опыт и прозрачные цены.",
+};
+
+
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!

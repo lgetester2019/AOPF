@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -8,6 +7,11 @@ import { Droplets, Wind, ShieldCheck } from "lucide-react";
 import { services } from "@/data/services";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+    title: "Все услуги по охране труда и экологии — СОУТ, риски, замеры, СУОТ",
+    description:
+        "Полный список услуг по охране труда: специальная оценка условий труда (СОУТ), оценка профессиональных рисков, разработка СУОТ, измерения факторов, производственный контроль и анализ воды.",
+};
 
 
 export default function ServicesPage() {

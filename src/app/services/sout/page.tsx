@@ -15,6 +15,13 @@ import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
 
+export const metadata = {
+    title: "Специальная оценка условий труда (СОУТ) — профессионально и с гарантией",
+    description:
+        "Проводим специальную оценку условий труда (СОУТ) в соответствии с законодательством. Оформление всех документов, консультации, аккредитованная лаборатория.",
+};
+
+
 const soutData = [
     { service: "Стоимость СОУТ офисного места", price: "от 500 рублей" },
 

@@ -8,6 +8,14 @@ import Certificates from "@/components/Certificates";
 import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
+
+export const metadata = {
+    title: "Измерения шума, освещённости, вибрации и других факторов на рабочих местах",
+    description:
+        "Проводим измерения физических факторов: шум, освещённость, вибрация, микроклимат и другие. Сертифицированная лаборатория, точные результаты, протоколы.",
+};
+
+
 const measurementData = [
     { service: "Отбор проб воздуха рабочей зоны", price: "1000 рублей" },
 ];
