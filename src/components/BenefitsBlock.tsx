@@ -29,7 +29,7 @@ export default function BenefitsBlock() {
                             <div>
                                 <h3 className="font-semibold text-lg">Современное оснащение</h3>
                                 <p className="text-sm text-white/90 mt-1">
-                                    Лаборатория и точные приборы: шум, микроклимат, вибрация и др.
+                                    Лаборатория выполняет измерения приборами 1го класса точности: шум, вибрация, микроклимат и т.д.
                                 </p>
                             </div>
                         </div>

@@ -8,6 +8,11 @@ import Certificates from "@/components/Certificates";
 import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
+import ServiceBlock from "@/components/ServiceBlock";
+import ServiceProcess from "@/components/ServiceProcess";
+import Reviews from "@/components/Review";
+import AuditFAQ from "@/components/AuditFAQ";
+import ContactMap from "@/components/ContactMap";
 
 export const metadata = {
     title: "Измерения шума, освещённости, вибрации и других факторов на рабочих местах",
@@ -67,21 +72,22 @@ export default function MeasurementsPage() {
 
                 </section>
                 <BenefitsBlock></BenefitsBlock>
-
-                <Certificates />
+                <ServiceBlock></ServiceBlock>
+                <AudienceBlock/>
+                <ServiceProcess></ServiceProcess>
+                <ContactForm></ContactForm>
+                <Reviews></Reviews>
                 <PricePreview
                     title="Измерения и лабораторные исследования"
                     data={measurementData}
                     href="/prices#measurement"
                     customPriceText="150 рублей за 1 показатель"
                 />
-
-                <OtherServices currentHref="/services/measurement" />
                 <ClientsSection />
-
-                <AudienceBlock/>
-
-                <ContactForm></ContactForm>
+                <AuditFAQ></AuditFAQ>
+                <Certificates />
+                <OtherServices currentHref="/services/measurement" />
+                <ContactMap></ContactMap>
             </main>
 
 

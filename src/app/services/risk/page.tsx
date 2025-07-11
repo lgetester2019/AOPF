@@ -14,6 +14,11 @@ import Certificates from "@/components/Certificates";
 import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
+import ServiceBlock from "@/components/ServiceBlock";
+import ServiceProcess from "@/components/ServiceProcess";
+import Reviews from "@/components/Review";
+import AuditFAQ from "@/components/AuditFAQ";
+import ContactMap from "@/components/ContactMap";
 
 export const metadata = {
     title: "Оценка профессиональных рисков — охрана труда на практике",
@@ -237,18 +242,22 @@ export default function RiskAssessmentPage() {
                     </Accordion>
                 </section>
                 <BenefitsBlock></BenefitsBlock>
-
-                <Certificates />
+                <ServiceBlock></ServiceBlock>
+                <AudienceBlock/>
+                <ServiceProcess></ServiceProcess>
+                <ContactForm></ContactForm>
+                <Reviews></Reviews>
                 <PricePreview
                     title="Оценка профессиональных рисков"
                     data={riskData}
                     href="/prices#risk"
                 />
-                <OtherServices currentHref="/services/risk" />
                 <ClientsSection />
-                <AudienceBlock/>
+                <AuditFAQ></AuditFAQ>
+                <Certificates />
+                <OtherServices currentHref="/services/risk" />
 
-                <ContactForm></ContactForm>
+                <ContactMap></ContactMap>
 
             </main>
 

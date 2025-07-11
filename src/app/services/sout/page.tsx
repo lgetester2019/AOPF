@@ -14,6 +14,11 @@ import Certificates from "@/components/Certificates";
 import BenefitsBlock from "@/components/BenefitsBlock";
 import PricePreview from "@/components/PricePreview";
 import AudienceBlock from "@/components/AudienceBlock";
+import ServiceBlock from "@/components/ServiceBlock";
+import ServiceProcess from "@/components/ServiceProcess";
+import Reviews from "@/components/Review";
+import AuditFAQ from "@/components/AuditFAQ";
+import ContactMap from "@/components/ContactMap";
 
 export const metadata = {
     title: "Специальная оценка условий труда (СОУТ) — профессионально и с гарантией",
@@ -181,18 +186,22 @@ export default function SOUTFullPage() {
                     </ul>
                 </section>
                 <BenefitsBlock></BenefitsBlock>
-
-                <Certificates />
+                <ServiceBlock></ServiceBlock>
+                <AudienceBlock/>
+                <ServiceProcess></ServiceProcess>
+                <ContactForm></ContactForm>
+                <Reviews></Reviews>
                 <PricePreview
                     title="Специальная оценка условий труда (СОУТ)"
                     data={soutData}
                     href="/prices#sout"
                 />
-                <OtherServices currentHref="/services/sout"/>
                 <ClientsSection />
-                <AudienceBlock/>
+                <AuditFAQ></AuditFAQ>
+                <Certificates />
+                <OtherServices currentHref="/services/sout"/>
 
-                <ContactForm></ContactForm>
+                <ContactMap></ContactMap>
             </main>
 
 
