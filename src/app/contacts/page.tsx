@@ -14,10 +14,35 @@ export default function ContactsPage() {
     return (
         <>
             <Header/>
+            <div className="max-w-[1350px] m-auto mt-40 md:px-0 px-2 ">
+            <header className="max-w-[1350px] mx-auto relative rounded-3xl overflow-hidden shadow-lg">
+                <img
+                    src="/contact_image.jpg"
+                    alt="Как с нами связаться"
+                    className="w-full  h-80 object-cover brightness-90"
+                />
+                <div
+                    className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+                    <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
+                        Как с нами связаться?
+                    </h1>
+                    <p className="max-w-xl text-center text-lg drop-shadow-md">
+                        Получите персональную консультацию любым удобным способом у наших специалистов
+                    </p>
+                    <a
+                        href="tel:+78129236867"
+                        className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
+                    >
+                        Позвонить: (812) 923-68-67
+                    </a>
+                </div>
+            </header>
+            </div>
 
             {/* 🟩 Зелёный блок: Адрес + Как добраться + Карта */}
-            <section className="px-2 mt-36 my-16">
-                <div className="max-w-[1350px] rounded-3xl text-white bg-[#26428b] py-10 px-4 sm:px-6 md:px-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+            <section className="px-2 mt-16 my-16">
+                <div
+                    className="max-w-[1350px] rounded-3xl text-white bg-[#26428b] py-10 px-4 sm:px-6 md:px-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
 
                     {/* Левая колонка: Адрес + Как добраться */}
                     <div className="space-y-8 text-sm sm:text-base md:text-lg leading-relaxed">
@@ -76,7 +101,8 @@ export default function ContactsPage() {
 
             {/* 🔵 Синий блок: Клиентский отдел + Основные контакты */}
             <section className="px-2 mb-20">
-                <div className=" bg-green-600/60  text-white py-12 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div
+                    className=" bg-green-600/60  text-white py-12 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
                     {/* Клиентский отдел */}
                     <div className="space-y-8">
@@ -110,8 +136,10 @@ export default function ContactsPage() {
                             <Phone className="mt-1 flex-shrink-0" size={24}/>
                             <span>
                                 <strong>Тел.:</strong><br/>
-                                <a href="tel:+78129236867" className="underline hover:text-green-300">(812) 923-68-67</a><br/>
-                                <a href="tel:+78124413778" className="underline hover:text-green-300">(812) 441-37-78</a>
+                                <a href="tel:+78129236867"
+                                   className="underline hover:text-green-300">(812) 923-68-67</a><br/>
+                                <a href="tel:+78124413778"
+                                   className="underline hover:text-green-300">(812) 441-37-78</a>
                             </span>
                         </p>
 
@@ -127,7 +155,7 @@ export default function ContactsPage() {
                     </div>
                 </div>
             </section>
-            <ContactForm />
+            <ContactForm/>
             <Footer/>
         </>
     );
