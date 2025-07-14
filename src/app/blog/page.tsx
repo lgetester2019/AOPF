@@ -62,56 +62,72 @@ export default function BlogPage() {
     return (
         <>
             <Header></Header>
-        <div className="max-w-[1350px] mt-32 mx-auto p-6 space-y-6">
-            <h1 className="text-4xl font-bold mb-6">Блог</h1>
+            <div className="max-w-[1350px] mt-32 mx-auto p-6 space-y-6">
+                <header className="max-w-[1350px] mb-6 mx-auto relative rounded-3xl overflow-hidden shadow-lg">
+                    <img
+                        src="/blog_image.jpg" // Убедись, что файл есть в public/
+                        alt="Блог"
+                        className="w-full h-80 object-cover brightness-90"
+                    />
+                    <div
+                        className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+                        <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
+                            Блог и полезные материалы
+                        </h1>
+                        <p className="max-w-xl text-center text-lg drop-shadow-md">
+                            Тут мы размещаем наиболее актуальные разъяснения, новости и практические кейсы по проведению
+                            СОУТ, лабораторным измерениям и другим аспектам нашей работы.
+                        </p>
+                    </div>
+                </header>
 
-            {loading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {Array.from({ length: 6 }).map((_, i) => (
-                        <PostCardSkeleton key={i} />
-                    ))}
-                </div>
-            ) : posts.length === 0 ? (
-                <p>Статей пока нет.</p>
-            ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {posts.map((post) => (
-                        <PostCard key={post.id} post={post} />
-                    ))}
-                </div>
-            )}
+                {loading ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {Array.from({length: 6}).map((_, i) => (
+                            <PostCardSkeleton key={i}/>
+                        ))}
+                    </div>
+                ) : posts.length === 0 ? (
+                    <p>Статей пока нет.</p>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {posts.map((post) => (
+                            <PostCard key={post.id} post={post}/>
+                        ))}
+                    </div>
+                )}
 
 
-            {/* Пагинация */}
-            <Pagination className="mt-10 mb-6 justify-center">
-                <PaginationContent>
-                    <PaginationItem>
-                        <PaginationPrevious
-                            onClick={() => setPage((p) => Math.max(1, p - 1))}
-                            className={page <= 1 ? 'pointer-events-none opacity-50' : ''}
-                        />
-                    </PaginationItem>
-
-                    {[...Array(totalPages)].map((_, i) => (
-                        <PaginationItem key={i}>
-                            <PaginationLink
-                                isActive={page === i + 1}
-                                onClick={() => setPage(i + 1)}
-                            >
-                                {i + 1}
-                            </PaginationLink>
+                {/* Пагинация */}
+                <Pagination className="mt-10 mb-6 justify-center">
+                    <PaginationContent>
+                        <PaginationItem>
+                            <PaginationPrevious
+                                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                                className={page <= 1 ? 'pointer-events-none opacity-50' : ''}
+                            />
                         </PaginationItem>
-                    ))}
 
-                    <PaginationItem>
-                        <PaginationNext
-                            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                            className={page >= totalPages ? 'pointer-events-none opacity-50' : ''}
-                        />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
-        </div>
+                        {[...Array(totalPages)].map((_, i) => (
+                            <PaginationItem key={i}>
+                                <PaginationLink
+                                    isActive={page === i + 1}
+                                    onClick={() => setPage(i + 1)}
+                                >
+                                    {i + 1}
+                                </PaginationLink>
+                            </PaginationItem>
+                        ))}
+
+                        <PaginationItem>
+                            <PaginationNext
+                                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                                className={page >= totalPages ? 'pointer-events-none opacity-50' : ''}
+                            />
+                        </PaginationItem>
+                    </PaginationContent>
+                </Pagination>
+            </div>
             <Footer></Footer>
         </>
     );

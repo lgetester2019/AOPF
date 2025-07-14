@@ -99,8 +99,8 @@ const Header: React.FC = () => {
                                     </div>
                                 )}
                             </div>
-                            <a href="#" className="px-3 py-1 hover:text-green-600 transition">
-                                Лаборатория
+                            <a href="/blog" className="px-3 py-1 hover:text-green-600 transition">
+                               Блог
                             </a>
                             <div
                                 className="relative"
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
                             <a href="/contacts" className="px-3 py-1 hover:text-green-600 transition">
                                 Контакты
                             </a>
-                            <a href="#" className="px-3 py-1 hover:text-green-600 transition">
+                            <a href="/documents" className="px-3 py-1 hover:text-green-600 transition">
                                 Документы
                             </a>
                         </nav>
