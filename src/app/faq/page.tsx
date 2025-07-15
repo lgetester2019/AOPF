@@ -6,12 +6,13 @@ import {
     AccordionTrigger,
     AccordionContent,
 } from "@/components/ui/accordion";
+import Footer from "@/components/Footer";
 
 export default function FaqPage() {
     return (
         <>
             <Header />
-            <main className="max-w-[1350px] mx-auto px-6 py-40 font-sans text-gray-800">
+            <main className="max-w-[1350px] mx-auto px-6 py-40 pb-16 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <img
                         src="/faq.jpg"
@@ -195,6 +196,7 @@ export default function FaqPage() {
                     </Accordion>
                 </section>
             </main>
+            <Footer></Footer>
         </>
     );
 }

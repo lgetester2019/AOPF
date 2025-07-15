@@ -23,7 +23,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div className="px-2">
+        <div className="">
             <section
                 className="bg-[#26428b]  my-10 mt-10 text-white lg:py-12 py-8 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">

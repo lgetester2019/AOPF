@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Certificates from "@/components/Certificates";
 import Footer from "@/components/Footer";
+import DocumentsSamples from "@/components/DocumentsSamples";
 
 export default function DocumentsPage() {
     return (
@@ -25,6 +26,7 @@ export default function DocumentsPage() {
                     </div>
                 </header>
                 <Certificates></Certificates>
+                <DocumentsSamples></DocumentsSamples>
             <Footer></Footer>
             </div>
         </>
