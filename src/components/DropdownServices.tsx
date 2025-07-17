@@ -9,6 +9,12 @@ const DropdownServices = () => {
             >
                 Все услуги
             </a>
+            <a
+                href="/prices"
+                className="px-4 py-2 font-semibold hover:bg-green-50 hover:text-green-700 transition"
+            >
+                Цены
+            </a>
             {services.map((service, index) => (
                 <a
                     key={index}

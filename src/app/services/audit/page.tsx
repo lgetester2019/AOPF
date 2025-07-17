@@ -92,9 +92,10 @@ export default function SUOTFullPage() {
                     </ol>
                 </section>
                 <BenefitsBlock></BenefitsBlock>
-<ServiceBlock></ServiceBlock>
-                <AudienceBlock/>
                 <ServiceProcess></ServiceProcess>
+                <AudienceBlock/>
+                <ServiceBlock></ServiceBlock>
+
                 <ContactForm></ContactForm>
                 <Reviews></Reviews>
                 <PricePreview

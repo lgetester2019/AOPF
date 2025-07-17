@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {ArrowRight, FileText} from "lucide-react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import { Droplets, Wind, ShieldCheck } from "lucide-react";
@@ -63,24 +63,37 @@ export default function ServicesPage() {
                         <h2 className="text-3xl font-extrabold mb-8 text-white drop-shadow-lg text-center">
                             Дополнительные услуги
                         </h2>
-                        <div className="grid md:grid-cols-2 gap-8 text-white/90">
+                        <div className="grid md:grid-cols-3 gap-8 text-white/90">
+                            {/* Услуги экологического направления */}
                             <div
                                 className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-2xl p-6 shadow-md">
                                 <Droplets className="w-10 h-10 mb-4 text-white"/>
-                                <h3 className="text-xl font-semibold mb-2">Исследования воды</h3>
+                                <h3 className="text-xl font-semibold mb-2">Услуги экологического направления</h3>
                                 <p className="text-sm">
-                                    Контроль качества питьевой, сточной, природной воды
-                                    <br/>по санитарным нормам и проектам.
+                                    Исследования воды. Контроль качества питьевой, сточной, природной воды<br/>
+                                    по санитарным нормам и проектам.
                                 </p>
                             </div>
 
+                            {/* Производственный контроль */}
                             <div
                                 className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-2xl p-6 shadow-md">
                                 <ShieldCheck className="w-10 h-10 mb-4 text-white"/>
                                 <h3 className="text-xl font-semibold mb-2">Производственный контроль</h3>
                                 <p className="text-sm">
-                                    Создание и ведение программы ПК <br/>
+                                    Создание и ведение программы ПК<br/>
                                     по всем необходимым измерениям.
+                                </p>
+                            </div>
+
+                            {/* Транспортно-технологические карты */}
+                            <div
+                                className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-2xl p-6 shadow-md">
+                                <FileText className="w-10 h-10 mb-4 text-white"/>
+                                <h3 className="text-xl font-semibold mb-2">Транспортно-технологические карты</h3>
+                                <p className="text-sm">
+                                    Разработка и оформление технологических карт<br/>
+                                    на погрузо-разгрузочные работы (ПРР).
                                 </p>
                             </div>
                         </div>

@@ -135,6 +135,7 @@ export default function PricesPage() {
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
+                
             </div>
         </>
     );

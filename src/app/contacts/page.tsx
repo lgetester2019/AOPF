@@ -137,7 +137,7 @@ export default function ContactsPage() {
                             <span>
                                 <strong>Тел.:</strong><br/>
                                 <a href="tel:+78129236867"
-                                   className="underline hover:text-green-300">(812) 923-68-67</a><br/>
+                                   className="underline hover:text-green-300">923-68-67</a><br/>
                                 <a href="tel:+78124413778"
                                    className="underline hover:text-green-300">(812) 441-37-78</a>
                             </span>

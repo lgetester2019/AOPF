@@ -25,8 +25,9 @@ export default function DocumentsPage() {
                         </p>
                     </div>
                 </header>
-                <Certificates></Certificates>
+
                 <DocumentsSamples></DocumentsSamples>
+                <Certificates></Certificates>
             <Footer></Footer>
             </div>
         </>

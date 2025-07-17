@@ -15,7 +15,7 @@ export default function FaqPage() {
             <main className="max-w-[1350px] mx-auto px-6 py-40 pb-16 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <img
-                        src="/faq.jpg"
+                        src="/ask.jpg"
                         alt="Вопросы и ответы"
                         className="w-full h-80 object-cover brightness-90"
                     />

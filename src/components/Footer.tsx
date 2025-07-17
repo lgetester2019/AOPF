@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                     {}
                     <nav className="flex flex-col items-center gap-3 lg:flex-row lg:gap-8 text-sm lg:text-base">
                         <a href="/services" className="hover:underline">Услуги</a>
-                        <a href="/laboratory" className="hover:underline">Лаборатория</a>
+                        <a href="/blog" className="hover:underline">Блог</a>
                         <a href="/about" className="hover:underline">О нас</a>
                         <a href="/contacts" className="hover:underline">Контакты</a>
                         <a href="/documents" className="hover:underline">Документы</a>
