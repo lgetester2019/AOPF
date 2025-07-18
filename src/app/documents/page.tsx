@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Certificates from "@/components/Certificates";
 import Footer from "@/components/Footer";
 import DocumentsSamples from "@/components/DocumentsSamples";
+import ContactForm from "@/components/ContactForm";
 
 export default function DocumentsPage() {
     return (
@@ -28,6 +29,7 @@ export default function DocumentsPage() {
 
                 <DocumentsSamples></DocumentsSamples>
                 <Certificates></Certificates>
+                <ContactForm />
             <Footer></Footer>
             </div>
         </>

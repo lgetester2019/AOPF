@@ -7,6 +7,7 @@ import {
     AccordionContent,
 } from "@/components/ui/accordion";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
 export default function FaqPage() {
     return (
@@ -195,6 +196,7 @@ export default function FaqPage() {
 
                     </Accordion>
                 </section>
+                <ContactForm />
             </main>
             <Footer></Footer>
         </>

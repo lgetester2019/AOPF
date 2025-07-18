@@ -60,6 +60,13 @@ export default function AdminPage() {
                     >
                         Добавить статью
                     </Link>
+                    <Link
+                        href="/admin/categories"
+                        className="text-blue-600 hover:underline"
+                    >
+                        Управление категориями
+                    </Link>
+
                 </div>
 
                 {loading ? (

@@ -48,9 +48,10 @@ export default async function Home() {
                 <AboutUs />
                 <ContactForm />
                 <Certificates />
-                <ContactMap />
+
                 <BlogOverview latestPosts={posts?.slice(0, 2) ?? []} />
                 <Reviews></Reviews>
+                <ContactMap />
                 <Footer />
             </div>
         </div>

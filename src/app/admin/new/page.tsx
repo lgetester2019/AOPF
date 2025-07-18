@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 import AdminAuth from '@/components/AdminAuth';
 import { v4 as uuidv4 } from 'uuid';
-
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Heading from '@tiptap/extension-heading';
@@ -74,9 +73,7 @@ function TiptapEditor({
 }) {
     const editor = useEditor({
         extensions: [
-            StarterKit.configure({
-                heading: false,
-            }),
+            StarterKit.configure({ heading: false }),
             Heading.configure({ levels: [1, 2, 3, 4, 5, 6] }),
             Bold,
             Italic,
@@ -106,7 +103,26 @@ export default function NewPostPage() {
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    const [categoryId, setCategoryId] = useState<string | null>(null);
+    const [categories, setCategories] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        async function fetchCategories() {
+            const { data, error } = await supabase
+                .from('categories')
+                .select('*')
+                .order('name', { ascending: true });
+
+            if (error) {
+                alert('Ошибка при загрузке категорий: ' + error.message);
+            } else {
+                setCategories(data || []);
+            }
+        }
+
+        fetchCategories();
+    }, []);
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -123,6 +139,7 @@ export default function NewPostPage() {
                 description,
                 content,
                 image_url: imageUrl,
+                category_id: categoryId,
             },
         ]);
 
@@ -176,6 +193,22 @@ export default function NewPostPage() {
                             onChange={(e) => setImageUrl(e.target.value)}
                             className="w-full border p-3 rounded-2xl"
                         />
+                    </div>
+
+                    <div>
+                        <label className="block mb-1 font-semibold">Категория</label>
+                        <select
+                            value={categoryId || ''}
+                            onChange={(e) => setCategoryId(e.target.value || null)}
+                            className="w-full border p-3 rounded-2xl"
+                        >
+                            <option value="">Без категории</option>
+                            {categories.map((cat) => (
+                                <option key={cat.id} value={cat.id}>
+                                    {cat.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     <button

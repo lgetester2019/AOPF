@@ -18,35 +18,56 @@ export default function EditPostPage() {
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    const [categoryId, setCategoryId] = useState<string | null>(null);
+
+    const [categories, setCategories] = useState<any[]>([]);
+
     const [loading, setLoading] = useState(false);
     const [loadingPost, setLoadingPost] = useState(true);
 
     useEffect(() => {
+        fetchCategories();
+    }, []);
+
+    useEffect(() => {
         if (!id) return;
-
-        async function fetchPost() {
-            setLoadingPost(true);
-            const { data, error } = await supabase
-                .from('posts')
-                .select('*')
-                .eq('id', id)
-                .single();
-
-            if (error) {
-                alert('Ошибка загрузки статьи: ' + error.message);
-                setLoadingPost(false);
-                return;
-            }
-
-            setTitle(data.title);
-            setDescription(data.description);
-            setContent(data.content);
-            setImageUrl(data.image_url);
-            setLoadingPost(false);
-        }
-
         fetchPost();
     }, [id]);
+
+    async function fetchCategories() {
+        const { data, error } = await supabase
+            .from('categories')
+            .select('*')
+            .order('name', { ascending: true });
+
+        if (error) {
+            alert('Ошибка при загрузке категорий: ' + error.message);
+        } else {
+            setCategories(data || []);
+        }
+    }
+
+    async function fetchPost() {
+        setLoadingPost(true);
+        const { data, error } = await supabase
+            .from('posts')
+            .select('*')
+            .eq('id', id)
+            .single();
+
+        if (error) {
+            alert('Ошибка загрузки статьи: ' + error.message);
+            setLoadingPost(false);
+            return;
+        }
+
+        setTitle(data.title);
+        setDescription(data.description);
+        setContent(data.content);
+        setImageUrl(data.image_url);
+        setCategoryId(data.category_id || null);
+        setLoadingPost(false);
+    }
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -59,6 +80,7 @@ export default function EditPostPage() {
                 description,
                 content,
                 image_url: imageUrl,
+                category_id: categoryId,
             })
             .eq('id', id);
 
@@ -128,6 +150,22 @@ export default function EditPostPage() {
                             onChange={(e) => setImageUrl(e.target.value)}
                             className="w-full border p-3 rounded-2xl"
                         />
+                    </div>
+
+                    <div>
+                        <label className="block mb-1 font-semibold">Категория</label>
+                        <select
+                            value={categoryId || ''}
+                            onChange={(e) => setCategoryId(e.target.value || null)}
+                            className="w-full border p-3 rounded-2xl"
+                        >
+                            <option value="">Без категории</option>
+                            {categories.map((category) => (
+                                <option key={category.id} value={category.id}>
+                                    {category.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     <button

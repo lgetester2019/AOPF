@@ -24,79 +24,140 @@ const PAGE_SIZE = 6;
 
 export default function BlogPage() {
     const [posts, setPosts] = useState<any[]>([]);
+    const [categories, setCategories] = useState<any[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        async function fetchPosts() {
-            setLoading(true);
+        fetchCategories();
+    }, []);
 
-            const { count } = await supabase
-                .from('posts')
-                .select('*', { count: 'exact', head: true });
+    useEffect(() => {
+        fetchPosts();
+    }, [page, selectedCategory]);
 
-            setTotal(count || 0);
+    async function fetchCategories() {
+        const { data, error } = await supabase
+            .from('categories')
+            .select('*')
+            .order('name', { ascending: true });
 
-            const { data, error } = await supabase
-                .from('posts')
-                .select('*')
-                .order('created_at', { ascending: false })
-                .range((page - 1) * PAGE_SIZE, page * PAGE_SIZE - 1);
+        if (!error && data) setCategories(data);
+    }
 
-            if (error) {
-                alert('Ошибка при загрузке статей: ' + error.message);
-                setLoading(false);
-                return;
-            }
+    async function fetchPosts() {
+        setLoading(true);
 
-            setPosts(data || []);
-            setLoading(false);
+        let query = supabase
+            .from('posts')
+            .select('*', { count: 'exact' })
+            .order('created_at', { ascending: false });
+
+        if (selectedCategory) {
+            query = query.eq('category_id', selectedCategory);
         }
 
-        fetchPosts();
-    }, [page]);
+        const { data: allData, count, error: countError } = await query;
+
+        if (countError) {
+            alert('Ошибка при подсчёте: ' + countError.message);
+            setLoading(false);
+            return;
+        }
+
+        setTotal(count || 0);
+
+        // Пагинация
+        let pagedQuery = supabase
+            .from('posts')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .range((page - 1) * PAGE_SIZE, page * PAGE_SIZE - 1);
+
+        if (selectedCategory) {
+            pagedQuery = pagedQuery.eq('category_id', selectedCategory);
+        }
+
+        const { data, error } = await pagedQuery;
+
+        if (error) {
+            alert('Ошибка при загрузке статей: ' + error.message);
+            setLoading(false);
+            return;
+        }
+
+        setPosts(data || []);
+        setLoading(false);
+    }
 
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
     return (
         <>
-            <Header></Header>
+            <Header />
             <div className="max-w-[1350px] mt-32 mx-auto p-6 space-y-6">
+                {/* Хедер баннер */}
                 <header className="max-w-[1350px] mb-6 mx-auto relative rounded-3xl overflow-hidden shadow-lg">
                     <img
-                        src="/blog_image.jpg" // Убедись, что файл есть в public/
+                        src="/blog_image.jpg"
                         alt="Блог"
                         className="w-full h-80 object-cover brightness-90"
                     />
-                    <div
-                        className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
                         <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
                             Блог и полезные материалы
                         </h1>
                         <p className="max-w-xl text-center text-lg drop-shadow-md">
-                            Тут мы размещаем наиболее актуальные разъяснения, новости и практические кейсы по проведению
-                            СОУТ, лабораторным измерениям и другим аспектам нашей работы.
+                            Тут мы размещаем наиболее актуальные разъяснения, новости и кейсы по СОУТ и измерениям.
                         </p>
                     </div>
                 </header>
 
+                {/* Фильтр по категориям */}
+                <div className="flex flex-wrap gap-2 justify-center mb-6">
+                    <button
+                        onClick={() => { setSelectedCategory(null); setPage(1); }}
+                        className={`px-4 py-2 rounded-full text-sm border ${
+                            selectedCategory === null
+                                ? 'bg-green-600 text-white'
+                                : 'bg-white text-gray-700 hover:bg-gray-100'
+                        }`}
+                    >
+                        Все категории
+                    </button>
+                    {categories.map((category) => (
+                        <button
+                            key={category.id}
+                            onClick={() => { setSelectedCategory(category.id); setPage(1); }}
+                            className={`px-4 py-2 rounded-full text-sm border ${
+                                selectedCategory === category.id
+                                    ? 'bg-green-600 text-white'
+                                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                            }`}
+                        >
+                            {category.name}
+                        </button>
+                    ))}
+                </div>
+
+                {/* Посты */}
                 {loading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {Array.from({length: 6}).map((_, i) => (
-                            <PostCardSkeleton key={i}/>
+                        {Array.from({ length: 6 }).map((_, i) => (
+                            <PostCardSkeleton key={i} />
                         ))}
                     </div>
                 ) : posts.length === 0 ? (
-                    <p>Статей пока нет.</p>
+                    <p className="text-center text-gray-600">Статей пока нет.</p>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {posts.map((post) => (
-                            <PostCard key={post.id} post={post}/>
+                            <PostCard key={post.id} post={post} />
                         ))}
                     </div>
                 )}
-
 
                 {/* Пагинация */}
                 <Pagination className="mt-10 mb-6 justify-center">
@@ -128,7 +189,7 @@ export default function BlogPage() {
                     </PaginationContent>
                 </Pagination>
             </div>
-            <Footer></Footer>
+            <Footer />
         </>
     );
 }

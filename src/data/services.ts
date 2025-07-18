@@ -27,4 +27,11 @@ export const services = [
         image: "/measurements.jpg",
         href: "/services/measurement",
     },
+    {
+        title: "Исследование воды",
+        description:
+            "Комплексный анализ питьевой, природной и сточной воды: органолептические, микробиологические и химические исследования для оценки качества, безопасности и соответствия нормативам.",
+        image: "/water.jpg",
+        href: "/services/water",
+    },
 ];

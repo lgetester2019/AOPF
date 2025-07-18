@@ -1,4 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -25,7 +27,9 @@ export default async function PostPage({ params }: PostPageProps) {
     }
 
     return (
-        <article className="max-w-3xl mx-auto p-6 space-y-6">
+        <>
+            <Header></Header>
+        <article className="max-w-3xl mt-32 mb-10 mx-auto p-6 space-y-6">
             <h1 className="text-4xl font-bold">{post.title}</h1>
             <div className="text-gray-500">
                 {new Date(post.created_at).toLocaleDateString()}
@@ -43,5 +47,7 @@ export default async function PostPage({ params }: PostPageProps) {
             />
 
         </article>
+            <Footer></Footer>
+        </>
     );
 }
