@@ -35,7 +35,7 @@ export default function ServicesPage() {
                                     alt={service.title}
                                     fill
                                     priority={false}
-                                    quality={75} // Оптимальное качество (по умолчанию 75)
+                                    quality={75}
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
@@ -68,7 +68,7 @@ export default function ServicesPage() {
                             Дополнительные услуги
                         </h2>
                         <div className="grid md:grid-cols-3 gap-8 text-white/90">
-                            {/* Услуги экологического направления */}
+                            {}
                             <div
                                 className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-2xl p-6 shadow-md">
                                 <Droplets className="w-10 h-10 mb-4 text-white"/>
@@ -79,7 +79,7 @@ export default function ServicesPage() {
                                 </p>
                             </div>
 
-                            {/* Производственный контроль */}
+                            {}
                             <div
                                 className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-2xl p-6 shadow-md">
                                 <ShieldCheck className="w-10 h-10 mb-4 text-white"/>
@@ -90,7 +90,7 @@ export default function ServicesPage() {
                                 </p>
                             </div>
 
-                            {/* Транспортно-технологические карты */}
+                            {}
                             <div
                                 className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded-2xl p-6 shadow-md">
                                 <FileText className="w-10 h-10 mb-4 text-white"/>

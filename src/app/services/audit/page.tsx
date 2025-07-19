@@ -24,7 +24,7 @@ export const metadata = {
 
 const auditData = [
     { service: "Аудит системы управления охраной труда(СУОТ)", price: "от 5000 рублей" },
-    // другие позиции...
+
 ];
 export default function SUOTFullPage() {
     return (

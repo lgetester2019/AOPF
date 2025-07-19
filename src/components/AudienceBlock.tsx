@@ -26,7 +26,7 @@ export default function AudienceBlock() {
     return (
         <section className="py-10 px-4 md:px-10 my-10 mb-24 bg-green-600/60 rounded-3xl max-w-[1350px] mx-auto text-white">
             <div className="flex flex-col md:flex-row gap-12">
-                {/* Левая часть — текст */}
+                {}
                 <div className="md:w-[50%] space-y-4">
                     <h2 className="text-4xl font-extrabold mb-4">{title}</h2>
                     <div className="text-white text-base leading-[1.6] space-y-2">
@@ -39,7 +39,7 @@ export default function AudienceBlock() {
                     </p>
                 </div>
 
-                {/* Правая часть — список получателей */}
+                {}
                 <div className="md:w-[55%] flex flex-col gap-6">
                     {points.map((point, idx) => (
                         <div

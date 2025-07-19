@@ -23,7 +23,7 @@ export default function FaqPage() {
                             fill
                             className="object-cover brightness-90"
                             sizes="100vw"
-                            priority={false} // можно сделать true, если изображение важно для загрузки
+                            priority={false}
                         />
                     </div>
                     <div
@@ -40,7 +40,7 @@ export default function FaqPage() {
                 <section className="space-y-10 leading-relaxed text-gray-700">
                     <Accordion type="single" collapsible className="space-y-6">
 
-                        {/* FAQ 1 */}
+                        {}
                         <AccordionItem value="faq1">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -65,7 +65,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* FAQ 2 */}
+                        {}
                         <AccordionItem value="faq2">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -83,7 +83,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* FAQ 3 */}
+                        {}
                         <AccordionItem value="faq3">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -104,7 +104,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* FAQ 4 */}
+                        {}
                         <AccordionItem value="faq5">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -127,7 +127,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* FAQ 5 */}
+                        {}
                         <AccordionItem value="faq6">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -158,7 +158,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* FAQ 6 */}
+                        {}
                         <AccordionItem value="faq7">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
@@ -184,7 +184,7 @@ export default function FaqPage() {
                             </AccordionContent>
                         </AccordionItem>
 
-                        {/* FAQ 7 */}
+                        {}
                         <AccordionItem value="faq8">
                             <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">

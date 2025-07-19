@@ -69,7 +69,7 @@ export default function BlogPage() {
 
         setTotal(count || 0);
 
-        // Пагинация
+
         let pagedQuery = supabase
             .from('posts')
             .select('*')
@@ -98,7 +98,7 @@ export default function BlogPage() {
         <>
             <Header />
             <div className="max-w-[1350px] mt-32 mx-auto p-6 space-y-6">
-                {/* Хедер баннер */}
+                {}
                 <header className="max-w-[1350px] mb-6 mx-auto relative rounded-3xl overflow-hidden shadow-lg">
 
                     <div className="relative w-full h-80">
@@ -123,7 +123,7 @@ export default function BlogPage() {
                     </div>
                 </header>
 
-                {/* Фильтр по категориям */}
+                {}
                 <div className="flex flex-wrap gap-2 justify-center mb-6">
                     <button
                         onClick={() => {
@@ -151,7 +151,7 @@ export default function BlogPage() {
                     ))}
                 </div>
 
-                {/* Посты */}
+                {}
                 {loading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {Array.from({ length: 6 }).map((_, i) => (
@@ -168,7 +168,7 @@ export default function BlogPage() {
                     </div>
                 )}
 
-                {/* Пагинация */}
+                {}
                 <Pagination className="mt-10 mb-6 justify-center">
                     <PaginationContent>
                         <PaginationItem>

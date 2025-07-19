@@ -1,4 +1,4 @@
-// app/documents/page.tsx
+
 
 import Header from "@/components/Header";
 import Certificates from "@/components/Certificates";
@@ -15,12 +15,12 @@ export default function DocumentsPage() {
                 <header className="max-w-[1350px] mb-6 mx-auto relative rounded-3xl overflow-hidden shadow-lg">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/documents_image.jpg" // убедись, что файл точно лежит в public/
+                            src="/documents_image.jpg"
                             alt="Документы"
                             fill
                             className="object-cover brightness-90"
                             sizes="100vw"
-                            priority={false} // можно поставить true, если на первом экране
+                            priority={false}
                         />
                     </div>
                     <div

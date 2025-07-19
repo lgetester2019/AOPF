@@ -31,7 +31,7 @@ export const metadata = {
 const soutData = [
     { service: "Стоимость СОУТ офисного места", price: "от 500 рублей" },
 
-    // ... и так далее ...
+
 ];
 
 

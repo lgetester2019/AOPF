@@ -51,7 +51,7 @@ export default function BlogOverview({ latestPosts }: BlogOverviewProps) {
 
     return (
         <section className="max-w-[1350px] my-10 mt-24 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#26428b] rounded-3xl shadow-lg p-6 md:p-10 text-white">
-            {/* Левая колонка с описанием */}
+            {}
             <div className="flex flex-col justify-center space-y-6 mb-8 md:mb-0">
                 <h2 className="text-3xl sm:text-4xl font-bold">Блог нашей лаборатории</h2>
                 <p className="text-white/90 text-base sm:text-xl leading-relaxed">
@@ -65,7 +65,7 @@ export default function BlogOverview({ latestPosts }: BlogOverviewProps) {
                 </Link>
             </div>
 
-            {/* Правая колонка с карточками */}
+            {}
             <div className="flex flex-col gap-4 text-black">
                 {postsToShow.map(post => (
                     <MiniPostCard key={post.id} post={post} />

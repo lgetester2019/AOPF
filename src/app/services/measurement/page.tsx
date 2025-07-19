@@ -59,7 +59,7 @@ export default function MeasurementsPage() {
                 </header>
 
                 <Accordion type="multiple" className="space-y-6 mt-16">
-                    {/* Физические факторы */}
+                    {}
                     <AccordionItem value="physical-factors">
                         <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
                             <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
@@ -85,7 +85,7 @@ export default function MeasurementsPage() {
                         </AccordionContent>
                     </AccordionItem>
 
-                    {/* Химические факторы */}
+                    {}
                     <AccordionItem value="chemical-factors">
                         <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
                             <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
@@ -125,7 +125,7 @@ export default function MeasurementsPage() {
                             </ul>
                         </AccordionContent>
                     </AccordionItem>
-                    {/* Программа производственного контроля */}
+                    {}
                     <AccordionItem value="control-program">
                         <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
                             <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">

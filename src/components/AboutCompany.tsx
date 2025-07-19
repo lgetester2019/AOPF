@@ -13,9 +13,9 @@ export default function AboutCompany() {
         <section className="py-10 mb-24 mt-6 px-4 md:px-10 bg-green-600/60 rounded-3xl max-w-[1350px] mx-auto text-white">
             <div className="flex flex-col md:flex-row gap-12 mx-auto">
                 <div className="md:w-1/2 space-y-4">
-                    {/*<h2 className="text-4xl font-extrabold mb-4 text-white">*/}
-                    {/*    Уважаемые гости нашего сайта!*/}
-                    {/*</h2>*/}
+                    {}
+                    {}
+                    {}
                     <h3 className="text-4xl font-extrabold mb-4 text-white">Почему выбирают нас?</h3>
 
                     <p className="text-white text-lg leading-relaxed">
@@ -34,14 +34,14 @@ export default function AboutCompany() {
                         <li>Сопровождение и документооборот по СИЗам и инструктажам.</li>
                     </ul>
 
-                    {/*<p className="text-black/50 font-bold text-lg mt-4">*/}
-                    {/*    Мы помогаем организациям выполнять обязательные требования законодательства, снижать риски и*/}
-                    {/*    заботиться о здоровье сотрудников.*/}
-                    {/*</p>*/}
+                    {}
+                    {}
+                    {}
+                    {}
                 </div>
 
                 <div className="md:w-1/2 flex flex-col gap-6">
-                    {/*<h3 className="text-4xl font-extrabold mb-2 text-white">Почему выбирают нас?</h3>*/}
+                    {}
                     <ul className="space-y-4">
                         {reasons.map((reason, idx) => (
                             <li

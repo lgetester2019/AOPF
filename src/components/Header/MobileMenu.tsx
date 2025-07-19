@@ -47,8 +47,8 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
                 <SearchToggle/>
                 <Button
                     onClick={() => {
-                        setModalOpen(true);  // открыть модалку
-                        // onClose();        // НЕ закрываем меню
+                        setModalOpen(true);
+
                     }}
                     className="w-full mt-6 bg-green-600 text-white rounded-full px-5 py-3 font-semibold shadow-lg"
                 >

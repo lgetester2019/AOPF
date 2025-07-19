@@ -23,7 +23,7 @@ export default function ContactsPage() {
                             fill
                             className="object-cover brightness-90"
                             sizes="100vw"
-                            priority={false} // Ставь true, если это на первом экране
+                            priority={false}
                         />
                     </div>
                     <div
@@ -44,12 +44,12 @@ export default function ContactsPage() {
                 </header>
             </div>
 
-            {/* 🟩 Зелёный блок: Адрес + Как добраться + Карта */}
+            {}
             <section className="px-2 mt-16 my-16">
                 <div
                     className="max-w-[1350px] rounded-3xl text-white bg-[#26428b] py-10 px-4 sm:px-6 md:px-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
 
-                    {/* Левая колонка: Адрес + Как добраться */}
+                    {}
                     <div className="space-y-8 text-sm sm:text-base md:text-lg leading-relaxed">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                             Как добраться
@@ -65,7 +65,7 @@ export default function ContactsPage() {
                             </span>
                         </div>
 
-                        {/* На автомобиле */}
+                        {}
                         <div>
                             <div className="flex items-center gap-2 font-semibold">
                                 <Car className="h-6 w-6"/>
@@ -77,7 +77,7 @@ export default function ContactsPage() {
                             </p>
                         </div>
 
-                        {/* Пешком */}
+                        {}
                         <div>
                             <div className="flex items-center gap-2 font-semibold">
                                 <Footprints className="h-6 w-6"/>
@@ -90,7 +90,7 @@ export default function ContactsPage() {
                         </div>
                     </div>
 
-                    {/* Правая колонка: Карта */}
+                    {}
                     <div className="w-full h-[250px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-md">
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?ll=30.342882%2C59.973558&mode=routes&rtext=59.971199%2C30.347189~59.976427%2C30.338092&rtt=auto"
@@ -104,12 +104,12 @@ export default function ContactsPage() {
                 </div>
             </section>
 
-            {/* 🔵 Синий блок: Клиентский отдел + Основные контакты */}
+            {}
             <section className="px-2 mb-20">
                 <div
                     className=" bg-green-600/60  text-white py-12 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
-                    {/* Клиентский отдел */}
+                    {}
                     <div className="space-y-8">
                         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">Отдел по работе с клиентами</h3>
 
@@ -133,7 +133,7 @@ export default function ContactsPage() {
                         </div>
                     </div>
 
-                    {/* Общие контакты */}
+                    {}
                     <div className="space-y-8 text-sm sm:text-base md:text-xl">
                         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">Контакты</h3>
 

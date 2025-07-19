@@ -16,7 +16,7 @@ export default function AboutPage() {
         <>
             <Header />
 
-            {/* 📘 Шапка с изображением */}
+            {}
             <section className="max-w-[1350px] mx-auto mt-40 px-4">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg">
                     <div className="relative w-full h-80">
@@ -26,7 +26,7 @@ export default function AboutPage() {
                             fill
                             className="object-cover brightness-90"
                             sizes="100vw"
-                            priority={true} // или false, если не критично
+                            priority={true}
                         />
                     </div>
                     <div
@@ -42,7 +42,7 @@ export default function AboutPage() {
                 </header>
             </section>
 
-            {/* 🔷 Основной блок с описанием */}
+            {}
             <section className="my-20 px-4">
 
                 <AboutCompany/>

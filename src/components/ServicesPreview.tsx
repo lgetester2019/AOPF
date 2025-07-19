@@ -13,7 +13,7 @@ export default function ServicesPreview() {
             <div className="max-w-[1350px] bg-green-600/60 rounded-3xl py-6 lg:py-14 px-4 sm:px-6 md:px-12 mx-auto">
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 
-                    {/* Левая колонка — текст + кнопка */}
+                    {}
                     <div className="flex flex-col order-1">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6">
                             Наши ключевые услуги
@@ -44,7 +44,7 @@ export default function ServicesPreview() {
                         </div>
                     </div>
 
-                    {/* Правая колонка — карточки услуг */}
+                    {}
                     <div className="order-2 flex flex-col gap-4 sm:gap-6">
                         {previewServices.map((service) => (
                             <div
@@ -84,7 +84,7 @@ export default function ServicesPreview() {
                             </div>
                         ))}
 
-                        {/* Кнопка внизу для мобильных */}
+                        {}
                         <div className="mt-2 md:hidden">
                             <Link
                                 href="/services"

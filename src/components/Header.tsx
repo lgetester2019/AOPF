@@ -11,12 +11,12 @@ const Header = () => {
 
     const handleMouseEnter = () => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        // пример для ховера, если нужен
+
     };
 
     const handleMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
-            // пример для ховера, если нужен
+
         }, 100);
     };
 

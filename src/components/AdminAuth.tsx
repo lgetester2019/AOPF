@@ -14,7 +14,7 @@ export default function AdminAuth({ children }: AdminAuthProps) {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    // Логин и пароль из env (чтобы были строки)
+
     const ADMIN_LOGIN = process.env.NEXT_PUBLIC_ADMIN_LOGIN || '';
     const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || '';
 
@@ -44,7 +44,7 @@ export default function AdminAuth({ children }: AdminAuthProps) {
     }
 
     if (!mounted) {
-        // Не рендерим ничего до монтирования, чтобы избежать гидратационных ошибок
+
         return null;
     }
 

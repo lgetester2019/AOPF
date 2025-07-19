@@ -16,7 +16,8 @@ const Footer: React.FC = () => {
                         <img
                             src="/logo_aopf.png"
                             alt="Логотип"
-                            className="h-10 w-auto cursor-pointer mx-auto lg:mx-0"
+                            className="h-10
+                             w-auto cursor-pointer mx-auto lg:mx-0"
                         />
                     </div>
 

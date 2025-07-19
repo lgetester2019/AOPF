@@ -12,7 +12,7 @@ export default function BenefitsBlock() {
                     </h2>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {/* 1 */}
+                        {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
                             <ShieldCheck className="w-8 h-8 text-green-400 flex-shrink-0" />
                             <div>
@@ -23,7 +23,7 @@ export default function BenefitsBlock() {
                             </div>
                         </div>
 
-                        {/* 2 */}
+                        {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
                             <Settings2 className="w-8 h-8 text-green-400 flex-shrink-0" />
                             <div>
@@ -34,7 +34,7 @@ export default function BenefitsBlock() {
                             </div>
                         </div>
 
-                        {/* 3 */}
+                        {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
                             <FileCheck2 className="w-8 h-8 text-green-400 flex-shrink-0" />
                             <div>
@@ -45,7 +45,7 @@ export default function BenefitsBlock() {
                             </div>
                         </div>
 
-                        {/* 4 */}
+                        {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
                             <Users className="w-8 h-8 text-green-400 flex-shrink-0" />
                             <div>
@@ -56,7 +56,7 @@ export default function BenefitsBlock() {
                             </div>
                         </div>
 
-                        {/* 5 */}
+                        {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
                             <Star className="w-8 h-8 text-green-400 flex-shrink-0" />
                             <div>
@@ -67,7 +67,7 @@ export default function BenefitsBlock() {
                             </div>
                         </div>
 
-                        {/* 6 */}
+                        {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
                             <CheckCircle className="w-8 h-8 text-green-400 flex-shrink-0" />
                             <div>

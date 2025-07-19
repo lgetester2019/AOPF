@@ -10,7 +10,7 @@ interface Post {
     description: string;
     content?: string;
     image_url: string;
-    created_at: string; // ISO дата
+    created_at: string;
 }
 
 interface PostCardProps {

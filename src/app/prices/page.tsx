@@ -56,7 +56,7 @@ const chemistryData: ServiceItem[] = [
     { service: "Комплексный анализ сточной воды для декларации на 30 ингредиентов", price: "от 25600 рублей" },
 ];
 
-// Добавляем тип параметра data
+
 function getMinPrice(data: ServiceItem[]): number | null {
     const prices = data
         .map(({ price }: ServiceItem) => {
@@ -78,7 +78,7 @@ export default function PricesPage() {
                 <h1 className="text-3xl font-bold mb-8">Цены на услуги</h1>
 
                 <Accordion type="single" collapsible className="space-y-6 max-w-[1350px] mx-auto">
-                    {/* СОУТ */}
+                    {}
                     <AccordionItem value="souut">
                         <AccordionTrigger>
                             <h2 className="text-2xl font-semibold border-l-4 border-green-600 pl-4 text-green-600 cursor-pointer select-none">
@@ -114,7 +114,7 @@ export default function PricesPage() {
                         </AccordionContent>
                     </AccordionItem>
 
-                    {/* Химия */}
+                    {}
                     <AccordionItem value="chemistry">
                         <AccordionTrigger>
                             <h2 className="text-2xl font-semibold border-l-4 border-green-600 pl-4 text-green-600 cursor-pointer select-none">

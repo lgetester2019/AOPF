@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Охрана труда и безопасность — лаборатория с аккредитацией",
         description: "Комплексные услуги по охране труда и экологии. СОУТ, контроль, обучение. Работаем по всей России.",
-        url: "https://example.com", // заменить на актуальный домен
+        url: "https://example.com",
         siteName: "Охрана труда",
         type: "website",
     },
     alternates: {
-        canonical: "https://example.com", // также заменить
+        canonical: "https://example.com",
     },
-    metadataBase: new URL("https://example.com"), // обязательно укажи домен
+    metadataBase: new URL("https://example.com"),
 };
 
 export default function RootLayout({

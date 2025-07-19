@@ -39,7 +39,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <Image
                     src={post.image_url}
                     alt={post.title}
-                    width={800} // укажи реальные размеры, если знаешь
+                    width={800}
                     height={400}
                     className="rounded shadow-md w-full max-h-96 object-cover"
                     style={{ width: '100%', height: 'auto' }}

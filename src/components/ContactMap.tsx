@@ -52,11 +52,12 @@ export default function ContactMap() {
                 {}
                 <div className="w-full h-[250px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-md">
                     <iframe
-                        src="https://yandex.ru/map-widget/v1/?ll=30.342882%2C59.973558&mode=routes&rtext=59.971199%2C30.347189~59.976427%2C30.338092&rtt=auto&ruri=ymapsbm1%3A%2F%2Ftransit%2Fstop%3Fid%3Dstation__10104983~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ3MTEwNRJt0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0JHQvtC70YzRiNC-0Lkg0KHQsNC80L_RgdC-0L3QuNC10LLRgdC60LjQuSDQv9GA0L7RgdC_0LXQutGCLCA2NCIKDWu08kEV3edvQg%2C%2C&z=16.25"
+                        src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=30.338093%2C59.976427&mode=whatshere&tab=inside&whatshere%5Bpoint%5D=30.338092%2C59.976427&whatshere%5Bzoom%5D=17&z=17"
                         width="100%"
                         height="100%"
-                        frameBorder="0"
+                        frameBorder="1"
                         allowFullScreen
+                        style={{position: 'relative', border: 'none'}}
                         title="Карта - адрес компании"
                     ></iframe>
                 </div>
