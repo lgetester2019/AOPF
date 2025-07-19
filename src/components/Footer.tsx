@@ -23,18 +23,20 @@ const Footer: React.FC = () => {
                     {}
                     <nav className="flex flex-col items-center gap-3 lg:flex-row lg:gap-8 text-sm lg:text-base">
                         <a href="/services" className="hover:underline">Услуги</a>
-                        <a href="/blog" className="hover:underline">Блог</a>
+                        <a href="/documents" className="hover:underline">Документы</a>
                         <a href="/about" className="hover:underline">О нас</a>
                         <a href="/contacts" className="hover:underline">Контакты</a>
-                        <a href="/documents" className="hover:underline">Документы</a>
+                        <a href="/blog" className="hover:underline">Блог</a>
+
                     </nav>
 
                     {}
                     <div className="flex justify-center gap-4 text-2xl">
                         <a
-                            href="https://t.me/+T61CqRO6JVo2Njcx"
+                            href="https://t.me/mikeS60"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="Telegram"
                             className="hover:text-gray-600"
                         >
                             <FaTelegramPlane />
@@ -43,6 +45,7 @@ const Footer: React.FC = () => {
                             href="https://wa.me/79111234567"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="WhatsApp"
                             className="hover:text-gray-600"
                         >
                             <BsWhatsapp />

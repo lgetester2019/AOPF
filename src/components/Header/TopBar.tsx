@@ -1,4 +1,6 @@
 import { Mail, Phone, MapPin, Clock, Send, PhoneCall } from "lucide-react";
+import {BsWhatsapp} from "react-icons/bs";
+import React from "react";
 
 const TopBar = () => (
     <div className="hidden lg:block w-full bg-green-600/20">
@@ -16,7 +18,7 @@ const TopBar = () => (
 
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                    <Mail size={16} className="text-gray-900" />
+                    <Mail size={16} className="text-gray-900"/>
                     <span>info.aopf@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -35,23 +37,25 @@ const TopBar = () => (
 
                 </div>
                 <a
-                    href="https://t.me/"
+                    href="https://t.me/mikeS60"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
                     aria-label="Telegram"
                 >
-                <Send size={18} className="text-[#0088cc]" />
+                    <Send size={18} className="text-[#0088cc]"/>
                 </a>
+
                 <a
-                    href="https://wa.me/79626847783"
+                    href="https://wa.me/79111234567"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+                    className="rounded-full hover:bg-gray-100"
                     aria-label="WhatsApp"
                 >
-                    <PhoneCall size={18} className="text-[#25D366]" />
+                    <BsWhatsapp size={20} className="text-[#25D366]"/>
                 </a>
+
             </div>
         </div>
     </div>

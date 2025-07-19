@@ -26,24 +26,25 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
 
             <nav className="flex flex-col gap-6 text-lg font-semibold text-gray-800">
                 <MobileSubMenu title="Услуги">
-                    <DropdownServices />
+                    <DropdownServices/>
                 </MobileSubMenu>
-                <a href="#" onClick={onClose} className="hover:text-green-600">
-                    Лаборатория
+
+                <a href="/documents" onClick={onClose} className="hover:text-green-600">
+                    Документы
                 </a>
                 <MobileSubMenu title="О нас">
-                    <DropdownMenu />
+                    <DropdownMenu/>
                 </MobileSubMenu>
-                <a href="#" onClick={onClose} className="hover:text-green-600">
+                <a href="/contacts" onClick={onClose} className="hover:text-green-600">
                     Контакты
                 </a>
-                <a href="#" onClick={onClose} className="hover:text-green-600">
-                    Документы
+                <a href="/blog" onClick={onClose} className="hover:text-green-600">
+                    Блог
                 </a>
             </nav>
 
             <div className="mt-auto">
-                <SearchToggle />
+                <SearchToggle/>
                 <Button
                     onClick={() => {
                         setModalOpen(true);  // открыть модалку

@@ -107,8 +107,8 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                     </div>
                                 )}
                             </div>
-                            <a href="/blog" className="px-3 py-1 hover:text-green-600 transition">
-                               Блог
+                            <a href="/documents" className="px-3 py-1 hover:text-green-600 transition">
+                                Документы
                             </a>
                             <div
                                 className="relative"
@@ -128,9 +128,10 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             <a href="/contacts" className="px-3 py-1 hover:text-green-600 transition">
                                 Контакты
                             </a>
-                            <a href="/documents" className="px-3 py-1 hover:text-green-600 transition">
-                                Документы
+                            <a href="/blog" className="px-3 py-1 hover:text-green-600 transition">
+                                Блог
                             </a>
+
                         </nav>
 
                         {}
@@ -171,8 +172,9 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             >
                                 <BsWhatsapp size={20} className="text-[#25D366]"/>
                             </a>
+
                             <a
-                                href="https://t.me/your_channel"
+                                href="https://t.me/mikeS60"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="rounded-full hover:bg-gray-100"
@@ -180,6 +182,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             >
                                 <Send size={20} className="text-[#0088cc]"/>
                             </a>
+
                             <button
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                                 className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
