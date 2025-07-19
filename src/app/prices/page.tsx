@@ -8,6 +8,11 @@ import {
     AccordionTrigger,
     AccordionContent,
 } from "@/components/ui/accordion";
+import AboutCompany from "@/components/AboutCompany";
+import ContactForm from "@/components/ContactForm";
+import AuditFAQ from "@/components/AuditFAQ";
+import ContactMap from "@/components/ContactMap";
+import Footer from "@/components/Footer";
 
 type ServiceItem = {
     service: string;
@@ -69,7 +74,7 @@ export default function PricesPage() {
     return (
         <>
             <Header />
-            <div className="max-w-[1350px] mx-auto px-6 py-36">
+            <div className="max-w-[1350px] mx-auto px-6 pb-20 pt-40">
                 <h1 className="text-3xl font-bold mb-8">Цены на услуги</h1>
 
                 <Accordion type="single" collapsible className="space-y-6 max-w-[1350px] mx-auto">
@@ -81,22 +86,27 @@ export default function PricesPage() {
                             </h2>
                         </AccordionTrigger>
                         <AccordionContent>
-                            <Table className="w-full border border-gray-300 rounded-tl-lg rounded-tr-lg overflow-hidden border-b-0">
+                            <Table
+                                className="w-full border border-gray-300 rounded-tl-lg rounded-tr-lg overflow-hidden border-b-0">
                                 <TableHeader>
                                     <TableRow className="bg-gray-100 text-gray-800 font-semibold">
-                                        <TableHead className="border border-gray-300 border-b-0 rounded-tl-lg px-4 py-2">
+                                        <TableHead
+                                            className="border border-gray-300 border-b-0 rounded-tl-lg px-4 py-2">
                                             Услуга
                                         </TableHead>
-                                        <TableHead className="border border-gray-300 border-b-0 rounded-tr-lg px-4 py-2">
+                                        <TableHead
+                                            className="border border-gray-300 border-b-0 rounded-tr-lg px-4 py-2">
                                             Стоимость
                                         </TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {souutData.map(({ service, price }, i) => (
+                                    {souutData.map(({service, price}, i) => (
                                         <TableRow key={i} className={i === 0 ? "bg-gray-50" : "bg-white"}>
-                                            <TableCell className="border border-gray-300 border-t-0 px-4 py-2">{service}</TableCell>
-                                            <TableCell className="border border-gray-300 border-t-0 px-4 py-2">{price}</TableCell>
+                                            <TableCell
+                                                className="border border-gray-300 border-t-0 px-4 py-2">{service}</TableCell>
+                                            <TableCell
+                                                className="border border-gray-300 border-t-0 px-4 py-2">{price}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -112,22 +122,27 @@ export default function PricesPage() {
                             </h2>
                         </AccordionTrigger>
                         <AccordionContent>
-                            <Table className="w-full border border-gray-300 rounded-bl-lg rounded-br-lg overflow-hidden">
+                            <Table
+                                className="w-full border border-gray-300 rounded-bl-lg rounded-br-lg overflow-hidden">
                                 <TableHeader>
                                     <TableRow className="bg-gray-100 text-gray-800 font-semibold">
-                                        <TableHead className="border border-gray-300 border-b-0 rounded-tl-lg px-4 py-2">
+                                        <TableHead
+                                            className="border border-gray-300 border-b-0 rounded-tl-lg px-4 py-2">
                                             Услуга
                                         </TableHead>
-                                        <TableHead className="border border-gray-300 border-b-0 rounded-tr-lg px-4 py-2">
+                                        <TableHead
+                                            className="border border-gray-300 border-b-0 rounded-tr-lg px-4 py-2">
                                             Стоимость
                                         </TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {chemistryData.map(({ service, price }, i) => (
+                                    {chemistryData.map(({service, price}, i) => (
                                         <TableRow key={i} className={i === 0 ? "bg-gray-50" : "bg-white"}>
-                                            <TableCell className="border border-gray-300 border-t-0 px-4 py-2">{service}</TableCell>
-                                            <TableCell className="border border-gray-300 border-t-0 px-4 py-2">{price}</TableCell>
+                                            <TableCell
+                                                className="border border-gray-300 border-t-0 px-4 py-2">{service}</TableCell>
+                                            <TableCell
+                                                className="border border-gray-300 border-t-0 px-4 py-2">{price}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -135,8 +150,20 @@ export default function PricesPage() {
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
-                
+                <p className="mt-10 text-gray-700 text-lg font-medium text-center  mx-auto">
+                    При заказе большого количества измерений/рабочих мест стоимость за единицу измерения/рабочего места
+                    может быть снижена.
+                </p>
+
+                <section className="mt-16 ">
+
+                    <AboutCompany/>
+                    <ContactForm/>
+                    <AuditFAQ></AuditFAQ>
+                    <ContactMap></ContactMap>
+                </section>
             </div>
+            <Footer/>
         </>
     );
 }

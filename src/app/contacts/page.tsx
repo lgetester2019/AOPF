@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Car, Footprints } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from "@/components/ContactForm";
-
+import Image from "next/image";
 export const metadata = {
     title: "Контакты | Агентство оценки производственных факторов — Санкт-Петербург",
     description:
@@ -15,28 +15,33 @@ export default function ContactsPage() {
         <>
             <Header/>
             <div className="max-w-[1350px] m-auto mt-40 md:px-0 px-2 ">
-            <header className="max-w-[1350px] mx-auto relative rounded-3xl overflow-hidden shadow-lg">
-                <img
-                    src="/contact_image.jpg"
-                    alt="Как с нами связаться"
-                    className="w-full  h-80 object-cover brightness-90"
-                />
-                <div
-                    className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
-                    <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
-                        Как с нами связаться?
-                    </h1>
-                    <p className="max-w-xl text-center text-lg drop-shadow-md">
-                        Получите персональную консультацию любым удобным способом у наших специалистов
-                    </p>
-                    <a
-                        href="tel:+78129236867"
-                        className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
-                    >
-                        Позвонить: (812) 923-68-67
-                    </a>
-                </div>
-            </header>
+                <header className="max-w-[1350px] mx-auto relative rounded-3xl overflow-hidden shadow-lg">
+                    <div className="relative w-full h-80">
+                        <Image
+                            src="/contact_image.jpg"
+                            alt="Как с нами связаться"
+                            fill
+                            className="object-cover brightness-90"
+                            sizes="100vw"
+                            priority={false} // Ставь true, если это на первом экране
+                        />
+                    </div>
+                    <div
+                        className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+                        <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
+                            Как с нами связаться?
+                        </h1>
+                        <p className="max-w-xl text-center text-lg drop-shadow-md">
+                            Получите персональную консультацию любым удобным способом у наших специалистов
+                        </p>
+                        <a
+                            href="tel:+78129236867"
+                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
+                        >
+                            Позвонить: (812) 923-68-67
+                        </a>
+                    </div>
+                </header>
             </div>
 
             {/* 🟩 Зелёный блок: Адрес + Как добраться + Карта */}

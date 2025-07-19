@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from 'next/image';
 
 interface Post {
     id: string;
@@ -20,8 +21,16 @@ export default function PostCard({ post }: PostCardProps) {
     return (
         <div className="rounded-xl overflow-hidden shadow-md bg-white flex flex-col h-full">
             {post.image_url && (
-                <img src={post.image_url} alt={post.title} className="h-48 w-full object-cover" />
-            )}
+
+                <div className="relative h-48 w-full">
+                    <Image
+                        src={post.image_url}
+                        alt={post.title}
+                        fill
+                        className="object-cover rounded"
+                        sizes="(max-width: 768px) 100vw, 700px"
+                    />
+                </div>            )}
             <div className="p-4 flex flex-col flex-grow space-y-2">
                 <h3 className="text-xl font-bold">{post.title}</h3>
                 <p className="text-gray-600 text-sm line-clamp-2">{post.description}</p>

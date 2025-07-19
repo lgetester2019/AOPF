@@ -14,7 +14,7 @@ import {
 import PostCardSkeleton from "@/components/PostCardSkeleton";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import Image from 'next/image';
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -100,12 +100,20 @@ export default function BlogPage() {
             <div className="max-w-[1350px] mt-32 mx-auto p-6 space-y-6">
                 {/* Хедер баннер */}
                 <header className="max-w-[1350px] mb-6 mx-auto relative rounded-3xl overflow-hidden shadow-lg">
-                    <img
-                        src="/blog_image.jpg"
-                        alt="Блог"
-                        className="w-full h-80 object-cover brightness-90"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+
+                    <div className="relative w-full h-80">
+                        <Image
+                            src="/blog_image.jpg"
+                            alt="Блог"
+                            fill
+                            sizes="100vw"
+                            quality={75}
+                            priority={false}
+                            className="object-cover brightness-90"
+                        />
+                    </div>
+                    <div
+                        className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
                         <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
                             Блог и полезные материалы
                         </h1>
@@ -118,7 +126,8 @@ export default function BlogPage() {
                 {/* Фильтр по категориям */}
                 <div className="flex flex-wrap gap-2 justify-center mb-6">
                     <button
-                        onClick={() => { setSelectedCategory(null); setPage(1); }}
+                        onClick={() => {
+                            setSelectedCategory(null); setPage(1); }}
                         className={`px-4 py-2 rounded-full text-sm border ${
                             selectedCategory === null
                                 ? 'bg-green-600 text-white'

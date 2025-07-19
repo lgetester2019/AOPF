@@ -19,6 +19,7 @@ import ServiceProcess from "@/components/ServiceProcess";
 import Reviews from "@/components/Review";
 import AuditFAQ from "@/components/AuditFAQ";
 import ContactMap from "@/components/ContactMap";
+import Image from 'next/image';
 
 export const metadata = {
     title: "Специальная оценка условий труда (СОУТ) — профессионально и с гарантией",
@@ -40,11 +41,16 @@ export default function SOUTFullPage() {
             <Header />
             <main className="max-w-[1350px] mx-auto px-6 pt-40 pb-10 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
-                    <img
-                        src="/sout.jpg"
-                        alt="Специальная оценка условий труда"
-                        className="w-full h-80 object-cover brightness-90"
-                    />
+                    <div className="relative w-full h-80">
+                        <Image
+                            src="/sout.jpg"
+                            alt="Специальная оценка условий труда"
+                            fill
+                            style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
+                            sizes="100vw"
+                            priority={false}
+                        />
+                    </div>
                     <div
                         className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
                         <h1 className="lg:text-4xl text-xl  font-extrabold mb-2 drop-shadow-lg text-center">

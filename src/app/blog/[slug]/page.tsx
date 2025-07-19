@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -35,10 +36,14 @@ export default async function PostPage({ params }: PostPageProps) {
                 {new Date(post.created_at).toLocaleDateString()}
             </div>
             {post.image_url && (
-                <img
+                <Image
                     src={post.image_url}
                     alt={post.title}
+                    width={800} // укажи реальные размеры, если знаешь
+                    height={400}
                     className="rounded shadow-md w-full max-h-96 object-cover"
+                    style={{ width: '100%', height: 'auto' }}
+                    sizes="(max-width: 768px) 100vw, 800px"
                 />
             )}
             <div

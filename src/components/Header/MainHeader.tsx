@@ -20,8 +20,15 @@ import DropdownServices from "@/components/DropdownServices";
 
 import MobileMenu from "./MobileMenu";
 import TopBar from "@/components/Header/TopBar";
+import ModalForm from "@/components/ModalForm";
 
-const Header: React.FC = () => {
+interface MainHeaderProps {
+    openMobileMenu: () => void;
+    openModal: () => void;
+}
+
+
+const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isAboutOpen, setIsAboutOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,11 +51,12 @@ const Header: React.FC = () => {
             setIsServicesOpen(false);
         }, 100);
     };
-
+    const [isOpen, setIsOpen] = useState(false);
     const handleAboutMouseEnter = () => {
         clearTimeoutRef();
         setIsAboutOpen(true);
     };
+    const [modalOpen, setModalOpen] = useState(false);
 
     const handleAboutMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
@@ -129,9 +137,13 @@ const Header: React.FC = () => {
                         <div className="hidden lg:flex items-center gap-4 ml-auto">
                             <SearchToggle/>
                             <Button
-                                className="bg-transparent text-green-600 border-2 border-green-600 hover:bg-green-600 hover:text-white rounded-full px-5 py-2 font-semibold transition">
+                                onClick={() => setIsOpen(true)}
+                                className="bg-transparent text-green-600 border-2 border-green-600 hover:bg-green-600 hover:text-white rounded-full px-5 py-2 font-semibold transition"
+                            >
                                 Подать заявку
                             </Button>
+
+                            <ModalForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
                         </div>
 
                         {}
@@ -183,13 +195,18 @@ const Header: React.FC = () => {
                     </div>
                 </div>
 
-                {}
+
                 {mobileMenuOpen && (
-                    <MobileMenu onClose={() => setMobileMenuOpen(false)}/>
+                    <MobileMenu
+                        onClose={() => setMobileMenuOpen(false)}
+                        isModalOpen={modalOpen}
+                        setModalOpen={setModalOpen}
+                    />
                 )}
+
             </header>
         </div>
     );
 };
 
-export default Header;
+export default MainHeader;

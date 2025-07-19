@@ -13,6 +13,7 @@ import AuditFAQ from "@/components/AuditFAQ";
 import ServiceProcess from "@/components/ServiceProcess";
 import Reviews from "@/components/Review";
 import ContactMap from "@/components/ContactMap";
+import Image from 'next/image';
 
 export const metadata = {
     title: "Аудит и разработка СУОТ — эффективная система охраны труда",
@@ -31,19 +32,27 @@ export default function SUOTFullPage() {
             <Header />
             <main className="max-w-[1350px] mx-auto px-6 pt-40 pb-10 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
-                    <img
-                        src="/suot.jpg"
-                        alt="Система управления охраной труда"
-                        className="w-full h-80 object-cover brightness-90"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+                    <div className="relative w-full h-80">
+                        <Image
+                            src="/suot.jpg"
+                            alt="Система управления охраной труда"
+                            fill
+                            style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
+                            sizes="100vw"
+                            priority={false}
+                        />
+                    </div>
+                    <div
+                        className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
                         <h1 className="lg:text-4xl text-xl font-extrabold mb-2 drop-shadow-lg text-center">
                             Аудит, разработка системы управления охраной труда (СУОТ)
                         </h1>
                         <p className="max-w-xl text-center text-lg drop-shadow-md">
-                            В соответствии со статьей 212 ТК РФ работодатель обязан обеспечить создание и функционирование системы управления охраной труда
+                            В соответствии со статьей 212 ТК РФ работодатель обязан обеспечить создание и
+                            функционирование системы управления охраной труда
                         </p>
-                        <button className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
+                        <button
+                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Заказать консультацию
                         </button>
                     </div>

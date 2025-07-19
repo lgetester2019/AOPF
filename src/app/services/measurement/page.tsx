@@ -14,6 +14,8 @@ import Reviews from "@/components/Review";
 import AuditFAQ from "@/components/AuditFAQ";
 import ContactMap from "@/components/ContactMap";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import MeasurementBlock from "@/components/MeasurementBlock";
+import Image from 'next/image';
 
 export const metadata = {
     title: "Измерения шума, освещённости, вибрации и других факторов на рабочих местах",
@@ -31,11 +33,16 @@ export default function MeasurementsPage() {
             <Header />
             <main className="max-w-[1350px] mx-auto px-6 pb-10 pt-40 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
-                    <img
-                        src="/measurements.jpg"
-                        alt="Измерения физических факторов"
-                        className="w-full h-80 object-cover brightness-90"
-                    />
+                    <div className="relative w-full h-80">
+                        <Image
+                            src="/measurements.jpg"
+                            alt="Измерения физических факторов"
+                            fill
+                            style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
+                            sizes="100vw"
+                            priority={false}
+                        />
+                    </div>
                     <div
                         className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
                         <h1 className="lg:text-4xl text-xl  font-extrabold mb-2 drop-shadow-lg text-center">
@@ -118,10 +125,40 @@ export default function MeasurementsPage() {
                             </ul>
                         </AccordionContent>
                     </AccordionItem>
+                    {/* Программа производственного контроля */}
+                    <AccordionItem value="control-program">
+                        <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
+                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                Программа производственного контроля
+                            </h2>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                            <div className="text-lg text-gray-700 space-y-4 leading-relaxed">
+                                <p>
+                                    Производственный контроль осуществляется на основе программы, утверждённой руководителем организации. Программа подлежит актуализации при изменении технологии, видов деятельности, сырья или объемов производства.
+                                </p>
+                                <p>Основные разделы программы:</p>
+                                <ul className="list-disc list-inside ml-4 space-y-1">
+                                    <li>Термины, определения, сокращения</li>
+                                    <li>Общие сведения об организации</li>
+                                    <li>Перечень санитарных правил, методик и нормативов (включая 52-ФЗ и СанПиН 1.2.3685-21)</li>
+                                    <li>Перечень должностных лиц, ответственных за контроль</li>
+                                    <li>Список факторов (химических, биологических, физических), объектов и точек отбора проб</li>
+                                    <li>График и периодичность исследований</li>
+                                    <li>Список вредных факторов и работников, подлежащих медосмотрам</li>
+                                    <li>Мероприятия по обеспечению безопасных условий труда</li>
+                                    <li>Формы учёта и отчётности</li>
+                                </ul>
+                                <p>
+                                    При поступлении жалоб на условия труда, внеплановые исследования проводятся незамедлительно. Отсутствие программы считается нарушением законодательства. Контролирующий орган — Роспотребнадзор.
+                                </p>
+                            </div>
+                        </AccordionContent>
+                    </AccordionItem>
                 </Accordion>
 
                 <BenefitsBlock></BenefitsBlock>
-                <ServiceBlock></ServiceBlock>
+                <MeasurementBlock></MeasurementBlock>
                 <AudienceBlock/>
                 <ServiceProcess></ServiceProcess>
                 <ContactForm></ContactForm>

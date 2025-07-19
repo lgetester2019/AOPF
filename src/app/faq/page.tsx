@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 
 export default function FaqPage() {
     return (
@@ -15,12 +16,18 @@ export default function FaqPage() {
             <Header />
             <main className="max-w-[1350px] mx-auto px-6 py-40 pb-16 font-sans text-gray-800">
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
-                    <img
-                        src="/ask.jpg"
-                        alt="Вопросы и ответы"
-                        className="w-full h-80 object-cover brightness-90"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
+                    <div className="relative w-full h-80">
+                        <Image
+                            src="/ask.jpg"
+                            alt="Вопросы и ответы"
+                            fill
+                            className="object-cover brightness-90"
+                            sizes="100vw"
+                            priority={false} // можно сделать true, если изображение важно для загрузки
+                        />
+                    </div>
+                    <div
+                        className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent px-6">
                         <h1 className="text-4xl font-extrabold mb-2 drop-shadow-lg text-center">
                             Вопросы и ответы
                         </h1>
@@ -35,7 +42,7 @@ export default function FaqPage() {
 
                         {}
                         <AccordionItem value="faq1">
-                            <AccordionTrigger>
+                        <AccordionTrigger>
                                 <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
                                     Верно ли, что если рабочее место является временным и создано на срок менее 12 месяцев, то специальная оценка условий труда по нему все равно должна проводиться, несмотря на ст. 17 Федерального закона от 28.12.2013 N 426-ФЗ, согласно которой внеплановая спецоценка проводится в течение 12 месяцев со дня ввода в эксплуатацию вновь организованного рабочего места?                                </h2>
 
