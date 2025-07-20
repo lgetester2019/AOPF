@@ -17,12 +17,22 @@ const supabase = createClient(
 );
 
 function generateSlug(title: string) {
+    const map: Record<string, string> = {
+        а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'e', ё: 'e', ж: 'zh', з: 'z',
+        и: 'i', й: 'y', к: 'k', л: 'l', м: 'm', н: 'n', о: 'o', п: 'p', р: 'r',
+        с: 's', т: 't', у: 'u', ф: 'f', х: 'h', ц: 'ts', ч: 'ch', ш: 'sh', щ: 'sch',
+        ъ: '', ы: 'y', ь: '', э: 'e', ю: 'yu', я: 'ya',
+    };
+
     return title
         .toLowerCase()
-        .trim()
+        .split('')
+        .map((char) => map[char] || char)
+        .join('')
         .replace(/[^\w\s-]/g, '')
         .replace(/\s+/g, '-')
-        .replace(/-+/g, '-');
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '');
 }
 
 function MenuBar({ editor }: { editor: any }) {
@@ -30,7 +40,7 @@ function MenuBar({ editor }: { editor: any }) {
 
     return (
         <div className="flex gap-2 mb-3 flex-wrap">
-            {[1, 2, 3, 4, 5, 6].map((level) => (
+            {[1, 2, 3].map((level) => (
                 <button
                     key={level}
                     type="button"
@@ -64,24 +74,16 @@ function MenuBar({ editor }: { editor: any }) {
     );
 }
 
-function TiptapEditor({
-                          content,
-                          onChange,
-                      }: {
-    content: string;
-    onChange: (content: string) => void;
-}) {
+function TiptapEditor({ content, onChange }: { content: string; onChange: (content: string) => void }) {
     const editor = useEditor({
         extensions: [
             StarterKit.configure({ heading: false }),
-            Heading.configure({ levels: [1, 2, 3, 4, 5, 6] }),
+            Heading.configure({ levels: [1, 2, 3] }),
             Bold,
             Italic,
         ],
         content,
-        onUpdate: ({ editor }) => {
-            onChange(editor.getHTML());
-        },
+        onUpdate: ({ editor }) => onChange(editor.getHTML()),
     });
 
     if (!editor) return <div>Загрузка редактора...</div>;
@@ -89,10 +91,7 @@ function TiptapEditor({
     return (
         <div>
             <MenuBar editor={editor} />
-            <EditorContent
-                editor={editor}
-                className="border p-3 rounded-2xl min-h-[200px] bg-white"
-            />
+            <EditorContent editor={editor} className="border p-3 rounded-2xl min-h-[200px] bg-white" />
         </div>
     );
 }
@@ -109,16 +108,10 @@ export default function NewPostPage() {
 
     useEffect(() => {
         async function fetchCategories() {
-            const { data, error } = await supabase
-                .from('categories')
-                .select('*')
-                .order('name', { ascending: true });
+            const { data, error } = await supabase.from('categories').select('*').order('name', { ascending: true });
 
-            if (error) {
-                alert('Ошибка при загрузке категорий: ' + error.message);
-            } else {
-                setCategories(data || []);
-            }
+            if (error) alert('Ошибка при загрузке категорий: ' + error.message);
+            else setCategories(data || []);
         }
 
         fetchCategories();
@@ -167,6 +160,9 @@ export default function NewPostPage() {
                             onChange={(e) => setTitle(e.target.value)}
                             className="w-full border p-3 rounded-2xl"
                         />
+                        <p className="text-sm text-gray-500 mt-1">
+                            Слаг: <span className="font-mono">{generateSlug(title)}</span>
+                        </p>
                     </div>
 
                     <div>

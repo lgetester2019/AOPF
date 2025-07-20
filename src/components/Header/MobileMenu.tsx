@@ -6,6 +6,7 @@ import DropdownMenu from "@/components/DropdownMenu";
 import DropdownServices from "@/components/DropdownServices";
 import MobileSubMenu from "./MobileSubMenu";
 import ModalForm from "@/components/ModalForm";
+import MobileSearchInput from "@/components/MobileSearchInput";
 
 interface MobileMenuProps {
     onClose: () => void;
@@ -44,7 +45,7 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
             </nav>
 
             <div className="mt-auto">
-                <SearchToggle/>
+                <MobileSearchInput onClose={onClose} />
                 <Button
                     onClick={() => {
                         setModalOpen(true);

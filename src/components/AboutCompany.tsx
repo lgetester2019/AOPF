@@ -13,9 +13,7 @@ export default function AboutCompany() {
         <section className="py-10 mb-24 mt-6 px-4 md:px-10 bg-green-600/60 rounded-3xl max-w-[1350px] mx-auto text-white">
             <div className="flex flex-col md:flex-row gap-12 mx-auto">
                 <div className="md:w-1/2 space-y-4">
-                    {}
-                    {}
-                    {}
+
                     <h3 className="text-4xl font-extrabold mb-4 text-white">Почему выбирают нас?</h3>
 
                     <p className="text-white text-lg leading-relaxed">

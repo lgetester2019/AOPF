@@ -3,6 +3,17 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import AdminAuth from '@/components/AdminAuth';
+import {
+    AlertDialog,
+    AlertDialogTrigger,
+    AlertDialogContent,
+    AlertDialogHeader,
+    AlertDialogFooter,
+    AlertDialogTitle,
+    AlertDialogDescription,
+    AlertDialogCancel,
+    AlertDialogAction,
+} from '@/components/ui/alert-dialog';
 
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -14,6 +25,7 @@ export default function CategoriesAdminPage() {
     const [name, setName] = useState('');
     const [editingId, setEditingId] = useState<string | null>(null);
     const [editingName, setEditingName] = useState('');
+    const [deletingId, setDeletingId] = useState<string | null>(null);
 
     useEffect(() => {
         fetchCategories();
@@ -31,9 +43,10 @@ export default function CategoriesAdminPage() {
         fetchCategories();
     }
 
-    async function handleDelete(id: string) {
-        if (!confirm('Удалить категорию?')) return;
-        await supabase.from('categories').delete().eq('id', id);
+    async function handleDeleteConfirmed() {
+        if (!deletingId) return;
+        await supabase.from('categories').delete().eq('id', deletingId);
+        setDeletingId(null);
         fetchCategories();
     }
 
@@ -62,65 +75,94 @@ export default function CategoriesAdminPage() {
     return (
         <AdminAuth>
             <div className="max-w-2xl mx-auto p-6">
-                <h1 className="text-2xl font-bold mb-4">Категории</h1>
+                <h1 className="text-2xl font-bold mb-6 text-gray-900">Категории</h1>
 
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-3 mb-6">
                     <input
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="border px-3 py-2 rounded w-full"
+                        className="border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-4 py-2 rounded-md w-full transition"
                         placeholder="Новая категория"
                     />
                     <button
                         onClick={handleAdd}
-                        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                        className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold px-5 py-2 rounded-md shadow-md transition"
                     >
                         Добавить
                     </button>
                 </div>
 
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                     {categories.map((cat) => (
                         <li
                             key={cat.id}
-                            className="border p-3 rounded flex justify-between items-center gap-4"
+                            className="border border-gray-200 p-4 rounded-lg flex justify-between items-center shadow-sm hover:shadow-md transition"
                         >
                             {editingId === cat.id ? (
-                                <div className="flex-1 flex gap-2">
+                                <div className="flex-1 flex gap-3">
                                     <input
                                         value={editingName}
                                         onChange={(e) => setEditingName(e.target.value)}
-                                        className="border px-3 py-2 rounded w-full"
+                                        className="border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-2 rounded-md w-full transition"
                                     />
                                     <button
                                         onClick={saveEditing}
-                                        className="bg-blue-600 text-white px-3 rounded hover:bg-blue-700"
+                                        className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold px-4 py-2 rounded-md shadow-md transition"
                                     >
                                         Сохранить
                                     </button>
                                     <button
                                         onClick={cancelEditing}
-                                        className="text-gray-500 hover:underline"
+                                        className="text-gray-600 hover:text-gray-800 font-medium px-3 py-2 rounded-md transition"
                                     >
                                         Отмена
                                     </button>
                                 </div>
                             ) : (
                                 <>
-                                    <span className="flex-1">{cat.name}</span>
-                                    <div className="flex gap-2">
+                                    <span className="flex-1 text-gray-900 font-medium">{cat.name}</span>
+                                    <div className="flex gap-4">
                                         <button
                                             onClick={() => startEditing(cat.id, cat.name)}
-                                            className="text-blue-600 hover:underline"
+                                            className="text-indigo-600 hover:text-indigo-800 font-semibold transition"
                                         >
                                             Редактировать
                                         </button>
-                                        <button
-                                            onClick={() => handleDelete(cat.id)}
-                                            className="text-red-600 hover:underline"
-                                        >
-                                            Удалить
-                                        </button>
+
+                                        <AlertDialog>
+                                            <AlertDialogTrigger asChild>
+                                                <button
+                                                    onClick={() => setDeletingId(cat.id)}
+                                                    className="text-red-600 hover:text-red-800 font-semibold transition"
+                                                >
+                                                    Удалить
+                                                </button>
+                                            </AlertDialogTrigger>
+                                            <AlertDialogContent className="max-w-md rounded-xl shadow-2xl p-6">
+                                                <AlertDialogHeader>
+                                                    <AlertDialogTitle className="text-xl font-bold text-gray-900">
+                                                        Удалить категорию?
+                                                    </AlertDialogTitle>
+                                                    <AlertDialogDescription className="mt-2 text-gray-600">
+                                                        Это действие нельзя будет отменить. Вы уверены?
+                                                    </AlertDialogDescription>
+                                                </AlertDialogHeader>
+                                                <AlertDialogFooter className="mt-6 flex justify-end gap-4">
+                                                    <AlertDialogCancel
+                                                        onClick={() => setDeletingId(null)}
+                                                        className="px-5 py-2 rounded-md border border-gray-300 hover:bg-gray-100 text-gray-700 transition font-medium"
+                                                    >
+                                                        Отмена
+                                                    </AlertDialogCancel>
+                                                    <AlertDialogAction
+                                                        onClick={handleDeleteConfirmed}
+                                                        className="px-5 py-2 rounded-md bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold transition"
+                                                    >
+                                                        Удалить
+                                                    </AlertDialogAction>
+                                                </AlertDialogFooter>
+                                            </AlertDialogContent>
+                                        </AlertDialog>
                                     </div>
                                 </>
                             )}
