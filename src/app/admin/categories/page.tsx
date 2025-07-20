@@ -143,6 +143,7 @@ export default function CategoriesAdminPage() {
                                                     <AlertDialogTitle className="text-xl font-bold text-gray-900">
                                                         Удалить категорию?
                                                     </AlertDialogTitle>
+
                                                     <AlertDialogDescription className="mt-2 text-gray-600">
                                                         Это действие нельзя будет отменить. Вы уверены?
                                                     </AlertDialogDescription>
