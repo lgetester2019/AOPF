@@ -30,6 +30,7 @@ const SearchToggle = () => {
                 }`}
             >
                 <input
+
                     ref={inputRef}
                     type="text"
                     placeholder="Поиск..."
