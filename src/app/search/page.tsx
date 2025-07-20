@@ -1,19 +1,14 @@
-
 import { getArticlesByQuery } from "@/lib/db";
 import { getStaticMatches } from "@/lib/staticPages";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
-type SearchParams = {
-    [key: string]: string | string[] | undefined;
-};
+interface Props {
+    searchParams?: any;
+}
 
-export default async function SearchPage({
-                                             searchParams,
-                                         }: {
-    searchParams?: SearchParams;
-}) {
+export default async function SearchPage({ searchParams }: Props) {
     const queryRaw = searchParams?.query;
     const query = Array.isArray(queryRaw) ? queryRaw[0] : queryRaw;
     const trimmedQuery = query?.trim();
@@ -25,11 +20,10 @@ export default async function SearchPage({
         <>
             <Header />
             <div className="max-w-[1350px] mx-auto mt-40 px-4 md:px-6">
-                {}
                 <header className="mb-10 rounded-3xl overflow-hidden relative shadow-xl">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/search_banner.jpg" // добавь подходящее изображение
+                            src="/search_banner.jpg"
                             alt="Поиск"
                             fill
                             className="object-cover brightness-90"
@@ -46,7 +40,6 @@ export default async function SearchPage({
                     </div>
                 </header>
 
-                {}
                 <main className="mb-20 space-y-10">
                     {!trimmedQuery && (
                         <p className="text-gray-600 text-center text-lg">
@@ -67,7 +60,6 @@ export default async function SearchPage({
                                 Результаты для «{trimmedQuery}»
                             </h2>
 
-                            {}
                             {articles.length > 0 && (
                                 <div className="mb-12">
                                     <h3 className="text-xl font-semibold mb-4 text-green-600">
@@ -92,7 +84,6 @@ export default async function SearchPage({
                                 </div>
                             )}
 
-                            {}
                             {staticMatches.length > 0 && (
                                 <div>
                                     <h3 className="text-xl font-semibold mb-4 text-green-600">
@@ -108,9 +99,7 @@ export default async function SearchPage({
                                                 <h4 className="text-lg font-medium text-green-600 group-hover:underline">
                                                     {page.label}
                                                 </h4>
-                                                <p className="text-sm text-gray-500 mt-1">
-                                                    Перейти →
-                                                </p>
+                                                <p className="text-sm text-gray-500 mt-1">Перейти →</p>
                                             </a>
                                         ))}
                                     </div>
