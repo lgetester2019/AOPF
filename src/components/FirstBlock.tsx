@@ -23,7 +23,7 @@ const FirstBlock = () => {
 
                     {}
                     <div className="hidden lg:flex justify-start">
-                        <Link href="#services" passHref>
+                        <Link href="/services" passHref>
                             <button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-7 py-3 font-semibold shadow-sm transition-colors duration-300">
                                 Подробнее об услугах
                             </button>
@@ -44,7 +44,7 @@ const FirstBlock = () => {
 
             {}
             <div className="mt-8 lg:hidden flex justify-center">
-                <Link href="#services" passHref>
+                <Link href="/services" >
                     <button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-7 py-3 font-semibold shadow-sm transition-colors duration-300">
                         Подробнее об услугах
                     </button>

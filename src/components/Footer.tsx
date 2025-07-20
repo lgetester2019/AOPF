@@ -4,24 +4,21 @@ import React from "react";
 import { Mail, Phone } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
     return (
         <footer className="max-w-[1350px]  mx-auto bg-white text-black rounded-t-[45px] pt-10 border border-t border-gray-300 border-b-0">
             <div className="max-w-[1350px] mx-auto px-6 lg:px-[60px]">
-                {}
+
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center text-center lg:text-left mb-10 gap-6">
-                    {}
-                    <div>
+                    <Link href="/" className="block">
                         <img
                             src="/logo_aopf.png"
                             alt="Логотип"
-                            className="h-10
-                             w-auto cursor-pointer mx-auto lg:mx-0"
+                            className="h-10 w-auto cursor-pointer mx-auto lg:mx-0"
                         />
-                    </div>
-
-                    {}
+                    </Link>
                     <nav className="flex flex-col items-center gap-3 lg:flex-row lg:gap-8 text-sm lg:text-base">
                         <a href="/services" className="hover:underline">Услуги</a>
                         <a href="/documents" className="hover:underline">Документы</a>

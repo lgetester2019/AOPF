@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, Send, PhoneCall, MapPin, Clock } from 'lucide-react';
+import { BsWhatsapp } from 'react-icons/bs';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -43,6 +44,7 @@ const ContactForm: React.FC = () => {
     return (
         <section className="bg-[#26428b] my-10 text-white lg:py-12 py-8 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
+                {/* Левая часть */}
                 <div className="space-y-6">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
                         Свяжитесь с нами, и наши эксперты&nbsp;
@@ -52,32 +54,67 @@ const ContactForm: React.FC = () => {
                     <p className="text-base sm:text-xl text-blue-100">
                         Мы работаем быстро, качественно, со строгим соблюдением условий договора и установленных сроков.
                     </p>
+
                     <div className="space-y-5 text-white text-sm sm:text-base">
                         <div className="flex items-center gap-3">
-                            <MapPin size={18} /><span>Санкт-Петербург</span>
+                            <MapPin size={18} />
+                            <span>Санкт-Петербург</span>
                         </div>
+
                         <div className="flex items-center gap-3">
-                            <Clock size={18} /><span>Пн–Пт 9:00–18:00</span>
+                            <Clock size={18} />
+                            <span>Пн–Пт 9:00–18:00</span>
                         </div>
+
                         <div className="flex items-center gap-3">
-                            <Phone size={18} /><span>8 (812) 441–37–78</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <Mail size={18} /><span>info.aopf@gmail.com</span>
-                        </div>
-                        <div className="flex items-center gap-6 pt-2">
-                            <a href="https://t.me/your_channel" target="_blank" rel="noopener noreferrer">
-                                <Send size={22} className="text-[#0088cc]" />
+                            <Phone size={18} />
+                            <a
+                                href="tel:+78124413778"
+                                className="hover:underline focus:outline-none focus:ring-2 focus:ring-white"
+                            >
+                                8 (812) 441–37–78
                             </a>
-                            <a href="https://wa.me/79111234567" target="_blank" rel="noopener noreferrer">
-                                <PhoneCall size={22} className="text-[#25D366]" />
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                            <Mail size={18} />
+                            <a
+                                href="mailto:info.aopf@gmail.com"
+                                className="hover:underline focus:outline-none focus:ring-2 focus:ring-white break-all"
+                            >
+                                info.aopf@gmail.com
+                            </a>
+                        </div>
+
+                        <div className="flex items-center gap-4 pt-2">
+                            <a
+                                href="https://t.me/mikeS60"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                                aria-label="Telegram"
+                            >
+                                <Send size={20} className="text-[#0088cc]" />
+                            </a>
+
+                            <a
+                                href="https://wa.me/79111234567"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                                aria-label="WhatsApp"
+                            >
+                                <BsWhatsapp size={20} className="text-[#25D366]" />
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <form onSubmit={handleSubmit}
-                      className="bg-white text-gray-900 p-4 md:p-6 sm:p-8 rounded-2xl shadow-xl space-y-5">
+                {/* Правая часть — форма */}
+                <form
+                    onSubmit={handleSubmit}
+                    className="bg-white text-gray-900 p-4 md:p-6 sm:p-8 rounded-2xl shadow-xl space-y-5"
+                >
                     <div>
                         <label className="block mb-1 font-medium text-sm">Ваше имя</label>
                         <input

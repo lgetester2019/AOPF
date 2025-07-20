@@ -1,5 +1,7 @@
+"use client";
+
 import { Mail, Phone, MapPin, Clock, Send, PhoneCall } from "lucide-react";
-import {BsWhatsapp} from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 import React from "react";
 
 const TopBar = () => (
@@ -18,24 +20,30 @@ const TopBar = () => (
 
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                    <Mail size={16} className="text-gray-900"/>
-                    <span>info.aopf@gmail.com</span>
+                    <Mail size={16} className="text-gray-900" />
+                    <a
+                        href="mailto:info.aopf@gmail.com"
+                        className="hover:underline"
+                    >
+                        info.aopf@gmail.com
+                    </a>
                 </div>
-                <div className="flex items-center gap-2">
-                    <Phone size={16} className="text-gray-900"/>
-                    <span>
-  <a href="tel:+78124413778" className="hover:underline">
-    8 (812) 441–37–78
-  </a>,{" "}
-                        <a href="tel:+79626847783" className="hover:underline">
-    +7 (962) 684-77-83
-  </a>,{" "}
-                        <a href="tel:+79119236867" className="hover:underline">
-    +7 (911) 923-68-67
-  </a>
-</span>
 
+                <div className="flex items-center gap-2">
+                    <Phone size={16} className="text-gray-900" />
+                    <span className="flex flex-col sm:flex-row sm:gap-1">
+                        <a href="tel:+78124413778" className="hover:underline">
+                            8 (812) 441–37–78
+                        </a>
+                        <a href="tel:+79626847783" className="hover:underline">
+                            +7 (962) 684-77-83
+                        </a>
+                        <a href="tel:+79119236867" className="hover:underline">
+                            +7 (911) 923-68-67
+                        </a>
+                    </span>
                 </div>
+
                 <a
                     href="https://t.me/mikeS60"
                     target="_blank"
@@ -43,19 +51,18 @@ const TopBar = () => (
                     className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
                     aria-label="Telegram"
                 >
-                    <Send size={18} className="text-[#0088cc]"/>
+                    <Send size={18} className="text-[#0088cc]" />
                 </a>
 
                 <a
                     href="https://wa.me/79111234567"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full hover:bg-gray-100"
+                    className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
                     aria-label="WhatsApp"
                 >
-                    <BsWhatsapp size={20} className="text-[#25D366]"/>
+                    <BsWhatsapp size={20} className="text-[#25D366]" />
                 </a>
-
             </div>
         </div>
     </div>
