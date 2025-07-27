@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                             <FaTelegramPlane />
                         </a>
                         <a
-                            href="https://wa.me/79111234567"
+                            href="https://wa.me/79119236867"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="WhatsApp"
