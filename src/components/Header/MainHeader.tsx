@@ -164,7 +164,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                 <Phone size={20} className="text-green-600"/>
                             </a>
                             <a
-                                href="https://wa.me/79111234567"
+                                href="https://wa.me/79119236867"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="rounded-full hover:bg-gray-100"
