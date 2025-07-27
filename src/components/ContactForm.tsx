@@ -98,7 +98,7 @@ const ContactForm: React.FC = () => {
                             </a>
 
                             <a
-                                href="https://wa.me/79111234567"
+                                href="https://wa.me/79119236867"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full hover:bg-white/10 transition-colors"
