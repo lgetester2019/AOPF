@@ -55,7 +55,7 @@ const TopBar = () => (
                 </a>
 
                 <a
-                    href="https://wa.me/79111234567"
+                    href="https://wa.me/79119236867"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
