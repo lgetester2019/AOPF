@@ -38,6 +38,27 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru">
+            <head>
+                {/* ADD START: Яндекс.Метрика */}
+                <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+                  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                  m[i].l=1*new Date();
+                  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                  ym(XXXXXX, "init", {
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                  });
+                ` }} />
+                <noscript>
+                    <div>
+                        <img src="https://mc.yandex.ru/watch/XXXXXX" style={{ position: 'absolute', left: '-9999px' }} alt="" />
+                    </div>
+                </noscript>
+                {/* ADD END */}
+            </head>
         <body className="antialiased">
         {children}
         </body>
