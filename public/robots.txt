@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /contacts
+Allow: /faq
+Allow: /services
+Allow: /services/risk
+Disallow: /admin
+Disallow: /login
+Sitemap: https://aopf.ru/sitemap.xml
