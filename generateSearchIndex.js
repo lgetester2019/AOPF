@@ -44,6 +44,75 @@ function walkApp(dir) {
 
                 if (!url) url = "/";
 
+                let schemaOrg = {};
+                if (url === "/contacts") {
+                    schemaOrg = {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Агентство Оценки Производственных Факторов",
+                        "url": "https://aopf.ru",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Б. Сампсониевский пр., 64",
+                            "addressLocality": "Санкт-Петербург",
+                            "postalCode": "194044",
+                            "addressCountry": "RU"
+                        },
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "+7-812-923-68-67",
+                            "email": "info.aopf@gmail.com"
+                        }
+                    };
+                } else if (url === "/faq") {
+                    schemaOrg = {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "Что такое СОУТ?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Специальная оценка условий труда (СОУТ) проводится в соответствии с 426-ФЗ для обеспечения безопасности работников."
+                                }
+                            }
+                        ]
+                    };
+                } else if (url === "/services") {
+                    schemaOrg = {
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Специальная оценка условий труда (СОУТ)",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Агентство Оценки Производственных Факторов",
+                            "url": "https://aopf.ru"
+                        },
+                        "areaServed": {
+                            "@type": "City",
+                            "name": "Санкт-Петербург"
+                        },
+                        "description": "Специальная оценка условий труда, производственный контроль, анализ воды и воздуха в Санкт-Петербурге."
+                    };
+                } else if (url === "/services/risk") {
+                    schemaOrg = {
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Оценка профессиональных рисков",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Агентство Оценки Производственных Факторов",
+                            "url": "https://aopf.ru"
+                        },
+                        "areaServed": {
+                            "@type": "City",
+                            "name": "Санкт-Петербург"
+                        },
+                        "description": "Профессиональная оценка рисков для охраны труда в соответствии с 426-ФЗ."
+                    };
+                }
+                
                 searchIndex.push({ url, title, content: text });
             }
         }
@@ -64,7 +133,8 @@ function addBlogPostsToIndex() {
 
         let title = "";
         let text = "";
-
+        let schemaOrg = {};
+        
         if (file.endsWith(".md") || file.endsWith(".mdx")) {
 
             const titleMatch = content.match(/title:\s*["'](.+?)["']/i);
@@ -72,11 +142,33 @@ function addBlogPostsToIndex() {
 
             const bodyMatch = content.match(/---[\s\S]*?---([\s\S]*)/);
             text = bodyMatch ? bodyMatch[1].replace(/[#_*>\-\[\]\(\)!]/g, " ").trim() : "";
+            schemaOrg = {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": title,
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Агентство Оценки Производственных Факторов",
+                    "url": "https://aopf.ru"
+                },
+                "description": text.length > 160 ? text.substring(0, 157) + "..." : text
+            };
         } else if (file.endsWith(".tsx")) {
 
             const extracted = extractTextFromPage(content);
             title = extracted.title;
             text = extracted.text;
+            schemaOrg = {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": title,
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Агентство Оценки Производственных Факторов",
+                    "url": "https://aopf.ru"
+                },
+                "description": text.length > 160 ? text.substring(0, 157) + "..." : text
+            };
         }
 
         if (title || text) {
