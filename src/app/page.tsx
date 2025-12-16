@@ -21,12 +21,13 @@ export const metadata = {
 };
 
 
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
 export default async function Home() {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 5000);
+    const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
     const { data: posts, error } = await supabase
         .from('posts')
         .select('*')
