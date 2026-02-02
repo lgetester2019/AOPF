@@ -71,8 +71,16 @@ const Footer: React.FC = () => {
                 <hr className="border-gray-300 mb-6" />
 
                 {}
-                <div className="text-center text-xs lg:text-sm pb-6 text-black">
+                <div className="text-center text-xs lg:text-sm pb-4 text-black">
                     &copy; 2025 АОПФ. Все права защищены. Информация на сайте носит исключительно информационный характер и не является публичной офертой.
+                </div>
+                <div class="artena">
+                    <div class="artena_links">
+                        <a href="https://artena.ru/" target="_blank" title="Продвижение сайтов">Продвижение сайтов</a>
+                    </div>
+                    <a href="https://artena.ru/">
+                        <img src="/public/artena.png" data-src="/public/artena.png" alt="Артена"></img>
+                    </a>
                 </div>
             </div>
         </footer>
