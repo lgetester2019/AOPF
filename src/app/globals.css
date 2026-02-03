@@ -149,12 +149,3 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
-.artena {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 10px;
-  width: 100%;
-}
