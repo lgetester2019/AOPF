@@ -74,6 +74,14 @@ const Footer: React.FC = () => {
                 <div className="text-center text-xs lg:text-sm pb-6 text-black">
                     &copy; 2025 АОПФ. Все права защищены. Информация на сайте носит исключительно информационный характер и не является публичной офертой.
                 </div>
+                <div className="artena">
+                    <div className="artena_links">
+                        <a href="https://artena.ru/" target="_blank" title="Продвижение сайтов">Продвижение сайтов</a>
+                    </div>
+                    <a href="https://artena.ru/">
+                        <img src="/artena.png" data-src="/artena.png" alt="Артена"></img>
+                    </a>
+                </div>
             </div>
         </footer>
     );
