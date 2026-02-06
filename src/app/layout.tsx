@@ -30,6 +30,9 @@ export const metadata: Metadata = {
         canonical: "https://example.com",
     },
     metadataBase: new URL("https://example.com"),
+    verification: {
+        yandex: "8682ea9c3d4e563c",
+    },
 };
 
 export default function RootLayout({
