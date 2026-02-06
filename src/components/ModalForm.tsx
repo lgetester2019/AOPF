@@ -26,8 +26,8 @@ const ModalForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
                 setStatus('sent');
                 setFormData({ name: '', phone: '', message: '' });
 
-                if (typeof window !== 'undefined' && typeof window.ym === 'function') {
-                    window.ym(104262961, 'reachGoal', 'send_all_form');
+                if (typeof window !== 'undefined' && typeof (window as any).ym === 'function') {
+                    (window as any).ym(104262961, 'reachGoal', 'send_all_form');
                 }
             } else {
                 setStatus('error');
