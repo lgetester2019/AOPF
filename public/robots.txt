@@ -1,9 +1,15 @@
 User-agent: *
-Allow: /
-Allow: /contacts
-Allow: /faq
-Allow: /services
-Allow: /services/risk
+Disallow: /go.php
 Disallow: /admin
 Disallow: /login
+Disallow: /search
+Disallow: /*query=
+
+User-agent: Yandex
+Disallow: /go.php
+Disallow: /admin
+Disallow: /login
+Disallow: /search
+Clean-param: query
+
 Sitemap: https://aopf.ru/sitemap.xml

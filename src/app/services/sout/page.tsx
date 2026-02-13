@@ -59,10 +59,10 @@ export default function SOUTFullPage() {
                         <p className="max-w-xl text-center text-lg drop-shadow-md">
                             Профессионально, надежно и в полном соответствии с требованиями законодательства
                         </p>
-                        <button
+                        <a href="/contacts"
                             className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Заказать консультацию
-                        </button>
+                        </a>
                     </div>
                 </header>
 

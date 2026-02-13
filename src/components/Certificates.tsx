@@ -11,8 +11,8 @@ const certificates = [
     },
     {
         title: "Уведомление о внесении в реестр",
-        src: "/certificates/Уведомление о внесение  в реестр.jpg",
-        href: "/certificates/Уведомление о внесение  в реестр.jpg",
+        src: "/certificates/Уведомление о внесение в реестр.jpg",
+        href: "/certificates/Уведомление о внесение в реестр.jpg",
         isPdf: false,
     },
     {
