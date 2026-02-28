@@ -1,60 +1,42 @@
-import Header from "@/components/Header";
-import FirstBlock from "@/components/FirstBlock";
-import { Stats } from "@/components/Stats";
-import Benefits from "@/components/Benefits";
-import ContactForm from "@/components/ContactForm";
-import ServicesPreview from "@/components/ServicesPreview";
-import ClientsSection from "@/components/ClientsSection";
-import ContactMap from "@/components/ContactMap";
-import Certificates from "@/components/Certificates";
-import AboutUs from "@/components/AboutUs";
-import Footer from "@/components/Footer";
-import BlogOverview from "@/components/BlogOverview";
-
+import Header from '@/components/Header';
+import FirstBlock from '@/components/FirstBlock';
+import ServicesPreview from '@/components/ServicesPreview';
+import Benefits from '@/components/Benefits';
+import Certificates from '@/components/Certificates';
+import BlogOverview from '@/components/BlogOverview';
+import Review from '@/components/Review';
+import ContactMap from '@/components/ContactMap';
+import Footer from '@/components/Footer';
 import { createClient } from '@supabase/supabase-js';
-import Reviews from "@/components/Review";
 
-export const metadata = {
-    title: "Охрана труда и безопасность — аккредитованная лаборатория",
-    description:
-        "Почти 10 лет оказываем услуги по охране труда: СОУТ, анализ воды, производственный контроль, обучение, оценка рисков и разработка документации. Аккредитация, опыт и прозрачные цены.",
-};
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
+export const revalidate = 60;
 
 export default async function Home() {
-    const controller = new AbortController();
-    setTimeout(() => controller.abort(), 5000);
-    const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
-    const { data: posts, error } = await supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(2);
+  const { data: posts } = await supabase
+    .from('posts')
+    .select('id, title, description, slug, publish_date, created_at, image_url, author')
+    .eq('status', 'published')
+    .order('publish_date', { ascending: false })
+    .limit(3);
 
-    const latestPost = posts?.[0] || null;
-    console.log("posts:", posts);
-
-    return (
-        <div>
-            <Header />
-            <div className="px-4 pt-28 w-full max-w-[1350px] mx-auto">
-                <FirstBlock />
-                <Stats />
-                <Benefits />
-                <ServicesPreview />
-                <ClientsSection />
-                <AboutUs />
-                <ContactForm />
-                <Certificates />
-
-                <BlogOverview latestPosts={posts?.slice(0, 2) ?? []} />
-                <Reviews></Reviews>
-                <ContactMap />
-                <Footer />
-            </div>
-        </div>
-    );
+  return (
+    <>
+      <Header />
+      <main className="pt-24 px-4 sm:px-6"> {/* Добавляем padding-top */}
+        <FirstBlock />
+        <ServicesPreview />
+        <Benefits />
+        <Certificates />
+        <BlogOverview posts={posts} />
+        <Review />
+        <ContactMap />
+      </main>
+      <Footer />
+    </>
+  );
 }
