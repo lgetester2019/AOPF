@@ -13,9 +13,9 @@ const FirstBlock = () => {
                 {/* Левая колонка с текстом */}
                 <div className="flex-1 flex flex-col justify-center text-center lg:text-left max-w-2xl mx-auto lg:mx-0 lg:pl-[50px]">
                     <h1 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
-                        Безопасность труда
-                        <br className="hidden lg:block" />
-                        и экология — наша забота
+                        Безопасность труда 
+                        <br className="hidden lg:block" /> 
+                         {" "}и экология — наша забота
                     </h1>
                     <p className="text-white text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10">
                         Более 10 лет мы проводим спецоценку условий труда, анализ воды и воздуха, производственный контроль и создаем системы управления охраной труда, в том числе профриски и технологические карты.
