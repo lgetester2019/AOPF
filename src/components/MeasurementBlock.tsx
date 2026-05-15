@@ -1,28 +1,28 @@
 import React from "react";
-import { FileText, CheckCircle, UserCheck, Shield } from 'lucide-react';;
+import { FileText, UserCheck, CheckCircle, Shield } from 'lucide-react';
 
 const MeasurementBlock: React.FC = () => {
     const items = [
         {
-            icon: <FiFileText className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <FileText className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Юридическая обязательность",
             description:
                 "Проведение измерений в рамках производственного контроля обязательно согласно статье 214 ТК РФ и регулируется законом №52-ФЗ и СанПиН 1.2.3685-21.",
         },
         {
-            icon: <FiUserCheck className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <UserCheck className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Выбор аккредитованной организации",
             description:
                 "Работодатель обязан заключить договор с организацией, имеющей аккредитованную в Росаккредитации лабораторию, с необходимой областью аккредитации.",
         },
         {
-            icon: <FiCheckCircle className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <CheckCircle className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Процедура выполнения измерений",
             description:
                 "Специалист лаборатории измеряет производственные факторы в соответствии с программой ПК и оформляет протоколы измерений.",
         },
         {
-            icon: <FiShield className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <Shield className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Полученные результаты",
             description:
                 "Используются для оценки соответствия гигиеническим нормативам условий труда сотрудников организации и принятия мероприятий по их улучшению.",

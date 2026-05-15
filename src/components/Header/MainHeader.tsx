@@ -4,16 +4,13 @@ import React, { useState, useRef } from "react";
 import {
     Mail,
     Phone,
-    MapPin,
-    Clock,
     ChevronDown,
     Send,
-    PhoneCall,
     Menu,
-    MessageCircle
+    MessageCircle,
+    X
 } from "lucide-react";
 
-import { X } from 'lucide-react';;
 import { Button } from "@/components/ui/button";
 import DropdownMenu from "@/components/DropdownMenu";
 import SearchToggle from "@/components/SearchToggle";
@@ -29,11 +26,11 @@ interface MainHeaderProps {
     openModal: () => void;
 }
 
-
 const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isAboutOpen, setIsAboutOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const clearTimeoutRef = () => {
@@ -53,12 +50,11 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
             setIsServicesOpen(false);
         }, 100);
     };
-    const [isOpen, setIsOpen] = useState(false);
+
     const handleAboutMouseEnter = () => {
         clearTimeoutRef();
         setIsAboutOpen(true);
     };
-    const [modalOpen, setModalOpen] = useState(false);
 
     const handleAboutMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
@@ -69,14 +65,12 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
     return (
         <div className="fixed top-0 left-0 w-full z-50 bg-white">
             <header className="w-full">
-                {}
-               <TopBar></TopBar>
+                <TopBar />
 
-                {}
                 <div className="bg-white rounded-b-4xl shadow-sm">
                     <div className="max-w-[1350px] mx-auto flex items-center justify-between px-6 py-4 gap-6">
                         <div className="flex items-center gap-4">
-                             <Link href="/" aria-label="Главная">
+                            <Link href="/" aria-label="Главная">
                                 <Image
                                     src="/logo_aopf.webp"
                                     alt="Логотип"
@@ -84,7 +78,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                     height={40}
                                     className="cursor-pointer"
                                 />
-                             </Link>
+                            </Link>
                             <div
                                 className="hidden lg:flex flex-col text-green-600 font-semibold select-none"
                                 style={{lineHeight: "1", marginTop: "-0.15rem"}}
@@ -94,7 +88,6 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             </div>
                         </div>
 
-                        {}
                         <nav className="hidden lg:flex gap-3 text-base font-semibold text-gray-800">
                             <div
                                 className="relative"
@@ -135,23 +128,19 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             <a href="/blog" className="px-3 py-1 hover:text-green-600 transition">
                                 Блог
                             </a>
-
                         </nav>
 
-                        {}
                         <div className="hidden lg:flex items-center gap-4 ml-auto">
-                            <SearchToggle/>
+                            <SearchToggle />
                             <Button
-                                onClick={() => setIsOpen(true)}
+                                onClick={() => setModalOpen(true)}
                                 className="bg-transparent text-green-600 border-2 border-green-600 hover:bg-green-600 hover:text-white rounded-full px-5 py-2 font-semibold transition"
                             >
                                 Подать заявку
                             </Button>
-
-                            <ModalForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
+                            <ModalForm isOpen={modalOpen} onClose={() => setModalOpen(false)} />
                         </div>
 
-                        {}
                         <div className="flex items-center gap-3 lg:hidden ml-auto">
                             <a
                                 href="mailto:info.aopf@gmail.com"
@@ -176,7 +165,6 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             >
                                 <MessageCircle size={20} className="text-[#25D366]"/>
                             </a>
-
                             <a
                                 href="https://t.me/mikeS60"
                                 target="_blank"
@@ -186,14 +174,13 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             >
                                 <Send size={20} className="text-[#0088cc]"/>
                             </a>
-
                             <button
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                                 className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
                                 aria-label="Toggle mobile menu"
                             >
                                 {mobileMenuOpen ? (
-                                    <AiOutlineClose size={24} className="text-green-600"/>
+                                    <X size={24} className="text-green-600"/>
                                 ) : (
                                     <Menu size={24} className="text-green-600"/>
                                 )}
@@ -202,7 +189,6 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                     </div>
                 </div>
 
-
                 {mobileMenuOpen && (
                     <MobileMenu
                         onClose={() => setMobileMenuOpen(false)}
@@ -210,7 +196,6 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                         setModalOpen={setModalOpen}
                     />
                 )}
-
             </header>
         </div>
     );

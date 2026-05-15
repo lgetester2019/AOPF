@@ -1,33 +1,33 @@
 import React from "react";
-import { Clipboard, Search, FileText, Users, CheckCircle } from 'lucide-react';;
+import { Clipboard, Search, FileText, Users, CheckCircle } from 'lucide-react';
 
 const steps = [
     {
-        icon: <FiClipboard className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
+        icon: <Clipboard className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
         title: "1. Предварительный аудит",
         description:
             "Оцениваем текущие процессы и выявляем ключевые риски по охране труда на вашем предприятии.",
     },
     {
-        icon: <FiSearch className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
+        icon: <Search className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
         title: "2. Анализ и разработка документации",
         description:
             "Создаём комплекс нормативных документов, регламентов и инструкций с учётом специфики производства.",
     },
     {
-        icon: <FiFileText className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
+        icon: <FileText className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
         title: "3. Согласование и утверждение",
         description:
             "Обсуждаем проект с заказчиком, вносим правки и утверждаем окончательный вариант документов.",
     },
     {
-        icon: <FiUsers className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
+        icon: <Users className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
         title: "4. Обучение и инструктаж",
         description:
             "Проводим обучение персонала, организуем инструктажи и повышаем уровень осведомленности сотрудников.",
     },
     {
-        icon: <FiCheckCircle className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
+        icon: <CheckCircle className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" />,
         title: "5. Внедрение и сопровождение",
         description:
             "Помогаем внедрить систему управления охраной труда, обеспечиваем сопровождение и регулярный аудит.",

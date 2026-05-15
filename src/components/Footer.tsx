@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Mail, Phone, MessageCircle } from "lucide-react";
-;;;
-import { Send } from 'lucide-react';;
+;;
+import { Send } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 const Footer: React.FC = () => {

@@ -1,28 +1,28 @@
 import React from "react";
-import { FileText, CheckCircle, UserCheck, Shield } from 'lucide-react';;
+import { FileText, CheckCircle, UserCheck, Shield } from 'lucide-react';
 
 const ServiceBlock: React.FC = () => {
     const items = [
         {
-            icon: <FiFileText className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <FileText className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Юридическая обязательность",
             description:
                 "Проведение СОУТ обязательно согласно статье 214 ТК РФ и регулируется законом №426-ФЗ. Исключение — только для государственных служащих.",
         },
         {
-            icon: <FiUserCheck className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <UserCheck className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Выбор аккредитованной организации",
             description:
                 "Работодатель обязан заключить договор с организацией, внесённой в реестр Минтруда и имеющей аккредитованную лабораторию и аттестованных экспертов.",
         },
         {
-            icon: <FiCheckCircle className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <CheckCircle className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Процедура оценки условий труда",
             description:
                 "Эксперт определяет факторы производственной среды, проводит измерения, оформляет отчёт по методике Минтруда и присваивает классы условий труда.",
         },
         {
-            icon: <FiShield className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
+            icon: <Shield className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />,
             title: "Результаты и гарантии для работников",
             description:
                 "На основании класса условий труда назначаются льготы и компенсации: молоко, отпуск, надбавки, медосмотры, досрочная пенсия. Данные заносятся в реестр Минтруда.",

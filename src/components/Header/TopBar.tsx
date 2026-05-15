@@ -1,7 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Clock, Send, PhoneCall, MessageCircle } from "lucide-react";
-;;
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import React from "react";
 
 const TopBar = () => (
@@ -21,10 +20,7 @@ const TopBar = () => (
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                     <Mail size={16} className="text-gray-900" />
-                    <a
-                        href="mailto:info.aopf@gmail.com"
-                        className="hover:underline"
-                    >
+                    <a href="mailto:info.aopf@gmail.com" className="hover:underline">
                         info.aopf@gmail.com
                     </a>
                 </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { X } from 'lucide-react';;
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SearchToggle from "@/components/SearchToggle";
 import DropdownMenu from "@/components/DropdownMenu";
@@ -22,19 +22,19 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
                 className="self-end p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 mb-4"
                 aria-label="Close menu"
             >
-                <AiOutlineClose size={28} className="text-green-600" />
+                <X size={28} className="text-green-600" />
             </button>
 
             <nav className="flex flex-col gap-6 text-lg font-semibold text-gray-800">
                 <MobileSubMenu title="Услуги">
-                    <DropdownServices/>
+                    <DropdownServices />
                 </MobileSubMenu>
 
                 <a href="/documents" onClick={onClose} className="hover:text-green-600">
                     Документы
                 </a>
                 <MobileSubMenu title="О нас">
-                    <DropdownMenu/>
+                    <DropdownMenu />
                 </MobileSubMenu>
                 <a href="/contacts" onClick={onClose} className="hover:text-green-600">
                     Контакты
@@ -49,13 +49,11 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
                 <Button
                     onClick={() => {
                         setModalOpen(true);
-
                     }}
                     className="w-full mt-6 bg-green-600 text-white rounded-full px-5 py-3 font-semibold shadow-lg"
                 >
                     Подать заявку
                 </Button>
-
 
                 <ModalForm isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
             </div>
