@@ -17,13 +17,13 @@ const certificates = [
     },
     {
         title: "Свидетельство МСИ 2024",
-        src: "/certificates/2024.png",
+        src: "/certificates/2024.webp",
         href: "/certificates/Свидетельство МСИ 2024.pdf",
         isPdf: true,
     },
     {
         title: "Свидетельство об участии в МСИ 4 раунд 2023",
-        src: "/certificates/2023.png",
+        src: "/certificates/2023.webp",
         href: "/certificates/свидетельство об участии в МСИ 4 раунд 2023.pdf",
         isPdf: true,
     },

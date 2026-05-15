@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { X } from 'lucide-react';;
 import { Button } from "@/components/ui/button";
 import SearchToggle from "@/components/SearchToggle";
 import DropdownMenu from "@/components/DropdownMenu";

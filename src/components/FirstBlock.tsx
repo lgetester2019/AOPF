@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-
+import Image from 'next/image';
 const FirstBlock = () => {
     return (
         <section
@@ -33,11 +33,14 @@ const FirstBlock = () => {
 
                 {/* Правая колонка с изображением */}
                 <div className="flex-1 flex justify-center items-center max-w-md lg:max-w-lg lg:ml-12 lg:pr-[50px]">
-                    <img
+                    <Image
                         src="/FB.svg"
                         alt="Лаборатория"
-                        className="w-full h-auto drop-shadow-2xl"
-                        style={{ maxHeight: '360px', maxWidth: '100%' }}
+                        width={462}
+                        height={349}
+                        className="drop-shadow-2xl"
+                        priority
+                        style={{ maxHeight: '360px', maxWidth: '100%', width: 'auto', height: 'auto' }}
                     />
                 </div>
             </div>

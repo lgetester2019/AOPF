@@ -21,7 +21,7 @@ export default function AboutPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/about_header.jpg"
+                            src="/about_header.webp"
                             alt="О компании"
                             fill
                             className="object-cover brightness-90"

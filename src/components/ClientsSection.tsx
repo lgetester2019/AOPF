@@ -3,11 +3,11 @@
 import Image from "next/image";
 
 const clients = [
-    { name: "Газпром Нефть", logo: "/clients/logo-gazprom-neft.png" },
-    { name: "Knauf", logo: "/clients/knauf-logo.png" },
+    { name: "Газпром Нефть", logo: "/clients/logo-gazprom-neft.webp" },
+    { name: "Knauf", logo: "/clients/knauf-logo.webp" },
     { name: "Medicine21", logo: "/clients/medicine21.svg" },
-    { name: "Светофор", logo: "/clients/Svetofor-logo.png" },
-    { name: "Отделстрой", logo: "/clients/content_otdelstroylogo.jpg" },
+    { name: "Светофор", logo: "/clients/Svetofor-logo.webp" },
+    { name: "Отделстрой", logo: "/clients/content_otdelstroylogo.webp" },
 
 ];
 

@@ -43,7 +43,7 @@ export default function SOUTFullPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/sout.jpg"
+                            src="/sout.webp"
                             alt="Специальная оценка условий труда"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}

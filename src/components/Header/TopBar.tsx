@@ -1,7 +1,7 @@
 "use client";
 
-import { Mail, Phone, MapPin, Clock, Send, PhoneCall } from "lucide-react";
-import { BsWhatsapp } from "react-icons/bs";
+import { Mail, Phone, MapPin, Clock, Send, PhoneCall, MessageCircle } from "lucide-react";
+;;
 import React from "react";
 
 const TopBar = () => (
@@ -59,9 +59,9 @@ const TopBar = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
-                    aria-label="WhatsApp"
+                    aria-label="Whatsapp"
                 >
-                    <BsWhatsapp size={20} className="text-[#25D366]" />
+                    <MessageCircle size={20} className="text-[#25D366]" />
                 </a>
             </div>
         </div>

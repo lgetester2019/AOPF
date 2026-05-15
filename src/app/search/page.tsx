@@ -23,7 +23,7 @@ export default async function SearchPage({ searchParams }: Props) {
                 <header className="mb-10 rounded-3xl overflow-hidden relative shadow-xl">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/search_banner.jpg"
+                            src="/search_banner.webp"
                             alt="Поиск"
                             fill
                             className="object-cover brightness-90"

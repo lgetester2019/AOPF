@@ -18,7 +18,7 @@ export default function ContactsPage() {
                 <header className="max-w-[1350px] mx-auto relative rounded-3xl overflow-hidden shadow-lg">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/contact_image.jpg"
+                            src="/contact_image.webp"
                             alt="Как с нами связаться"
                             fill
                             className="object-cover brightness-90"

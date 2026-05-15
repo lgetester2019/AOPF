@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ArticleDate from './ArticleDate';
-
+import Image from 'next/image';
 interface PostCardProps {
   post: {
     id: string;
@@ -19,13 +19,14 @@ export default function PostCard({ post }: PostCardProps) {
     <Link href={`/blog/${post.slug}`} className="block group h-full">
       <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
         {post.image_url && (
-          <div className="h-48 overflow-hidden">
-            <img 
-              src={post.image_url} 
+          <div className="relative h-48 overflow-hidden">
+            <Image
+              src={post.image_url}
               alt={post.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
-          </div>
+           </div>
         )}
         <div className="p-6 flex-1 flex flex-col">
           <h3 className="text-xl font-semibold mb-2 group-hover:text-indigo-600 line-clamp-2">

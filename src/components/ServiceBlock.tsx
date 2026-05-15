@@ -1,5 +1,5 @@
 import React from "react";
-import { FiFileText, FiCheckCircle, FiUserCheck, FiShield } from "react-icons/fi";
+import { FileText, CheckCircle, UserCheck, Shield } from 'lucide-react';;
 
 const ServiceBlock: React.FC = () => {
     const items = [

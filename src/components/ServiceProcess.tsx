@@ -1,5 +1,5 @@
 import React from "react";
-import { FiClipboard, FiSearch, FiFileText, FiUsers, FiCheckCircle } from "react-icons/fi";
+import { Clipboard, Search, FileText, Users, CheckCircle } from 'lucide-react';;
 
 const steps = [
     {

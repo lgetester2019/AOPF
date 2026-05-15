@@ -40,7 +40,7 @@ export default function WaterAnalysisPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/water.jpg"
+                            src="/water.webp"
                             alt="Исследование воды"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}

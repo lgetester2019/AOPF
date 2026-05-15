@@ -18,7 +18,7 @@ export default function FaqPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/ask.jpg"
+                            src="/ask.webp"
                             alt="Вопросы и ответы"
                             fill
                             className="object-cover brightness-90"

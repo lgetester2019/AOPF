@@ -10,14 +10,16 @@ import {
     Send,
     PhoneCall,
     Menu,
+    MessageCircle
 } from "lucide-react";
-import { BsWhatsapp } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
+
+import { X } from 'lucide-react';;
 import { Button } from "@/components/ui/button";
 import DropdownMenu from "@/components/DropdownMenu";
 import SearchToggle from "@/components/SearchToggle";
 import DropdownServices from "@/components/DropdownServices";
-
+import Link from 'next/link';
+import Image from 'next/image';
 import MobileMenu from "./MobileMenu";
 import TopBar from "@/components/Header/TopBar";
 import ModalForm from "@/components/ModalForm";
@@ -74,13 +76,15 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                 <div className="bg-white rounded-b-4xl shadow-sm">
                     <div className="max-w-[1350px] mx-auto flex items-center justify-between px-6 py-4 gap-6">
                         <div className="flex items-center gap-4">
-                            <a href="/" aria-label="Главная">
-                                <img
-                                    src="/logo_aopf.png"
+                             <Link href="/" aria-label="Главная">
+                                <Image
+                                    src="/logo_aopf.webp"
                                     alt="Логотип"
-                                    className="h-10 w-auto cursor-pointer"
+                                    width={79}
+                                    height={40}
+                                    className="cursor-pointer"
                                 />
-                            </a>
+                             </Link>
                             <div
                                 className="hidden lg:flex flex-col text-green-600 font-semibold select-none"
                                 style={{lineHeight: "1", marginTop: "-0.15rem"}}
@@ -168,9 +172,9 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="rounded-full hover:bg-gray-100"
-                                aria-label="WhatsApp"
+                                aria-label="Whatsapp"
                             >
-                                <BsWhatsapp size={20} className="text-[#25D366]"/>
+                                <MessageCircle size={20} className="text-[#25D366]"/>
                             </a>
 
                             <a

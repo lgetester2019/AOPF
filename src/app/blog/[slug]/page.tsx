@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 import { notFound } from 'next/navigation';
 import ArticleDate from '@/components/ArticleDate';
 import Link from 'next/link';
-
+import Image from 'next/image';
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -75,9 +75,14 @@ export default async function BlogPostPage({ params }: PageProps) {
       </div>
 
       {post.image_url && (
-        <div className="mb-8 rounded-lg overflow-hidden">
-          <img src={post.image_url} alt={post.title} className="w-full max-h-[500px] object-cover" />
-        </div>
+         <div className="relative mb-8 rounded-lg overflow-hidden w-full h-[500px]">
+            <Image
+              src={post.image_url}
+              alt={post.title}
+              fill
+              className="object-cover"
+            />
+          </div>
       )}
 
       {post.description && (

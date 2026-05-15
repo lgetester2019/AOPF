@@ -18,21 +18,21 @@ const reviews: Review[] = [
         name: "А.А. Лобан",
         company: 'ООО «КНАУФ ГИПС», Северо-Западная сбытовая дирекция',
         works: "производственный контроль, СОУТ, анализы воды",
-        scanSrc: "/reviews/knauf.jpg",
+        scanSrc: "/reviews/knauf.webp",
     },
     {
         id: 2,
         name: "В.Л. Кириллов",
         company: 'ЗАО «Племенной завод «Рабитицы»',
         works: "специальная оценка условий труда",
-        scanSrc: "/reviews/rabitici.jpg",
+        scanSrc: "/reviews/rabitici.webp",
     },
     {
         id: 3,
         name: "ЛЮ.В. Потапов",
         company: 'ООО «Торгсервис 6б»',
         works: "СОУТ, профриски, тех.карты",
-        scanSrc: "/reviews/torgservice.jpg",
+        scanSrc: "/reviews/torgservice.webp",
     },
 ];
 

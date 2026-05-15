@@ -40,7 +40,7 @@ export default function RiskAssessmentPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/risks.jpg"
+                            src="/risks.webp"
                             alt="Оценка профессиональных рисков"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, Send, PhoneCall, MapPin, Clock } from 'lucide-react';
-import { BsWhatsapp } from 'react-icons/bs';
+import { Mail, Phone, Send, PhoneCall, MapPin, Clock, MessageCircle } from 'lucide-react';
+
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -106,9 +106,9 @@ const ContactForm: React.FC = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                                aria-label="WhatsApp"
+                                aria-label="Whatsapp"
                             >
-                                <BsWhatsapp size={20} className="text-[#25D366]" />
+                                <MessageCircle size={20} className="text-[#25D366]" />
                             </a>
                         </div>
                     </div>

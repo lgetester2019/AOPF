@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { Mail, Phone } from "lucide-react";
-import { BsWhatsapp } from "react-icons/bs";
-import { FaTelegramPlane } from "react-icons/fa";
+import { Mail, Phone, MessageCircle } from "lucide-react";
+;;;
+import { Send } from 'lucide-react';;
 import Link from 'next/link';
-
+import Image from 'next/image';
 const Footer: React.FC = () => {
     return (
         <footer className="max-w-[1350px]  mx-auto bg-white text-black rounded-t-[45px] pt-10 border border-t border-gray-300 border-b-0">
@@ -13,11 +13,13 @@ const Footer: React.FC = () => {
 
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center text-center lg:text-left mb-10 gap-6">
                     <Link href="/" className="block">
-                        <img
-                            src="/logo_aopf.png"
+                         <Image
+                            src="/logo_aopf.webp"
                             alt="Логотип"
-                            className="h-10 w-auto cursor-pointer mx-auto lg:mx-0"
-                        />
+                            width={79}
+                            height={40}
+                            className="cursor-pointer mx-auto lg:mx-0"
+                         />
                     </Link>
                     <nav className="flex flex-col items-center gap-3 lg:flex-row lg:gap-8 text-sm lg:text-base">
                         <a href="/services" className="hover:underline">Услуги</a>
@@ -37,16 +39,16 @@ const Footer: React.FC = () => {
                             aria-label="Telegram"
                             className="hover:text-gray-600"
                         >
-                            <FaTelegramPlane />
+                            <Send />
                         </a>
                         <a
                             href="https://wa.me/79119236867"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="WhatsApp"
+                            aria-label="Whatsapp"
                             className="hover:text-gray-600"
                         >
-                            <BsWhatsapp />
+                            <MessageCircle />
                         </a>
                     </div>
                 </div>

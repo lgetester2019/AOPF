@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import Link from 'next/link';
 import ArticleDate from '@/components/ArticleDate';
+import Image from 'next/image';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -28,11 +29,13 @@ export default async function BlogPage() {
           >
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               {post.image_url && (
-                <img 
-                  src={post.image_url} 
-                  alt={post.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                />
+                <div className="relative w-full h-48 overflow-hidden">
+                  <Image
+                    src={post.image_url}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform"
+                  />
               )}
               <div className="p-6">
                 <h2 className="text-xl font-semibold mb-2 group-hover:text-indigo-600">

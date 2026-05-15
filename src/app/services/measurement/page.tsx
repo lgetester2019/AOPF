@@ -35,7 +35,7 @@ export default function MeasurementsPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/measurements.jpg"
+                            src="/measurements.webp"
                             alt="Измерения физических факторов"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}

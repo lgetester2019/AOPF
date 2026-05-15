@@ -34,7 +34,7 @@ export default function SUOTFullPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/suot.jpg"
+                            src="/suot.webp"
                             alt="Система управления охраной труда"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
