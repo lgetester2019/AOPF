@@ -54,7 +54,7 @@ export default function Reviews() {
         <section className="pb-10 mb-10 md:py-12 rounded-3xl bg-white max-w-[1350px] mx-auto px-4 sm:px-6 md:px-8">
             <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8 text-gray-900 relative inline-block">
                 Отзывы клиентов
-                <span className="block h-1 w-full bg-green-600 rounded-full mx-auto mt-3"></span>
+                <span className="block h-1 w-full bg-green-700 rounded-full mx-auto mt-3"></span>
             </h2>
 
             <div className="flex overflow-x-auto scroll-smooth hide-scrollbar gap-4 sm:grid sm:grid-cols-2 sm:gap-6 md:grid-cols-3">

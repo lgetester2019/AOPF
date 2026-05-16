@@ -1,11 +1,12 @@
 "use client";
 
 import { MapPin, Phone, Mail } from "lucide-react";
+import YandexMapLazy from '@/components/YandexMapLazy';
 
 export default function ContactMap() {
     return (
         <div className=" max-w-[1350px]  mx-auto">
-        <section className="bg-green-600/60 py-12 my-16 px-4 sm:px-6 md:px-10 rounded-3xl">
+        <section className="bg-green-700/60 py-12 my-16 px-4 sm:px-6 md:px-10 rounded-3xl">
             <div className="max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start text-white">
                 {}
                 <div>
@@ -28,10 +29,10 @@ export default function ContactMap() {
                             <Phone className="mt-1 text-white flex-shrink-0" size={24} />
                             <span>
                                 <strong>Тел.:</strong><br />
-                                <a href="tel:+78129236867" className="underline hover:text-green-300">
+                                <a href="tel:+78129236867" className="underline hover:text-green-700">
                                     (812) 923-68-67
                                 </a><br />
-                                <a href="tel:+78124413778" className="underline hover:text-green-300">
+                                <a href="tel:+78124413778" className="underline hover:text-green-700">
                                     (812) 441-37-78
                                 </a>
                             </span>
@@ -41,7 +42,7 @@ export default function ContactMap() {
                             <Mail className="mt-1 text-white flex-shrink-0" size={24} />
                             <span>
                                 <strong>E-mail:</strong><br />
-                                <a href="mailto:info.aopf@gmail.com" className="underline hover:text-green-300">
+                                <a href="mailto:info.aopf@gmail.com" className="underline hover:text-green-700">
                                     info.aopf@gmail.com
                                 </a>
                             </span>
@@ -51,15 +52,11 @@ export default function ContactMap() {
 
                 {}
                 <div className="w-full h-[250px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-md">
-                    <iframe
-                        src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=30.338093%2C59.976427&mode=whatshere&tab=inside&whatshere%5Bpoint%5D=30.338092%2C59.976427&whatshere%5Bzoom%5D=17&z=17"
-                        width="100%"
-                        height="100%"
-                        frameBorder="1"
-                        allowFullScreen
-                        style={{position: 'relative', border: 'none'}}
-                        title="Карта - адрес компании"
-                    ></iframe>
+                    <YandexMapLazy
+                      src="https://yandex.ru/map-widget/v1/?ll=30.342882%2C59.973558&mode=routes&rtext=59.971199%2C30.347189~59.976427%2C30.338092&rtt=auto"
+                      height="400px"
+                      width="100%"
+                    />
                 </div>
             </div>
         </section>

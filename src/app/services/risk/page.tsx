@@ -40,7 +40,7 @@ export default function RiskAssessmentPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/risks.webp"
+                            src="/risks-opt.webp"
                             alt="Оценка профессиональных рисков"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
@@ -57,7 +57,7 @@ export default function RiskAssessmentPage() {
                             Безопасность, здоровье и соответствие закону — наш приоритет
                         </p>
                         <a href="/contacts"
-                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
+                            className="bg-green-700 mt-4 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Получить консультацию
                         </a>
                     </div>
@@ -66,9 +66,9 @@ export default function RiskAssessmentPage() {
                 {}
                 <section className="space-y-10 leading-relaxed  text-gray-700">
                     <Accordion type="single" collapsible className="space-y-6 ">
-                        <AccordionItem value="definition w-full cursor-pointer  hover:bg-green-600/10">
-                            <AccordionTrigger className="hover:no-underline hover:text-green-600/80  ">
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 hover:text-green-600/80 pl-4 text-green-600">
+                        <AccordionItem value="definition w-full cursor-pointer  hover:bg-green-700/10">
+                            <AccordionTrigger className="hover:no-underline hover:text-green-700/80  ">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 hover:text-green-700/80 pl-4 text-green-700">
                                     Что такое профессиональный риск?
                                 </h2>
                             </AccordionTrigger>
@@ -85,7 +85,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="goal">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Цель и обязательность оценки профессиональных рисков
                                 </h2>
                             </AccordionTrigger>
@@ -97,7 +97,7 @@ export default function RiskAssessmentPage() {
                                     создать и поддерживать систему управления охраной труда, частью которой
                                     является управление профессиональными рисками.
                                 </p>
-                                <p className="mt-4 bg-green-600/20 p-4 rounded border-l-4 border-green-600/50">
+                                <p className="mt-4 bg-green-700/20 p-4 rounded border-l-4 border-green-700/50">
                                     Отсутствие оценки профессиональных рисков — нарушение законодательства
                                     и повод для штрафа до 80 000 ₽ (ч.1 ст. 5.27.1 КоАП РФ).
                                 </p>
@@ -106,7 +106,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="system">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Система управления профессиональными рисками
                                 </h2>
                             </AccordionTrigger>
@@ -143,7 +143,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="identification">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Идентификация опасностей и оценка профессиональных рисков
                                 </h2>
                             </AccordionTrigger>
@@ -171,7 +171,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="documentation">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Документирование и контроль системы управления рисками
                                 </h2>
                             </AccordionTrigger>
@@ -192,7 +192,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="frequency">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Периодичность проведения оценки профессиональных рисков
                                 </h2>
                             </AccordionTrigger>
@@ -211,7 +211,7 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="procedure">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Порядок оценки профессионального риска
                                 </h2>
                             </AccordionTrigger>
@@ -233,12 +233,12 @@ export default function RiskAssessmentPage() {
 
                         <AccordionItem value="conclusion">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold  border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold  border-l-4 border-green-700 pl-4 text-green-700">
                                     Заключение
                                 </h2>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <p className="bg-green-100/40 p-6 rounded-xl border border-green-300 text-base">
+                                <p className="bg-green-700/40 p-6 rounded-xl border border-green-700 text-base">
                                     Наша организация обладает большим опытом в проведении аттестации
                                     рабочих мест и оценке профессиональных рисков, а также поможет
                                     разработать мероприятия по снижению рисков и подготовить

@@ -29,14 +29,14 @@ const MobileSearchInput = ({ onClose }: MobileSearchInputProps) => {
             <input
                 type="text"
                 placeholder="Найти..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-green-700"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
             />
             <button
                 onClick={handleSearch}
-                className="p-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors"
+                className="p-2 bg-green-700 text-white rounded-full hover:bg-green-600 transition-colors"
                 aria-label="Search"
             >
                 <Search size={20} />

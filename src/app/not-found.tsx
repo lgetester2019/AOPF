@@ -6,7 +6,7 @@ export default function NotFoundPage() {
         <>
             <Header />
             <div className="max-w-[1350px] mx-auto mb-16 mt-44 px-4 md:px-6">
-                <div className="rounded-3xl overflow-hidden  bg-green-50 py-24 px-8 md:py-32 md:px-16 text-center">
+                <div className="rounded-3xl overflow-hidden  bg-green-700 py-24 px-8 md:py-32 md:px-16 text-center">
                     <h1 className="text-5xl md:text-6xl font-extrabold text-green-700 mb-6 ">
                         404 — Страница не найдена
                     </h1>
@@ -15,7 +15,7 @@ export default function NotFoundPage() {
                     </p>
                     <a
                         href="/"
-                        className="inline-block px-8 py-4 bg-green-600 text-white text-lg font-medium rounded-full hover:bg-green-700 transition duration-200 shadow-md"
+                        className="inline-block px-8 py-4 bg-green-700 text-white text-lg font-medium rounded-full hover:bg-green-600 transition duration-200 shadow-md"
                     >
                         Вернуться на главную
                     </a>

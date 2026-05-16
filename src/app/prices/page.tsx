@@ -81,7 +81,7 @@ export default function PricesPage() {
                     {}
                     <AccordionItem value="souut">
                         <AccordionTrigger>
-                            <h2 className="text-2xl font-semibold border-l-4 border-green-600 pl-4 text-green-600 cursor-pointer select-none">
+                            <h2 className="text-2xl font-semibold border-l-4 border-green-700 pl-4 text-green-700 cursor-pointer select-none">
                                 Специальная оценка условий труда (СОУТ){minSouutPrice && ` от ${minSouutPrice} ₽`}
                             </h2>
                         </AccordionTrigger>
@@ -117,7 +117,7 @@ export default function PricesPage() {
                     {}
                     <AccordionItem value="chemistry">
                         <AccordionTrigger>
-                            <h2 className="text-2xl font-semibold border-l-4 border-green-600 pl-4 text-green-600 cursor-pointer select-none">
+                            <h2 className="text-2xl font-semibold border-l-4 border-green-700 pl-4 text-green-700 cursor-pointer select-none">
                                 Химия{minChemistryPrice && ` от ${minChemistryPrice} ₽`}
                             </h2>
                         </AccordionTrigger>

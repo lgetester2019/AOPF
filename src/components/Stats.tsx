@@ -18,7 +18,7 @@ const stats: StatItem[] = [
 export const Stats = () => {
     return (
         <div className="mx-auto max-w-[1350px] mt-2 pb-12 pt-6">
-            <div className="grid grid-cols-2 bg-green-600/60 md:grid-cols-4 rounded-3xl overflow-hidden border-4 border-green-600">
+            <div className="grid grid-cols-2 bg-green-700/60 md:grid-cols-4 rounded-3xl overflow-hidden border-4 border-green-700">
                 {stats.map((stat, idx) => {
                     let num: number;
                     let plus = false;
@@ -36,7 +36,7 @@ export const Stats = () => {
                         <div
                             key={idx}
                             className={`text-center py-8 px-4 ${
-                                idx !== stats.length - 1 ? 'md:border-r-4 border-green-600' : ''
+                                idx !== stats.length - 1 ? 'md:border-r-4 border-green-700' : ''
                             }`}
                         >
                             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-white flex justify-center items-center gap-1">

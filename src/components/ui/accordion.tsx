@@ -40,7 +40,7 @@ function AccordionTrigger({
                 )}
                 {...props}
             >
-        <span className="text-green-600 group-hover:text-green-800 transition-colors duration-300">
+        <span className="text-green-700 group-hover:text-green-800 transition-colors duration-300">
           {children}
         </span>
                 <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />

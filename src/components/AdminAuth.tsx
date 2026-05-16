@@ -76,7 +76,7 @@ export default function AdminAuth({ children }: AdminAuthProps) {
                     />
                     <button
                         type="submit"
-                        className="w-full bg-green-600 text-white py-3 rounded-2xl hover:bg-green-700 transition"
+                        className="w-full bg-green-700 text-white py-3 rounded-2xl hover:bg-green-600 transition"
                     >
                         Войти
                     </button>

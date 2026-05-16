@@ -62,7 +62,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
                             {articles.length > 0 && (
                                 <div className="mb-12">
-                                    <h3 className="text-xl font-semibold mb-4 text-green-600">
+                                    <h3 className="text-xl font-semibold mb-4 text-green-700">
                                         Статьи
                                     </h3>
                                     <div className="grid gap-4 md:grid-cols-2">
@@ -70,9 +70,9 @@ export default async function SearchPage({ searchParams }: Props) {
                                             <a
                                                 key={article.id}
                                                 href={`/blog/${article.slug}`}
-                                                className="block p-5 rounded-2xl border border-gray-200 hover:shadow-md hover:border-green-300 transition duration-200 group"
+                                                className="block p-5 rounded-2xl border border-gray-200 hover:shadow-md hover:border-green-700 transition duration-200 group"
                                             >
-                                                <h4 className="text-lg font-medium text-green-600 group-hover:underline">
+                                                <h4 className="text-lg font-medium text-green-700 group-hover:underline">
                                                     {article.title}
                                                 </h4>
                                                 <p className="text-sm text-gray-500 mt-1">
@@ -86,7 +86,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
                             {staticMatches.length > 0 && (
                                 <div>
-                                    <h3 className="text-xl font-semibold mb-4 text-green-600">
+                                    <h3 className="text-xl font-semibold mb-4 text-green-700">
                                         Страницы сайта
                                     </h3>
                                     <div className="grid gap-4 md:grid-cols-2">
@@ -94,9 +94,9 @@ export default async function SearchPage({ searchParams }: Props) {
                                             <a
                                                 key={page.href}
                                                 href={page.href}
-                                                className="block p-5 rounded-2xl border border-gray-200 hover:shadow-md hover:border-green-300 transition duration-200 group"
+                                                className="block p-5 rounded-2xl border border-gray-200 hover:shadow-md hover:border-green-700 transition duration-200 group"
                                             >
-                                                <h4 className="text-lg font-medium text-green-600 group-hover:underline">
+                                                <h4 className="text-lg font-medium text-green-700 group-hover:underline">
                                                     {page.label}
                                                 </h4>
                                                 <p className="text-sm text-gray-500 mt-1">Перейти →</p>

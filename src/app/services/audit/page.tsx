@@ -34,7 +34,7 @@ export default function SUOTFullPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/suot.webp"
+                            src="/suot-opt.webp"
                             alt="Система управления охраной труда"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
@@ -52,14 +52,14 @@ export default function SUOTFullPage() {
                             функционирование системы управления охраной труда
                         </p>
                         <a href="/contacts"
-                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
+                            className="bg-green-700 mt-4 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Заказать консультацию
                         </a>
                     </div>
                 </header>
 
                 <section className="space-y-8 leading-relaxed text-gray-700">
-                    <h2 className="text-2xl font-bold text-green-600 border-l-4 border-green-600 pl-4 mb-4">
+                    <h2 className="text-2xl font-bold text-green-700 border-l-4 border-green-700 pl-4 mb-4">
                         Перечень документов системы управления охраной труда
                     </h2>
 

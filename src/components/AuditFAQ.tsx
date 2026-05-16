@@ -5,12 +5,12 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 export default function AuditFAQ() {
     return (
         <section className="py-12 space-y-10 leading-relaxed text-gray-700">
-            <h2 className="text-3xl font-bold text-center text-green-600">Вопросы и ответы по СОУТ</h2>
+            <h2 className="text-3xl font-bold text-center text-green-700">Вопросы и ответы по СОУТ</h2>
             <Accordion type="single" collapsible className="space-y-6 max-w-[1350px] mx-auto">
 
                 <AccordionItem value="faq1">
                     <AccordionTrigger>
-                        <h3 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                        <h3 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                             Срок действия декларации по СОУТ
                         </h3>
                     </AccordionTrigger>
@@ -23,7 +23,7 @@ export default function AuditFAQ() {
 
                 <AccordionItem value="faq2">
                     <AccordionTrigger>
-                        <h3 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                        <h3 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                             Шаги организаций после проведения СОУТ
                         </h3>
                     </AccordionTrigger>
@@ -36,7 +36,7 @@ export default function AuditFAQ() {
 
                 <AccordionItem value="faq3">
                     <AccordionTrigger>
-                        <h3 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                        <h3 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                             СОУТ и вредность рабочих мест аварийной бригады
                         </h3>
                     </AccordionTrigger>
@@ -49,7 +49,7 @@ export default function AuditFAQ() {
 
                 <AccordionItem value="faq4">
                     <AccordionTrigger>
-                        <h3 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                        <h3 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                             Зарегистрирована ли декларация СОУТ?
                         </h3>
                     </AccordionTrigger>
@@ -62,7 +62,7 @@ export default function AuditFAQ() {
 
                 <AccordionItem value="faq5">
                     <AccordionTrigger>
-                        <h3 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                        <h3 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                             Нужна ли спецоценка условий труда для офисных работников?
                         </h3>
                     </AccordionTrigger>
@@ -75,7 +75,7 @@ export default function AuditFAQ() {
 
                 <AccordionItem value="faq6">
                     <AccordionTrigger>
-                        <h3 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                        <h3 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                             Какие документы нужны для СОУТ?
                         </h3>
                     </AccordionTrigger>

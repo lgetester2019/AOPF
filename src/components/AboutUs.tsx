@@ -20,7 +20,7 @@ export default function AboutUs() {
     ];
 
     return (
-        <section className="py-10 mb-24 mt-6 px-4 md:px-10 bg-green-600/60 rounded-3xl max-w-[1350px] mx-auto text-white">
+        <section className="py-10 mb-24 mt-6 px-4 md:px-10 bg-green-700/60 rounded-3xl max-w-[1350px] mx-auto text-white">
             <div className="flex flex-col md:flex-row gap-12  mx-auto">
                 {}
                 <div className="md:w-1/2 space-y-2">

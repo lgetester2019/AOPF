@@ -10,7 +10,7 @@ export default function ServicesPreview() {
 
     return (
         <section className="py-16 sm:py-20">
-            <div className="max-w-[1350px] bg-green-600/60 rounded-3xl py-6 lg:py-14 px-4 sm:px-6 md:px-12 mx-auto">
+            <div className="max-w-[1350px] bg-green-700 rounded-3xl py-6 lg:py-14 px-4 sm:px-6 md:px-12 mx-auto">
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 
                     {}

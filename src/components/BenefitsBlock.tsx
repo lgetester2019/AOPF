@@ -14,7 +14,7 @@ export default function BenefitsBlock() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
-                            <ShieldCheck className="w-8 h-8 text-green-400 flex-shrink-0" />
+                            <ShieldCheck className="w-8 h-8 text-green-700 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-lg">Профессионализм</h3>
                                 <p className="text-sm text-white/90 mt-1">
@@ -25,7 +25,7 @@ export default function BenefitsBlock() {
 
                         {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
-                            <Settings2 className="w-8 h-8 text-green-400 flex-shrink-0" />
+                            <Settings2 className="w-8 h-8 text-green-700 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-lg">Современное оснащение</h3>
                                 <p className="text-sm text-white/90 mt-1">
@@ -36,7 +36,7 @@ export default function BenefitsBlock() {
 
                         {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
-                            <FileCheck2 className="w-8 h-8 text-green-400 flex-shrink-0" />
+                            <FileCheck2 className="w-8 h-8 text-green-700 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-lg">Соблюдение норм</h3>
                                 <p className="text-sm text-white/90 mt-1">
@@ -47,7 +47,7 @@ export default function BenefitsBlock() {
 
                         {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
-                            <Users className="w-8 h-8 text-green-400 flex-shrink-0" />
+                            <Users className="w-8 h-8 text-green-700 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-lg">Ориентация на клиента</h3>
                                 <p className="text-sm text-white/90 mt-1">
@@ -58,7 +58,7 @@ export default function BenefitsBlock() {
 
                         {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
-                            <Star className="w-8 h-8 text-green-400 flex-shrink-0" />
+                            <Star className="w-8 h-8 text-green-700 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-lg">Прозрачность и репутация</h3>
                                 <p className="text-sm text-white/90 mt-1">
@@ -69,7 +69,7 @@ export default function BenefitsBlock() {
 
                         {}
                         <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl">
-                            <CheckCircle className="w-8 h-8 text-green-400 flex-shrink-0" />
+                            <CheckCircle className="w-8 h-8 text-green-700 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-lg">Комплексный подход</h3>
                                 <p className="text-sm text-white/90 mt-1">

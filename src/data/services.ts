@@ -3,14 +3,14 @@ export const services = [
         title: "Специальная оценка условий труда",
         description:
             "Профессиональная СОУТ в соответствии с законодательством, с оформлением всей документации.",
-        image: "/sout.webp",
+        image: "/sout-opt.webp",
         href: "/services/sout",
     },
     {
         title: "Оценка профессиональных рисков",
         description:
             "Комплексная оценка рисков для обеспечения безопасности и предотвращения несчастных случаев.",
-        image: "/risks.webp",
+        image: "/risks-opt.webp",
         href: "/services/risk",
     },
     {
@@ -24,7 +24,7 @@ export const services = [
         title: "Измерение физических и химических факторов",
         description:
             "Профессиональные измерения шума, освещенности, вибрации и других факторов на рабочем месте.",
-        image: "/measurements.webp",
+        image: "/measurements-opt.webp",
         href: "/services/measurement",
     },
     {

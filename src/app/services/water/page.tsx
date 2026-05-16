@@ -57,7 +57,7 @@ export default function WaterAnalysisPage() {
                             Качество и безопасность вашей воды — наша забота
                         </p>
                         <a href="/contacts"
-                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
+                            className="bg-green-700 mt-4 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Получить консультацию
                         </a>
                     </div>
@@ -68,7 +68,7 @@ export default function WaterAnalysisPage() {
 
                         <AccordionItem value="why-analysis-needed">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Зачем нужен анализ воды?
                                 </h2>
                             </AccordionTrigger>
@@ -90,7 +90,7 @@ export default function WaterAnalysisPage() {
 
                         <AccordionItem value="types-of-analysis">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Какие виды анализа воды существуют?
                                 </h2>
                             </AccordionTrigger>
@@ -117,7 +117,7 @@ export default function WaterAnalysisPage() {
 
                         <AccordionItem value="water-types">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Какие типы воды анализируются?
                                 </h2>
                             </AccordionTrigger>
@@ -138,7 +138,7 @@ export default function WaterAnalysisPage() {
 
                         <AccordionItem value="sampling-rules">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Как правильно отбирать пробы воды?
                                 </h2>
                             </AccordionTrigger>
@@ -169,7 +169,7 @@ export default function WaterAnalysisPage() {
 
                         <AccordionItem value="analysis-steps">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                     Этапы анализа воды
                                 </h2>
                             </AccordionTrigger>
@@ -186,12 +186,12 @@ export default function WaterAnalysisPage() {
 
                         <AccordionItem value="about-company">
                             <AccordionTrigger>
-                                <h2 className="text-2xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-2xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     О нас
                                 </h2>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <p className="bg-green-100/40 p-6 rounded-xl border border-green-300 text-base">
+                                <p className="bg-green-700/40 p-6 rounded-xl border border-green-700 text-base">
                                     ООО «АОПФ» — аккредитованная лаборатория с 2011 года. Мы проводим анализ питьевой,
                                     природной и сточной воды по широкому спектру параметров. В составе нашей команды —
                                     опытные специалисты с профильным образованием. Мы используем современное

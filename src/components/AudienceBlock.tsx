@@ -24,7 +24,7 @@ export default function AudienceBlock() {
     ];
 
     return (
-        <section className="py-10 px-4 md:px-10 my-10 mb-24 bg-green-600/60 rounded-3xl max-w-[1350px] mx-auto text-white">
+        <section className="py-10 px-4 md:px-10 my-10 mb-24 bg-green-700/60 rounded-3xl max-w-[1350px] mx-auto text-white">
             <div className="flex flex-col md:flex-row gap-12">
                 {}
                 <div className="md:w-[50%] space-y-4">

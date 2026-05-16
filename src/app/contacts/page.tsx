@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import YandexMapLazy from '@/components/YandexMapLazy';
 export const metadata = {
     title: "Контакты | Агентство оценки производственных факторов — Санкт-Петербург",
     description:
@@ -36,7 +37,7 @@ export default function ContactsPage() {
                         </p>
                         <a
                             href="tel:+78129236867"
-                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
+                            className="bg-green-700 mt-4 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
                         >
                             Позвонить: (812) 923-68-67
                         </a>
@@ -92,14 +93,11 @@ export default function ContactsPage() {
 
                     {}
                     <div className="w-full h-[250px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-md">
-                        <iframe
-                            src="https://yandex.ru/map-widget/v1/?ll=30.342882%2C59.973558&mode=routes&rtext=59.971199%2C30.347189~59.976427%2C30.338092&rtt=auto"
-                            width="100%"
-                            height="100%"
-                            frameBorder="0"
-                            allowFullScreen
-                            title="Карта - адрес компании"
-                        ></iframe>
+                        <YandexMapLazy
+                          src="https://yandex.ru/map-widget/v1/?ll=30.342882%2C59.973558&mode=routes&rtext=59.971199%2C30.347189~59.976427%2C30.338092&rtt=auto"
+                          height="400px"
+                          width="100%"
+                        />
                     </div>
                 </div>
             </section>
@@ -107,7 +105,7 @@ export default function ContactsPage() {
             {}
             <section className="px-2 mb-20">
                 <div
-                    className=" bg-green-600/60  text-white py-12 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                    className=" bg-green-700/60  text-white py-12 px-4 sm:px-6 md:px-10 rounded-3xl max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
                     {}
                     <div className="space-y-8">
@@ -119,14 +117,14 @@ export default function ContactsPage() {
                             <div className="flex items-center gap-3">
                                 <Phone size={20}/>
                                 <span>
-                                    <a href="tel:+78124413778" className="underline hover:text-green-300">(812) 441-37-78</a>,{' '}
-                                    <a href="tel:+79626847783" className="underline hover:text-green-300">+7 962 684-77-83</a>
+                                    <a href="tel:+78124413778" className="underline hover:text-green-700">(812) 441-37-78</a>,{' '}
+                                    <a href="tel:+79626847783" className="underline hover:text-green-700">+7 962 684-77-83</a>
                                 </span>
                             </div>
 
                             <div className="flex items-center gap-3">
                                 <Mail size={20}/>
-                                <a href="mailto:kurilova.aopf@gmail.com" className="underline hover:text-green-300">
+                                <a href="mailto:kurilova.aopf@gmail.com" className="underline hover:text-green-700">
                                     kurilova.aopf@gmail.com
                                 </a>
                             </div>
@@ -142,9 +140,9 @@ export default function ContactsPage() {
                             <span>
                                 <strong>Тел.:</strong><br/>
                                 <a href="tel:+78129236867"
-                                   className="underline hover:text-green-300">923-68-67</a><br/>
+                                   className="underline hover:text-green-700">923-68-67</a><br/>
                                 <a href="tel:+78124413778"
-                                   className="underline hover:text-green-300">(812) 441-37-78</a>
+                                   className="underline hover:text-green-700">(812) 441-37-78</a>
                             </span>
                         </p>
 
@@ -152,7 +150,7 @@ export default function ContactsPage() {
                             <Mail className="mt-1 flex-shrink-0" size={24}/>
                             <span>
                                 <strong>E-mail:</strong><br/>
-                                <a href="mailto:info.aopf@gmail.com" className="underline hover:text-green-300">
+                                <a href="mailto:info.aopf@gmail.com" className="underline hover:text-green-700">
                                     info.aopf@gmail.com
                                 </a>
                             </span>

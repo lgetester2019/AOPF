@@ -166,7 +166,7 @@ export default function AdminPage() {
                     <h1 className="text-3xl font-bold text-gray-900">Управление статьями</h1>
                     <div className="flex flex-wrap gap-3">
                         <Link href="/admin/edit/new">
-                            <Button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-5">
+                            <Button className="bg-green-700 hover:bg-green-600 text-white rounded-full px-5">
                                 + Новая статья
                             </Button>
                         </Link>
@@ -231,7 +231,7 @@ export default function AdminPage() {
                                                 </h2>
                                                 <span className={`px-2 py-1 text-xs rounded-full ${
                                                     post.status === 'published' 
-                                                        ? 'bg-green-100 text-green-800' 
+                                                        ? 'bg-green-700 text-green-800' 
                                                         : 'bg-yellow-100 text-yellow-800'
                                                 }`}>
                                                     {post.status === 'published' ? 'Опубликовано' : 'Черновик'}

@@ -57,9 +57,9 @@ export default function Benefits() {
                 {benefits.map(({ icon: Icon, title, description }, idx) => (
                     <div
                         key={idx}
-                        className="flex flex-col items-center p-8 rounded-xl border-4 border-gray-900 hover:shadow-lg hover:shadow-green-300 transition-shadow duration-300 cursor-pointer"
+                        className="flex flex-col items-center p-8 rounded-xl border-4 border-gray-900 hover:shadow-lg hover:shadow-green-700 transition-shadow duration-300 cursor-pointer"
                     >
-                        <div className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 text-white mb-5">
+                        <div className="flex items-center justify-center w-14 h-14 rounded-full bg-green-700 text-white mb-5">
                             <Icon className="w-8 h-8" />
                         </div>
                         <h3 className="text-2xl font-semibold text-gray-900 mb-3 text-center">{title}</h3>

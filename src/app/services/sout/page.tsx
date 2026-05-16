@@ -43,7 +43,7 @@ export default function SOUTFullPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/sout.webp"
+                            src="/sout-opt.webp"
                             alt="Специальная оценка условий труда"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
@@ -60,7 +60,7 @@ export default function SOUTFullPage() {
                             Профессионально, надежно и в полном соответствии с требованиями законодательства
                         </p>
                         <a href="/contacts"
-                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
+                            className="bg-green-700 mt-4 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Заказать консультацию
                         </a>
                     </div>
@@ -70,7 +70,7 @@ export default function SOUTFullPage() {
                     <Accordion type="single" collapsible className="space-y-6">
                         <AccordionItem value="stages" className="w-full cursor-pointer rounded-md transition-colors">
                             <AccordionTrigger className="w-full text-left hover:no-underline">
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600 hover:text-green-600/80 transition-colors duration-200">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700 hover:text-green-700/80 transition-colors duration-200">
                                     Этапы проведения специальной оценки условий труда
                                 </h2>
                             </AccordionTrigger>
@@ -110,7 +110,7 @@ export default function SOUTFullPage() {
 
                         <AccordionItem value="after" className="w-full cursor-pointer rounded-md transition-colors">
                             <AccordionTrigger className="w-full text-left hover:no-underline">
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600 hover:text-green-600/80 transition-colors duration-200">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700 hover:text-green-700/80 transition-colors duration-200">
                                     Что делать после СОУТ?
                                 </h2>
                             </AccordionTrigger>
@@ -129,7 +129,7 @@ export default function SOUTFullPage() {
                                     произведена в течение 30 рабочих дней после подписания отчета СОУТ. Можно подать
                                     лично, почтой или в электронном виде через сайт Роструда.
                                 </p>
-                                <p className="mb-4 text-gray-700 italic bg-green-600/30 p-4 rounded border-l-4 border-green-600/50">
+                                <p className="mb-4 text-gray-700 italic bg-green-700/30 p-4 rounded border-l-4 border-green-700/50">
                                     Не подлежат декларированию: рабочие места с вредными условиями труда, включенные в
                                     списки досрочного назначения пенсии, места с измененными условиями труда или вновь
                                     организованные.
@@ -140,7 +140,7 @@ export default function SOUTFullPage() {
                         <AccordionItem value="commission"
                                        className="w-full cursor-pointer rounded-md transition-colors">
                             <AccordionTrigger className="w-full text-left hover:no-underline">
-                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600 hover:text-green-600/80 transition-colors duration-200">
+                                <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700 hover:text-green-700/80 transition-colors duration-200">
                                     Обязанности комиссии по проведению СОУТ
                                 </h2>
                             </AccordionTrigger>

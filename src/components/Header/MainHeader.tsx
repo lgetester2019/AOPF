@@ -80,7 +80,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                 />
                             </Link>
                             <div
-                                className="hidden lg:flex flex-col text-green-600 font-semibold select-none"
+                                className="hidden lg:flex flex-col text-green-700 font-semibold select-none"
                                 style={{lineHeight: "1", marginTop: "-0.15rem"}}
                             >
                                 <span className="text-lg leading-none">СОУТ от</span>
@@ -94,7 +94,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                 onMouseEnter={handleServicesMouseEnter}
                                 onMouseLeave={handleServicesMouseLeave}
                             >
-                                <button className="flex items-center gap-1 px-3 py-1 hover:text-green-600 transition">
+                                <button className="flex items-center gap-1 px-3 py-1 hover:text-green-700 transition">
                                     Услуги <ChevronDown size={16}/>
                                 </button>
                                 {isServicesOpen && (
@@ -104,7 +104,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                     </div>
                                 )}
                             </div>
-                            <a href="/documents" className="px-3 py-1 hover:text-green-600 transition">
+                            <a href="/documents" className="px-3 py-1 hover:text-green-700 transition">
                                 Документы
                             </a>
                             <div
@@ -112,7 +112,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                 onMouseEnter={handleAboutMouseEnter}
                                 onMouseLeave={handleAboutMouseLeave}
                             >
-                                <button className="flex items-center gap-1 px-3 py-1 hover:text-green-600 transition">
+                                <button className="flex items-center gap-1 px-3 py-1 hover:text-green-700 transition">
                                     О нас <ChevronDown size={16}/>
                                 </button>
                                 {isAboutOpen && (
@@ -122,10 +122,10 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                     </div>
                                 )}
                             </div>
-                            <a href="/contacts" className="px-3 py-1 hover:text-green-600 transition">
+                            <a href="/contacts" className="px-3 py-1 hover:text-green-700 transition">
                                 Контакты
                             </a>
-                            <a href="/blog" className="px-3 py-1 hover:text-green-600 transition">
+                            <a href="/blog" className="px-3 py-1 hover:text-green-700 transition">
                                 Блог
                             </a>
                         </nav>
@@ -134,7 +134,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             <SearchToggle />
                             <Button
                                 onClick={() => setModalOpen(true)}
-                                className="bg-transparent text-green-600 border-2 border-green-600 hover:bg-green-600 hover:text-white rounded-full px-5 py-2 font-semibold transition"
+                                className="bg-transparent text-green-700 border-2 border-green-700 hover:bg-green-700 hover:text-white rounded-full px-5 py-2 font-semibold transition"
                             >
                                 Подать заявку
                             </Button>
@@ -147,14 +147,14 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                                 className="rounded-full hover:bg-gray-100"
                                 aria-label="Email"
                             >
-                                <Mail size={20} className="text-green-600"/>
+                                <Mail size={20} className="text-green-700"/>
                             </a>
                             <a
                                 href="tel:88124413778"
                                 className="rounded-full hover:bg-gray-100"
                                 aria-label="Телефон"
                             >
-                                <Phone size={20} className="text-green-600"/>
+                                <Phone size={20} className="text-green-700"/>
                             </a>
                             <a
                                 href="https://wa.me/79119236867"
@@ -176,13 +176,13 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             </a>
                             <button
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+                                className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
                                 aria-label="Toggle mobile menu"
                             >
                                 {mobileMenuOpen ? (
-                                    <X size={24} className="text-green-600"/>
+                                    <X size={24} className="text-green-700"/>
                                 ) : (
-                                    <Menu size={24} className="text-green-600"/>
+                                    <Menu size={24} className="text-green-700"/>
                                 )}
                             </button>
                         </div>

@@ -24,7 +24,7 @@ const FirstBlock = () => {
                     {/* Кнопка для десктопа */}
                     <div className="hidden lg:flex justify-start">
                         <Link href="/services" passHref>
-                            <button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-7 py-3 font-semibold shadow-sm transition-colors duration-300">
+                            <button className="bg-green-700 hover:bg-green-600 text-white rounded-full px-7 py-3 font-semibold shadow-sm transition-colors duration-300">
                                 Подробнее об услугах
                             </button>
                         </Link>
@@ -36,10 +36,10 @@ const FirstBlock = () => {
                     <Image
                         src="/FB.svg"
                         alt="Лаборатория"
+                        priority
                         width={462}
                         height={349}
                         className="drop-shadow-2xl"
-                        priority
                         style={{ maxHeight: '360px', maxWidth: '100%', width: 'auto', height: 'auto' }}
                     />
                 </div>
@@ -48,7 +48,7 @@ const FirstBlock = () => {
             {/* Кнопка для мобильных */}
             <div className="mt-8 lg:hidden flex justify-center">
                 <Link href="/services">
-                    <button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-7 py-3 font-semibold shadow-sm transition-colors duration-300">
+                    <button className="bg-green-700 hover:bg-green-600 text-white rounded-full px-7 py-3 font-semibold shadow-sm transition-colors duration-300">
                         Подробнее об услугах
                     </button>
                 </Link>

@@ -19,10 +19,10 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
         <div className="fixed inset-0 bg-white z-50 flex flex-col p-3 overflow-y-auto">
             <button
                 onClick={onClose}
-                className="self-end p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 mb-4"
+                className="self-end p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700 mb-4"
                 aria-label="Close menu"
             >
-                <X size={28} className="text-green-600" />
+                <X size={28} className="text-green-700" />
             </button>
 
             <nav className="flex flex-col gap-6 text-lg font-semibold text-gray-800">
@@ -30,16 +30,16 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
                     <DropdownServices />
                 </MobileSubMenu>
 
-                <a href="/documents" onClick={onClose} className="hover:text-green-600">
+                <a href="/documents" onClick={onClose} className="hover:text-green-700">
                     Документы
                 </a>
                 <MobileSubMenu title="О нас">
                     <DropdownMenu />
                 </MobileSubMenu>
-                <a href="/contacts" onClick={onClose} className="hover:text-green-600">
+                <a href="/contacts" onClick={onClose} className="hover:text-green-700">
                     Контакты
                 </a>
-                <a href="/blog" onClick={onClose} className="hover:text-green-600">
+                <a href="/blog" onClick={onClose} className="hover:text-green-700">
                     Блог
                 </a>
             </nav>
@@ -50,7 +50,7 @@ export default function MobileMenu({ onClose, isModalOpen, setModalOpen }: Mobil
                     onClick={() => {
                         setModalOpen(true);
                     }}
-                    className="w-full mt-6 bg-green-600 text-white rounded-full px-5 py-3 font-semibold shadow-lg"
+                    className="w-full mt-6 bg-green-700 text-white rounded-full px-5 py-3 font-semibold shadow-lg"
                 >
                     Подать заявку
                 </Button>

@@ -5,25 +5,25 @@ import Image from "next/image";
 const certificates = [
     {
         title: "Аттестат аккредитации",
-        src: "/certificates/Аттестат аккредитации.jpg",
-        href: "/certificates/Аттестат аккредитации.jpg",
+        src: "/certificates/attestat.webp",
+        href: "/certificates/attestat.webp",
         isPdf: false,
     },
     {
         title: "Уведомление о внесении в реестр",
-        src: "/certificates/Уведомление о внесение в реестр.jpg",
-        href: "/certificates/Уведомление о внесение в реестр.jpg",
+        src: "/certificates/uvedomlenie.webp",
+        href: "/certificates/uvedomlenie.webp",
         isPdf: false,
     },
     {
         title: "Свидетельство МСИ 2024",
-        src: "/certificates/2024.webp",
+        src: "/certificates/2024-opt.webp",
         href: "/certificates/Свидетельство МСИ 2024.pdf",
         isPdf: true,
     },
     {
         title: "Свидетельство об участии в МСИ 4 раунд 2023",
-        src: "/certificates/2023.webp",
+        src: "/certificates/2023-opt.webp",
         href: "/certificates/свидетельство об участии в МСИ 4 раунд 2023.pdf",
         isPdf: true,
     },
@@ -35,7 +35,7 @@ export default function Certificates() {
             <div className="max-w-[1350px] mx-auto px-4 sm:px-6 md:px-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6 sm:mb-10 text-gray-900 relative inline-block">
                     Наши сертификаты
-                    <span className="block h-1 w-full bg-green-600 rounded-full mx-auto mt-3 sm:mt-4"></span>
+                    <span className="block h-1 w-full bg-green-700 rounded-full mx-auto mt-3 sm:mt-4"></span>
                 </h2>
 
                 <div

@@ -11,7 +11,7 @@
   font-style: normal;
   font-display: swap;
 }
-
+@keyframes spin { to { transform: rotate(360deg); } }
 @font-face {
   font-family: 'Nunito';
   src: url('/fonts/nunito/Nunito-Bold.woff2') format('woff2');

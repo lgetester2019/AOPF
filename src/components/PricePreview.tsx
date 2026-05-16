@@ -24,7 +24,7 @@ export default function PricePreview({ title, data, href, customPriceText }: Pri
 
     return (
         <section className="py-16 sm:py-10">
-            <div className="max-w-[1350px] bg-green-600/70 rounded-3xl py-10 px-4 lg:px-12 mx-auto shadow-lg">
+            <div className="max-w-[1350px] bg-green-700/70 rounded-3xl py-10 px-4 lg:px-12 mx-auto shadow-lg">
                 <h3 className="md:text-3xl text-2xl font-extrabold text-white mb-6 lg:text-center text-left ">{title}</h3>
                 <p className="text-white/90 max-w-[1350px] mx-auto mb-6 lg:text-center text-left leading-relaxed text-lg">
                     Мы предлагаем качественные услуги по охране труда с прозрачным ценообразованием и индивидуальным подходом к каждому клиенту. Наша команда профессионалов поможет провести замеры, аудит и предоставить рекомендации для повышения безопасности и снижения рисков на вашем предприятии.
@@ -35,12 +35,12 @@ export default function PricePreview({ title, data, href, customPriceText }: Pri
 
                 {customPriceText ? (
                     <p className="lg:text-center text-left lg:text-2xl text-xl font-semibold text-white mb-5">
-                        Стоимость от <span className="underline decoration-green-300">{customPriceText}</span>
+                        Стоимость от <span className="underline decoration-green-700">{customPriceText}</span>
                     </p>
                 ) : minPrice ? (
                     <p className="lg:text-center text-left lg:text-2xl text-xl  font-semibold text-white mb-5">
                         Стоимость от{" "}
-                        <span className="underline decoration-green-300">{minPrice} рублей</span>
+                        <span className="underline decoration-green-700">{minPrice} рублей</span>
                     </p>
                 ) : (
                     <p className="lg:text-center text-left text-xl text-white/90 mb-5">
@@ -51,7 +51,7 @@ export default function PricePreview({ title, data, href, customPriceText }: Pri
                 <div className="flex justify-center">
                     <Link
                         href={href}
-                        className="inline-flex items-center gap-2 bg-white text-green-700 px-6 py-3 rounded-full font-semibold text-lg hover:bg-green-50 transition-shadow shadow-md"
+                        className="inline-flex items-center gap-2 bg-white text-green-700 px-6 py-3 rounded-full font-semibold text-lg hover:bg-green-700 transition-shadow shadow-md"
                     >
                         Смотреть полный прайс
                         <svg

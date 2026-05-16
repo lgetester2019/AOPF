@@ -35,7 +35,7 @@ export default function MeasurementsPage() {
                 <header className="relative rounded-3xl overflow-hidden shadow-lg mb-12">
                     <div className="relative w-full h-80">
                         <Image
-                            src="/measurements.webp"
+                            src="/measurements-opt.webp"
                             alt="Измерения физических факторов"
                             fill
                             style={{objectFit: 'cover', filter: 'brightness(0.9)'}}
@@ -52,7 +52,7 @@ export default function MeasurementsPage() {
                             Профессиональные инструментальные измерения для оценки условий труда
                         </p>
                         <a href="/contacts"
-                            className="bg-green-600 mt-4 hover:bg-green-700 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
+                            className="bg-green-700 mt-4 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold shadow-sm transition-colors duration-300">
                             Заказать консультацию
                         </a>
                     </div>
@@ -61,8 +61,8 @@ export default function MeasurementsPage() {
                 <Accordion type="multiple" className="space-y-6 mt-16">
                     {}
                     <AccordionItem value="physical-factors">
-                        <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
-                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                        <AccordionTrigger className="hover:no-underline hover:text-green-700/80">
+                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                 Список измеряемых физических факторов
                             </h2>
                         </AccordionTrigger>
@@ -87,8 +87,8 @@ export default function MeasurementsPage() {
 
                     {}
                     <AccordionItem value="chemical-factors">
-                        <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
-                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                        <AccordionTrigger className="hover:no-underline hover:text-green-700/80">
+                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                 Список измеряемых химических факторов
                             </h2>
                         </AccordionTrigger>
@@ -127,8 +127,8 @@ export default function MeasurementsPage() {
                     </AccordionItem>
                     {}
                     <AccordionItem value="control-program">
-                        <AccordionTrigger className="hover:no-underline hover:text-green-600/80">
-                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-600 pl-4 text-green-600">
+                        <AccordionTrigger className="hover:no-underline hover:text-green-700/80">
+                            <h2 className="text-2xl font-bold mb-6 border-l-4 border-green-700 pl-4 text-green-700">
                                 Программа производственного контроля
                             </h2>
                         </AccordionTrigger>

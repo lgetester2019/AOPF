@@ -232,7 +232,7 @@ export default function CategoriesAdminPage() {
                         <Button
                             onClick={handleAdd}
                             disabled={!name.trim()}
-                            className="bg-green-600 hover:bg-green-700"
+                            className="bg-green-700 hover:bg-green-600"
                         >
                             Добавить категорию
                         </Button>

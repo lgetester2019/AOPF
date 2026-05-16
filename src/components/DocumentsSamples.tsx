@@ -46,7 +46,7 @@ export default function DocumentsSamples() {
             <div className="max-w-[1350px] mx-auto px-4 sm:px-6 md:px-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6 sm:mb-10 text-gray-900 relative inline-block">
                     Образцы документов
-                    <span className="block h-1 w-full bg-green-600 rounded-full mx-auto mt-3 sm:mt-4"></span>
+                    <span className="block h-1 w-full bg-green-700 rounded-full mx-auto mt-3 sm:mt-4"></span>
                 </h2>
 
                 <div

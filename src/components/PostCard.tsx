@@ -41,7 +41,7 @@ export default function PostCard({ post }: PostCardProps) {
               format="short" 
             />
             {post.author && (
-              <span className="text-gray-400">👤 {post.author}</span>
+              <span className="text-gray-600">👤 {post.author}</span>
             )}
           </div>
         </div>

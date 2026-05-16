@@ -126,7 +126,7 @@ const ContactForm: React.FC = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-2.5 border bg-green-600/10 border-green-400 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+                            className="w-full px-4 py-2.5 border bg-green-700/10 border-green-700 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700 transition-all duration-300"
                             placeholder="Иван (необязательно)"
                         />
                     </div>
@@ -139,7 +139,7 @@ const ContactForm: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-2.5 border border-green-400 bg-green-600/10 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+                            className="w-full px-4 py-2.5 border border-green-700 bg-green-700/10 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700 transition-all duration-300"
                             placeholder="+7 (999) 123-45-67"
                         />
                     </div>
@@ -151,21 +151,21 @@ const ContactForm: React.FC = () => {
                             value={formData.message}
                             onChange={handleChange}
                             rows={6}
-                            className="w-full px-4 py-2.5 border border-green-400 bg-green-600/10 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none transition-all duration-300"
+                            className="w-full px-4 py-2.5 border border-green-700 bg-green-700/10 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700 resize-none transition-all duration-300"
                             placeholder="Дополнительная информация..."
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full bg-green-600 hover:bg-green-700 text-white rounded-xl px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
+                        className="w-full bg-green-700 hover:bg-green-600 text-white rounded-xl px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
                         disabled={status === 'sending'}
                     >
                         {status === 'sending' ? 'Отправка...' : 'Оставить заявку'}
                     </button>
 
                     {status === 'sent' && (
-                        <p className="text-green-600 font-medium">Форма успешно отправлена!</p>
+                        <p className="text-green-700 font-medium">Форма успешно отправлена!</p>
                     )}
                     {status === 'error' && (
                         <p className="text-red-600 font-medium">Ошибка при отправке. Попробуйте позже.</p>

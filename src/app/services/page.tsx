@@ -61,7 +61,7 @@ export default function ServicesPage() {
 
                     ))}
                 </div>
-                <section className="my-10 relative overflow-hidden rounded-3xl shadow-xl bg-green-600/80">
+                <section className="my-10 relative overflow-hidden rounded-3xl shadow-xl bg-green-700/80">
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-3xl"></div>
                     <div className="relative z-10 p-10 text-white">
                         <h2 className="text-3xl font-extrabold mb-8 text-white drop-shadow-lg text-center">

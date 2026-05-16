@@ -43,7 +43,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq1">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Верно ли, что если рабочее место является временным и создано на срок менее 12
                                     месяцев, то специальная оценка условий труда по нему все равно должна проводиться,
                                     несмотря на ст. 17 Федерального закона от 28.12.2013 N 426-ФЗ, согласно которой
@@ -68,7 +68,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq2">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Что делать, если работник отказывается подписывать карту специальной оценки условий
                                     труда?
                                 </h2>
@@ -86,7 +86,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq3">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Кто обязан проводить специальную оценку условий труда – работодатель или
                                     организация-клиент, где фактически работают сотрудники работодателя?
                                 </h2>
@@ -107,7 +107,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq5">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Проводится ли внеплановая специальная оценка условий труда при изменении
                                     наименования должности в штатном расписании?
                                 </h2>
@@ -130,7 +130,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq6">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Нужна ли внеплановая СОУТ, если работодатель переместил рабочее место в новый офис?
                                 </h2>
                             </AccordionTrigger>
@@ -161,7 +161,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq7">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Надо ли вносить изменения в трудовой договор по результатам проведения СОУТ?
                                 </h2>
                             </AccordionTrigger>
@@ -187,7 +187,7 @@ export default function FaqPage() {
                         {}
                         <AccordionItem value="faq8">
                             <AccordionTrigger>
-                                <h2 className="text-xl font-bold border-l-4 border-green-600 pl-4 text-green-600">
+                                <h2 className="text-xl font-bold border-l-4 border-green-700 pl-4 text-green-700">
                                     Вносятся ли дополнительные страховые взносы, если спецоценкой были установлены
                                     вредные условия труда?
                                 </h2>
