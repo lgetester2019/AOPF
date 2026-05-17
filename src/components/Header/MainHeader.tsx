@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
     Mail,
     Phone,
@@ -31,6 +31,11 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
     const [isAboutOpen, setIsAboutOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
+    useEffect(() => {
+        const handler = () => setModalOpen(true);
+        window.addEventListener('open-modal-form', handler);
+        return () => window.removeEventListener('open-modal-form', handler);
+    }, []);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const clearTimeoutRef = () => {
@@ -134,7 +139,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ openMobileMenu, openModal }) =>
                             <SearchToggle />
                             <Button
                                 onClick={() => setModalOpen(true)}
-                                className="bg-transparent text-green-700 border-2 border-green-700 hover:bg-green-700 hover:text-white rounded-full px-5 py-2 font-semibold transition"
+                                className="bg-transparent text-green-700 border-2 border-green-700 hover:bg-green-700 hover:text-white rounded-full px-5 py-2 font-semibold transition cursor-pointer"
                             >
                                 Подать заявку
                             </Button>

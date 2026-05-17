@@ -67,12 +67,12 @@ export default function ServicesPreview() {
                                         {service.description}
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-2 mt-1">
-                                        <Link
-                                            href="/#form"
-                                            className="text-sm text-center font-semibold px-3 py-1 rounded-full bg-white text-[#26428b] hover:bg-gray-100 transition"
+                                        <button
+                                            onClick={() => window.dispatchEvent(new CustomEvent('open-modal-form'))}
+                                            className="text-sm text-center font-semibold px-3 py-1 rounded-full bg-white text-[#26428b] hover:bg-gray-100 transition cursor-pointer"
                                         >
                                             Заказать
-                                        </Link>
+                                        </button>
                                         <Link
                                             href={service.href}
                                             className="text-sm text-center font-semibold px-3 py-1 rounded-full border border-white text-white hover:bg-white hover:text-[#26428b] transition"
