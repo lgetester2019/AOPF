@@ -1,177 +1,196 @@
 #!/usr/bin/env node
 /**
  * optimize-images.mjs
- * -------------------
- * Сжимает изображения, найденные Lighthouse как проблемные.
- * Создаёт оптимизированные копии — оригиналы НЕ удаляет.
+ * ───────────────────
+ * Два режима обработки:
+ *
+ *  ИКОНКИ (sout, measurements, suot, risks)
+ *    — показываются как маленькие значки 96×96 px
+ *    — сжимаем до 192×192 px (×2 для Retina), больше не нужно
+ *
+ *  СЕРТИФИКАТЫ (attestat, 2024, 2023, uvedomlenie)
+ *    — показываются как превью 213×250 px
+ *    — НО при клике открываются на весь экран и должны быть читаемы
+ *    — сжимаем до 1400×1800 px (достаточно для чтения текста на любом мониторе)
+ *    — это всё равно в разы меньше оригинала, но полностью читаемо
+ *
+ * fit: 'inside' — пропорции сохраняются, обрезки нет.
  *
  * Запуск:
- *   node scripts/optimize-images.mjs
- *
- * После запуска обновите src в компонентах (скрипт подскажет что менять).
+ *   node scripts/optimize-images.mjs            — применить
+ *   node scripts/optimize-images.mjs --dry-run  — только показать
  */
 
-import sharp  from 'sharp';
-import fs     from 'fs';
-import path   from 'path';
+import sharp from 'sharp';
+import fs    from 'fs';
+import path  from 'path';
 import { fileURLToPath } from 'url';
 
+const DRY_RUN   = process.argv.includes('--dry-run');
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC    = path.resolve(__dirname, '..', 'public');
 
-// ─── Список изображений из Lighthouse-отчёта ──────────────────────────────
-//
-//  original     — путь к исходному файлу в /public
-//  output       — путь к оптимизированному файлу (новое имя, всегда .webp)
-//  displayW     — ширина отображения на экране (из Lighthouse boundingRect)
-//  displayH     — высота отображения на экране
-//  multiplier   — множитель для Retina/2x экранов (обычно 2)
-//  quality      — качество WebP (80 = хорошо, заметно не хуже оригинала)
-
 const IMAGES = [
+
+  // ═══════════════════════════════════════════════════════════════════
+  // ИКОНКИ УСЛУГ
+  // Отображаются как маленькие значки 96×96 px на странице.
+  // Пользователь их не открывает — 192×192 достаточно (Retina ×2).
+  // ═══════════════════════════════════════════════════════════════════
   {
-    // sout.webp: 4932×4912px, 1.6 МБ → показывается 96×96px
+    type:     'icon',
     original: path.join(PUBLIC, 'sout.webp'),
     output:   path.join(PUBLIC, 'sout-opt.webp'),
-    displayW: 96,
-    displayH: 96,
-    multiplier: 2,
-    quality: 85,
+    maxW: 192, maxH: 192, quality: 85,
   },
   {
-    // measurements.webp: 3463×3456px, 688 КБ → показывается 96×96px
+    type:     'icon',
     original: path.join(PUBLIC, 'measurements.webp'),
     output:   path.join(PUBLIC, 'measurements-opt.webp'),
-    displayW: 96,
-    displayH: 96,
-    multiplier: 2,
-    quality: 85,
+    maxW: 192, maxH: 192, quality: 85,
   },
   {
-    // Аттестат аккредитации.jpg: 1452×1700px, 931 КБ → показывается 213×250px
+    type:     'icon',
+    original: path.join(PUBLIC, 'suot.webp'),
+    output:   path.join(PUBLIC, 'suot-opt.webp'),
+    maxW: 192, maxH: 192, quality: 85,
+  },
+  {
+    type:     'icon',
+    original: path.join(PUBLIC, 'risks.webp'),
+    output:   path.join(PUBLIC, 'risks-opt.webp'),
+    maxW: 192, maxH: 192, quality: 85,
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // СЕРТИФИКАТЫ
+  // Показываются как превью, но при клике открываются на просмотр.
+  // Нужно чтобы текст был читаем на полном экране (1920×1080 и выше).
+  // 1400×1800 px — достаточно для чтения на любом мониторе,
+  // при этом в 2-5 раз меньше оригиналов по весу.
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    type:     'certificate',
     original: path.join(PUBLIC, 'certificates', 'Аттестат аккредитации.jpg'),
     output:   path.join(PUBLIC, 'certificates', 'attestat.webp'),
-    displayW: 213,
-    displayH: 250,
-    multiplier: 2,
-    quality: 85,
+    maxW: 1400, maxH: 1800, quality: 90,
   },
   {
-    // 2024.webp: 1180×1389px, 452 КБ → показывается 213×250px
+    type:     'certificate',
     original: path.join(PUBLIC, 'certificates', '2024.webp'),
     output:   path.join(PUBLIC, 'certificates', '2024-opt.webp'),
-    displayW: 213,
-    displayH: 250,
-    multiplier: 2,
-    quality: 85,
+    maxW: 1400, maxH: 1800, quality: 90,
   },
   {
-    // 2023.webp: 1140×1340px, 435 КБ → показывается 213×250px
+    type:     'certificate',
     original: path.join(PUBLIC, 'certificates', '2023.webp'),
     output:   path.join(PUBLIC, 'certificates', '2023-opt.webp'),
-    displayW: 213,
-    displayH: 250,
-    multiplier: 2,
-    quality: 85,
+    maxW: 1400, maxH: 1800, quality: 90,
   },
   {
-      // suot.webp: 3435×3428px, 414 КБ → показывается 96×96px
-      original: path.join(PUBLIC, 'suot.webp'),
-      output:   path.join(PUBLIC, 'suot-opt.webp'),
-      displayW: 96, displayH: 96, multiplier: 2, quality: 85,
-  },
-  {
-      // risks.webp: 3387×3370px, 412 КБ → показывается 96×96px
-      original: path.join(PUBLIC, 'risks.webp'),
-      output:   path.join(PUBLIC, 'risks-opt.webp'),
-      displayW: 96, displayH: 96, multiplier: 2, quality: 85,
-  },
-  {
-      // Уведомление о внесении в реестр.jpg: 1700×1996px, 339 КБ → показывается 213×250px
-      original: path.join(PUBLIC, 'certificates', 'Уведомление о внесение в реестр.jpg'),
-      output:   path.join(PUBLIC, 'certificates', 'uvedomlenie.webp'),
-      displayW: 213, displayH: 250, multiplier: 2, quality: 85,
+    type:     'certificate',
+    original: path.join(PUBLIC, 'certificates', 'Уведомление о внесение в реестр.jpg'),
+    output:   path.join(PUBLIC, 'certificates', 'uvedomlenie.webp'),
+    maxW: 1400, maxH: 1800, quality: 90,
   },
 ];
 
-// ─── Функция сжатия ────────────────────────────────────────────────────────
+// ─── Функция обработки одного файла ────────────────────────────────────────
 
-async function optimizeImage(cfg) {
-  const { original, output, displayW, displayH, multiplier, quality } = cfg;
+async function optimizeOne({ type, original, output, maxW, maxH, quality }) {
+  const name = path.basename(original);
 
   if (!fs.existsSync(original)) {
-    console.warn(`  ⚠️  Файл не найден, пропускаем: ${original}`);
-    return null;
+    console.warn(`  ⚠️  Файл не найден, пропускаем:\n     ${original}`);
+    return false;
   }
 
-  const targetW = displayW * multiplier;  // для Retina: 96 × 2 = 192px
-  const targetH = displayH * multiplier;
-
+  const meta   = await sharp(original).metadata();
+  const origW  = meta.width  ?? '?';
+  const origH  = meta.height ?? '?';
   const before = fs.statSync(original).size;
+  const label  = type === 'icon' ? '🔷 Иконка' : '📄 Сертификат';
 
+  if (DRY_RUN) {
+    console.log(`  ${label}: ${name}`);
+    console.log(`    оригинал:  ${origW}×${origH} px  |  ${kb(before)} КБ`);
+    console.log(`    сжать до:  вписать в ${maxW}×${maxH} px  (fit: inside, без обрезки)`);
+    console.log(`    качество:  ${quality}/100  →  выход: ${path.basename(output)}`);
+    return true;
+  }
+
+  // Ключевой параметр: fit:'inside' — вписать целиком, не обрезая
   await sharp(original)
-    .resize(targetW, targetH, {
-      fit: 'cover',          // обрезать по центру если нужно
-      withoutEnlargement: true,  // не увеличивать если оригинал меньше
+    .resize(maxW, maxH, {
+      fit:              'inside',  // ← вписать БЕЗ обрезки
+      withoutEnlargement: true,   // ← не увеличивать маленькие изображения
     })
     .webp({ quality })
     .toFile(output);
 
-  const after = fs.statSync(output).size;
-  const saved = ((1 - after / before) * 100).toFixed(0);
+  const after   = fs.statSync(output).size;
+  const resMeta = await sharp(output).metadata();
+  const savedPc = Math.round((1 - after / before) * 100);
 
-  return { before, after, saved };
+  console.log(`  ${label}: ${name}`);
+  console.log(`    оригинал:  ${origW}×${origH} px  |  ${kb(before)} КБ`);
+  console.log(`    результат: ${resMeta.width}×${resMeta.height} px  |  ${kb(after)} КБ  (−${savedPc}%)`);
+  console.log(`    файл:      ${path.basename(output)}`);
+  return true;
 }
 
-// ─── Запуск ────────────────────────────────────────────────────────────────
+function kb(bytes) { return Math.round(bytes / 1024); }
 
-console.log('\n╔══════════════════════════════════════════════════════════╗');
-console.log('║          Оптимизация изображений для aopf.ru             ║');
-console.log('╚══════════════════════════════════════════════════════════╝\n');
+// ─── Запуск ─────────────────────────────────────────────────────────────────
 
-const replacements = [];  // для инструкции в конце
+const icons = IMAGES.filter(i => i.type === 'icon');
+const certs = IMAGES.filter(i => i.type === 'certificate');
 
-for (const cfg of IMAGES) {
-  const name = path.basename(cfg.original);
-  process.stdout.write(`  Обрабатываю: ${name} ... `);
+console.log('\n╔══════════════════════════════════════════════════════════════╗');
+console.log('║        Оптимизация изображений  (fit: inside, без обрезки)   ║');
+console.log('╠══════════════════════════════════════════════════════════════╣');
+console.log(`║  🔷 Иконки (${icons.length} шт.)      — до 192×192 px   (только для страницы)  ║`);
+console.log(`║  📄 Сертификаты (${certs.length} шт.)  — до 1400×1800 px (читаемы при клике) ║`);
+console.log('╚══════════════════════════════════════════════════════════════╝\n');
 
-  try {
-    const result = await optimizeImage(cfg);
-    if (result) {
-      const { before, after, saved } = result;
-      console.log(`✅ ${kb(before)} КБ → ${kb(after)} КБ  (−${saved}%)`);
-      replacements.push({
-        from: '/' + path.relative(PUBLIC, cfg.original).replace(/\\/g, '/'),
-        to:   '/' + path.relative(PUBLIC, cfg.output).replace(/\\/g, '/'),
-      });
-    }
-  } catch (err) {
-    console.log(`❌ Ошибка: ${err.message}`);
-  }
+if (DRY_RUN) console.log('⚠️  Режим --dry-run: файлы НЕ изменяются.\n');
+
+let ok = 0, fail = 0;
+
+console.log('── Иконки ──────────────────────────────────────────────────────\n');
+for (const img of icons) {
+  const res = await optimizeOne(img).catch(err => {
+    console.error(`  ❌ ${path.basename(img.original)}: ${err.message}`);
+    return false;
+  });
+  res ? ok++ : fail++;
+  console.log();
 }
 
-function kb(bytes) {
-  return Math.round(bytes / 1024);
+console.log('── Сертификаты ─────────────────────────────────────────────────\n');
+for (const img of certs) {
+  const res = await optimizeOne(img).catch(err => {
+    console.error(`  ❌ ${path.basename(img.original)}: ${err.message}`);
+    return false;
+  });
+  res ? ok++ : fail++;
+  console.log();
 }
 
-// ─── Инструкция что менять в коде ─────────────────────────────────────────
+console.log('─'.repeat(64));
 
-if (replacements.length > 0) {
-  console.log('\n╔══════════════════════════════════════════════════════════╗');
-  console.log('║   Теперь замените пути в коде (Ctrl+Shift+R в PyCharm)  ║');
-  console.log('╚══════════════════════════════════════════════════════════╝\n');
-
-  for (const { from, to } of replacements) {
-    console.log(`  Найти:   ${from}`);
-    console.log(`  Заменить: ${to}`);
-    console.log();
-  }
-
-  console.log('─'.repeat(58));
-  console.log('\n📋 Как заменить в PyCharm:');
-  console.log('   Ctrl+Shift+R → вставить строку из "Найти" → вставить "Заменить"');
-  console.log('   → Replace All\n');
-
-  console.log('📋 Или запустите авто-замену путей:');
-  console.log('   node scripts/update-image-paths.mjs\n');
+if (DRY_RUN) {
+  console.log(`\n👀 Dry-run завершён. Будет обработано: ${ok} файлов.\n`);
+  console.log('   Запустите без --dry-run чтобы применить:\n');
+  console.log('   node scripts/optimize-images.mjs\n');
+} else {
+  console.log(`\n✅ Готово! Обработано: ${ok} файлов${fail ? `  |  ошибок: ${fail}` : ''}.\n`);
+  console.log('📋 Следующие шаги:\n');
+  console.log('  1. Проверьте сайт — откройте и кликните на каждый сертификат:');
+  console.log('     npm run dev\n');
+  console.log('  2. Соберите production:');
+  console.log('     npm run build && npm run start\n');
+  console.log('  3. Зафиксируйте:');
+  console.log('     git add public/');
+  console.log('     git commit -m "perf: re-optimize images, readable certs, no cropping"\n');
 }

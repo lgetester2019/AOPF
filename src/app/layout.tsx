@@ -28,11 +28,11 @@ export const metadata: Metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://example.com",
+        canonical: "https://aopf.ru",
     },
-    metadataBase: new URL("https://example.com"),
+    metadataBase: new URL("https://aopf.ru/"),
     verification: {
-        yandex: "8682ea9c3d4e563c",
+        yandex: "61bd324922a76a55",
     },
 };
 
@@ -44,6 +44,7 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <head>
+                <script src="https://analytics.ahrefs.com/analytics.js" data-key="e1Y9fJE4WXLIjkLnZ2UaFg" async></script>
                 {/* Preload главного изображения на главной странице.
                     Это заставляет браузер загрузить FB.svg в первую очередь,
                     ещё до того как он разберёт весь HTML — улучшает LCP. */}
