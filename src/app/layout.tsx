@@ -45,6 +45,7 @@ export default function RootLayout({
         <html lang="ru">
             <head>
                 <script src="https://analytics.ahrefs.com/analytics.js" data-key="e1Y9fJE4WXLIjkLnZ2UaFg" async></script>
+                <meta name="yandex-verification" content="61bd324922a76a55" />
                 {/* Preload главного изображения на главной странице.
                     Это заставляет браузер загрузить FB.svg в первую очередь,
                     ещё до того как он разберёт весь HTML — улучшает LCP. */}
