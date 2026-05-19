@@ -1,100 +1,153 @@
 import { createClient } from '@supabase/supabase-js';
 import { notFound } from 'next/navigation';
-import ArticleDate from '@/components/ArticleDate';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Calendar, User, Tag, ArrowLeft } from 'lucide-react';
+
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-// Правильная типизация для Next.js 15+ (params - это Promise)
 type PageProps = {
-  params: Promise<{ slug: string }>
-}
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateStaticParams() {
   const { data: posts } = await supabase
     .from('posts')
     .select('slug')
     .eq('status', 'published');
+  return (posts || []).map((post) => ({ slug: post.slug }));
+}
 
-  console.log('Generating static params for posts:', posts?.map(p => p.slug));
+export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params;
+  const { data: post } = await supabase
+    .from('posts')
+    .select('title, description')
+    .eq('slug', slug)
+    .eq('status', 'published')
+    .single();
 
-  return (posts || []).map((post) => ({
-    slug: post.slug,
-  }));
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.description,
+  };
 }
 
 export const dynamicParams = true;
 export const revalidate = 0;
 
+function formatDate(dateStr: string, includeTime = false) {
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return '';
+  const opts: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+  if (includeTime) { opts.hour = '2-digit'; opts.minute = '2-digit'; }
+  return d.toLocaleDateString('ru-RU', opts);
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
-  // Ждем params, так как это Promise
   const { slug } = await params;
-  
-  console.log('=== BLOG POST PAGE ===');
-  console.log('Extracted slug:', slug);
 
   const { data: post, error } = await supabase
     .from('posts')
-    .select(`
-      *,
-      categories:category_id (name, slug)
-    `)
+    .select('*, categories:category_id(name, slug)')
     .eq('slug', slug)
     .eq('status', 'published')
     .single();
 
   if (error || !post) {
-    console.log(`Post with slug "${slug}" not found`);
     notFound();
   }
 
+  const category = Array.isArray(post.categories) ? post.categories[0] : post.categories;
+
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      <div className="mb-6">
-        <Link href="/blog" className="text-indigo-600 hover:text-indigo-800">
-          ← Назад к списку
-        </Link>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-gray-500 mb-6 flex items-center gap-1.5 flex-wrap">
+        <Link href="/" className="hover:text-green-700 transition-colors">Главная</Link>
+        <span>/</span>
+        <Link href="/blog" className="hover:text-green-700 transition-colors">Блог</Link>
+        {category && (
+          <>
+            <span>/</span>
+            <Link
+              href={`/blog?category=${category.slug}`}
+              className="hover:text-green-700 transition-colors"
+            >
+              {category.name}
+            </Link>
+          </>
+        )}
+      </nav>
 
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+      {/* Заголовок */}
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-5">
+        {post.title}
+      </h1>
 
-      <div className="flex flex-wrap items-center gap-4 text-gray-500 mb-8 pb-4 border-b">
-        <ArticleDate
-          date={post.publish_date || post.created_at}
-          format="full"
-        />
-        {post.author && <span>👤 {post.author}</span>}
-        {post.categories && (
-          <span className="px-2 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm">
-            {post.categories.name}
+      {/* Мета-блок */}
+      <div className="flex flex-wrap items-center gap-3 mb-8 pb-5 border-b border-gray-200">
+        <span className="flex items-center gap-1.5 text-sm text-gray-500">
+          <Calendar size={14} className="text-green-600" />
+          {formatDate(post.publish_date || post.created_at)}
+        </span>
+        {post.author && (
+          <span className="flex items-center gap-1.5 text-sm text-gray-500">
+            <User size={14} className="text-green-600" />
+            {post.author}
           </span>
+        )}
+        {category && (
+          <Link
+            href={`/blog?category=${category.slug}`}
+            className="flex items-center gap-1.5 text-sm px-3 py-1 bg-green-50 text-green-700 rounded-full border border-green-100 hover:bg-green-100 transition-colors"
+          >
+            <Tag size={12} />
+            {category.name}
+          </Link>
         )}
       </div>
 
+      {/* Главное изображение */}
       {post.image_url && (
-         <div className="relative mb-8 rounded-lg overflow-hidden w-full h-[500px]">
-            <Image
-              src={post.image_url}
-              alt={post.title}
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="relative mb-8 rounded-2xl overflow-hidden w-full h-[300px] sm:h-[420px]">
+          <Image
+            src={post.image_url}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       )}
 
+      {/* Лид / описание */}
       {post.description && (
-        <div className="mb-8 p-4 bg-gray-50 rounded-lg italic text-gray-700">
+        <div className="mb-8 p-5 bg-green-50 border-l-4 border-green-600 rounded-r-xl text-gray-700 italic text-base leading-relaxed">
           {post.description}
         </div>
       )}
 
+      {/* Основное содержание — используем blog-content для корректного рендера HTML из Quill */}
       <div
-        className="prose prose-lg max-w-none"
+        className="blog-content"
         dangerouslySetInnerHTML={{ __html: post.content || '' }}
       />
-    </article>
+
+      {/* Нижняя навигация */}
+      <div className="mt-12 pt-6 border-t border-gray-200">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800 transition-colors group"
+        >
+          <ArrowLeft size={18} className="group-hover:-translate-x-0.5 transition-transform" />
+          Все статьи блога
+        </Link>
+      </div>
+    </div>
   );
 }
