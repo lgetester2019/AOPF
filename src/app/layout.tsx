@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Охрана труда и безопасность — лаборатория с аккредитацией",
         description: "Комплексные услуги по охране труда и экологии. СОУТ, контроль, обучение. Работаем по всей России.",
-        url: "https://example.com",
+        url: "https://aopf.ru",
         siteName: "Охрана труда",
         type: "website",
     },

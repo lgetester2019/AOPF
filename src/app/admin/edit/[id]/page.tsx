@@ -510,7 +510,7 @@ export default function EditArticlePage() {
               className={inputClass}
               value={formData.imageUrl}
               onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-              placeholder="https://example.com/image.jpg"
+              placeholder="https://aopf.ru/image.jpg"
             />
             {formData.imageUrl && (
               <div className="mt-3 relative h-40 rounded-lg overflow-hidden bg-gray-100">
