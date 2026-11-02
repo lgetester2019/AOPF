@@ -1,11 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { X } from 'lucide-react';
 
 const ModalForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
-    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error' | 'captcha'>('idle');
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,13 +17,19 @@ const ModalForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            setStatus('captcha');
+            return;
+        }
+
         setStatus('sending');
 
         try {
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, captchaToken }),
             });
 
             if (res.ok) {
@@ -34,6 +44,10 @@ const ModalForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
             }
         } catch {
             setStatus('error');
+        } finally {
+            // a reCAPTCHA token can be used only once, so always reset
+            recaptchaRef.current?.reset();
+            setCaptchaToken(null);
         }
     };
 
@@ -90,6 +104,16 @@ const ModalForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
                         />
                     </div>
 
+                    <div className="flex justify-center overflow-x-auto">
+                        <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                            onChange={setCaptchaToken}
+                            onExpired={() => setCaptchaToken(null)}
+                            hl="ru"
+                        />
+                    </div>
+
                     <button
                         type="submit"
                         disabled={status === 'sending'}
@@ -100,6 +124,9 @@ const ModalForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
 
                     {status === 'sent' && <p className="text-green-700 font-medium mt-4">Форма успешно отправлена!</p>}
                     {status === 'error' && <p className="text-red-600 font-medium mt-4">Ошибка при отправке. Попробуйте позже.</p>}
+                    {status === 'captcha' && (
+                        <p className="text-red-600 font-medium">Подтвердите, что вы не робот.</p>
+                    )}
                 </form>
             </div>
         </div>

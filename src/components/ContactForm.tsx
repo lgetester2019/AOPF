@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Mail, Phone, Send, PhoneCall, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 
@@ -11,7 +12,10 @@ const ContactForm: React.FC = () => {
         message: ''
     });
 
-    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error' | 'captcha'>('idle');
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,15 +23,19 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            setStatus('captcha');
+            return;
+        }
+
         setStatus('sending');
 
         try {
             const res = await fetch('/api/contact', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData, captchaToken }),
             });
 
             if (res.ok) {
@@ -40,8 +48,12 @@ const ContactForm: React.FC = () => {
             } else {
                 setStatus('error');
             }
-        } catch (err) {
+        } catch {
             setStatus('error');
+        } finally {
+            // a reCAPTCHA token can be used only once, so always reset
+            recaptchaRef.current?.reset();
+            setCaptchaToken(null);
         }
     };
 
@@ -156,6 +168,16 @@ const ContactForm: React.FC = () => {
                         />
                     </div>
 
+                    <div className="flex justify-center overflow-x-auto">
+                        <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                            onChange={setCaptchaToken}
+                            onExpired={() => setCaptchaToken(null)}
+                            hl="ru"
+                        />
+                    </div>
+
                     <button
                         type="submit"
                         className="w-full bg-green-700 hover:bg-green-600 text-white rounded-xl px-6 py-3 font-semibold shadow-sm transition-colors duration-300"
@@ -169,6 +191,9 @@ const ContactForm: React.FC = () => {
                     )}
                     {status === 'error' && (
                         <p className="text-red-600 font-medium">Ошибка при отправке. Попробуйте позже.</p>
+                    )}
+                    {status === 'captcha' && (
+                        <p className="text-red-600 font-medium">Подтвердите, что вы не робот.</p>
                     )}
                 </form>
             </div>
